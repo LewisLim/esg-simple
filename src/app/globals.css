@@ -3,11 +3,27 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #0d9488;
+  --secondary: #06b6d4;
+  --accent: #f59e0b;
+  --success: #10b981;
+  --warning: #f97316;
+  --neutral: #6b7280;
+  --font: #374151;
+  --font-light: #9ca3af;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-neutral: var(--neutral);
+  --color-font: var(--font);
+  --color-font-light: var(--font-light);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,6 +32,8 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --font: #e5e7eb;
+    --font-light: #6b7280;
   }
 }
 
@@ -27,22 +45,27 @@ body {
 
 /* Custom Layer for Additional Utilities */
 @layer utilities {
+
   /* XS Font Sizes */
   .text-xxs {
-    font-size: 0.625rem; /* 10px */
-    line-height: 0.75rem; /* 12px */
+    font-size: 0.625rem;
+    /* 10px */
+    line-height: 0.75rem;
+    /* 12px */
   }
-  
+
   .text-xxxs {
-    font-size: 0.5rem; /* 8px */
-    line-height: 0.625rem; /* 10px */
+    font-size: 0.5rem;
+    /* 8px */
+    line-height: 0.625rem;
+    /* 10px */
   }
 
   /* Extended Font Weights */
   .font-medium-plus {
     font-weight: 550;
   }
-  
+
   .font-semibold-plus {
     font-weight: 650;
   }
@@ -53,7 +76,7 @@ body {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
-  
+
   .glass-dark {
     background: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
@@ -64,13 +87,13 @@ body {
   .border-gradient {
     border: 2px solid transparent;
     background: linear-gradient(white, white) padding-box,
-                linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899) border-box;
+      linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899) border-box;
   }
-  
+
   .border-gradient-dark {
     border: 2px solid transparent;
     background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
-                linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899) border-box;
+      linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899) border-box;
   }
 
   /* Text Gradients */
@@ -80,7 +103,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  
+
   .text-gradient-warm {
     background: linear-gradient(45deg, #f59e0b, #ef4444, #ec4899);
     background-clip: text;
@@ -93,20 +116,20 @@ body {
     scrollbar-width: thin;
     scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
   }
-  
+
   .scrollbar-thin::-webkit-scrollbar {
     width: 6px;
   }
-  
+
   .scrollbar-thin::-webkit-scrollbar-track {
     background: transparent;
   }
-  
+
   .scrollbar-thin::-webkit-scrollbar-thumb {
     background: rgba(156, 163, 175, 0.5);
     border-radius: 3px;
   }
-  
+
   .scrollbar-thin::-webkit-scrollbar-thumb:hover {
     background: rgba(156, 163, 175, 0.7);
   }
@@ -115,11 +138,11 @@ body {
   .shadow-glow {
     box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
   }
-  
+
   .shadow-glow-warm {
     box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
   }
-  
+
   .shadow-glow-pink {
     box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
   }
@@ -128,15 +151,15 @@ body {
   .hover-lift {
     transition: transform 0.2s ease-in-out;
   }
-  
+
   .hover-lift:hover {
     transform: translateY(-2px);
   }
-  
+
   .hover-scale {
     transition: transform 0.2s ease-in-out;
   }
-  
+
   .hover-scale:hover {
     transform: scale(1.05);
   }
@@ -148,16 +171,16 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  
+
   .full-screen {
     width: 100vw;
     height: 100vh;
   }
-  
+
   .safe-top {
     padding-top: env(safe-area-inset-top);
   }
-  
+
   .safe-bottom {
     padding-bottom: env(safe-area-inset-bottom);
   }
@@ -165,23 +188,24 @@ body {
 
 /* Custom Animations */
 @layer components {
+
   /* Fade Animations */
   .animate-fade-in {
     animation: fadeIn 0.5s ease-in-out;
   }
-  
+
   .animate-fade-in-up {
     animation: fadeInUp 0.6s ease-out;
   }
-  
+
   .animate-fade-in-down {
     animation: fadeInDown 0.6s ease-out;
   }
-  
+
   .animate-fade-in-left {
     animation: fadeInLeft 0.6s ease-out;
   }
-  
+
   .animate-fade-in-right {
     animation: fadeInRight 0.6s ease-out;
   }
@@ -190,7 +214,7 @@ body {
   .animate-scale-in {
     animation: scaleIn 0.3s ease-out;
   }
-  
+
   .animate-scale-bounce {
     animation: scaleBounce 0.6s ease-out;
   }
@@ -199,7 +223,7 @@ body {
   .animate-slide-up {
     animation: slideUp 0.4s ease-out;
   }
-  
+
   .animate-slide-down {
     animation: slideDown 0.4s ease-out;
   }
@@ -208,7 +232,7 @@ body {
   .animate-rotate-in {
     animation: rotateIn 0.5s ease-out;
   }
-  
+
   .animate-wiggle {
     animation: wiggle 1s ease-in-out infinite;
   }
@@ -217,7 +241,7 @@ body {
   .animate-pulse-slow {
     animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
-  
+
   .animate-pulse-fast {
     animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
@@ -249,7 +273,7 @@ body {
   .animate-bounce-x {
     animation: bounceX 1s infinite;
   }
-  
+
   .animate-bounce-slow {
     animation: bounce 2s infinite;
   }
@@ -257,8 +281,13 @@ body {
 
 /* Keyframe Definitions */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInUp {
@@ -266,6 +295,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -277,6 +307,7 @@ body {
     opacity: 0;
     transform: translateY(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -288,6 +319,7 @@ body {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -299,6 +331,7 @@ body {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -310,6 +343,7 @@ body {
     opacity: 0;
     transform: scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -321,12 +355,15 @@ body {
     opacity: 0;
     transform: scale(0.3);
   }
+
   50% {
     transform: scale(1.05);
   }
+
   70% {
     transform: scale(0.9);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -337,6 +374,7 @@ body {
   from {
     transform: translateY(100%);
   }
+
   to {
     transform: translateY(0);
   }
@@ -346,6 +384,7 @@ body {
   from {
     transform: translateY(-100%);
   }
+
   to {
     transform: translateY(0);
   }
@@ -356,6 +395,7 @@ body {
     opacity: 0;
     transform: rotate(-200deg);
   }
+
   to {
     opacity: 1;
     transform: rotate(0);
@@ -363,25 +403,34 @@ body {
 }
 
 @keyframes wiggle {
-  0%, 7% {
+
+  0%,
+  7% {
     transform: rotateZ(0);
   }
+
   15% {
     transform: rotateZ(-15deg);
   }
+
   20% {
     transform: rotateZ(10deg);
   }
+
   25% {
     transform: rotateZ(-10deg);
   }
+
   30% {
     transform: rotateZ(6deg);
   }
+
   35% {
     transform: rotateZ(-4deg);
   }
-  40%, 100% {
+
+  40%,
+  100% {
     transform: rotateZ(0);
   }
 }
@@ -390,55 +439,86 @@ body {
   from {
     box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
   }
+
   to {
     box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
   }
 }
 
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: rgba(99, 102, 241, 0.75); }
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: rgba(99, 102, 241, 0.75);
+  }
 }
 
 @keyframes float {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
+
   100% {
     transform: translateY(0px);
   }
 }
 
 @keyframes shake {
-  10%, 90% {
+
+  10%,
+  90% {
     transform: translateX(-1px);
   }
-  20%, 80% {
+
+  20%,
+  80% {
     transform: translateX(2px);
   }
-  30%, 50%, 70% {
+
+  30%,
+  50%,
+  70% {
     transform: translateX(-4px);
   }
-  40%, 60% {
+
+  40%,
+  60% {
     transform: translateX(4px);
   }
 }
 
 @keyframes bounceX {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateX(0);
   }
+
   40% {
     transform: translateX(-30px);
   }
+
   60% {
     transform: translateX(-15px);
   }
