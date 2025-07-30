@@ -12,7 +12,7 @@ const ContactLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Header />
-      <main className="head-body pt-[80px] base-padding mx-w-7xl">{children}</main>
+      <main className="head-body base-padding max-w-6xl w-full flex-center mx-auto">{children}</main>
       <Footer />
     </>
   );

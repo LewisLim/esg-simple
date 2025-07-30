@@ -10,7 +10,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-primary shadow-sm border-b border-gray-200">
       <div className="mx-auto base-padding">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
@@ -18,7 +18,7 @@ export default function Header() {
               <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">C</span>
               </div>
-              <span className="ml-2 text-xl font-semibold text-gray-900">
+              <span className="ml-2 text-xl font-semibold">
                 CarbonCalc
               </span>
             </a>
@@ -27,25 +27,25 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-8">
             <a
               href="/"
-              className="text-gray-900 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors"
+              className="px-3 py-2 text-sm font-medium transition-colors"
             >
               Home
             </a>
             <a
               href="/calculator"
-              className="text-gray-900 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors"
+              className="px-3 py-2 text-sm font-medium transition-colors"
             >
               Calculator
             </a>
             <a
               href="/tips"
-              className="text-gray-900 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors"
+              className="px-3 py-2 text-sm font-medium transition-colors"
             >
               Tips
             </a>
             <a
               href="/about"
-              className="text-gray-900 hover:text-green-600 px-3 py-2 text-sm font-medium transition-colors"
+              className="px-3 py-2 text-sm font-medium transition-colors"
             >
               About
             </a>
@@ -55,7 +55,7 @@ export default function Header() {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-gray-900 hover:text-green-600 focus:outline-none focus:text-green-600 p-2"
+              className="focus:outline-none focus:text-green-600 p-2"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
@@ -99,25 +99,25 @@ export default function Header() {
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
               <a
                 href="/"
-                className="text-gray-900 hover:text-green-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors rounded-md"
+                className="block px-3 py-2 text-base font-medium transition-colors rounded-md"
               >
                 Home
               </a>
               <a
                 href="/calculator"
-                className="text-gray-900 hover:text-green-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors rounded-md"
+                className="block px-3 py-2 text-base font-medium transition-colors rounded-md"
               >
                 Calculator
               </a>
               <a
                 href="/tips"
-                className="text-gray-900 hover:text-green-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors rounded-md"
+                className="block px-3 py-2 text-base font-medium transition-colors rounded-md"
               >
                 Tips
               </a>
               <a
                 href="/about"
-                className="text-gray-900 hover:text-green-600 hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors rounded-md"
+                className="block px-3 py-2 text-base font-medium transition-colors rounded-md"
               >
                 About
               </a>
