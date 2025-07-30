@@ -1,0 +1,142 @@
+/* Custom Layer for Additional Utilities */
+@layer utilities {
+
+    /* XS Font Sizes */
+    .text-xxs {
+        font-size: 0.625rem;
+        /* 10px */
+        line-height: 0.75rem;
+        /* 12px */
+    }
+
+    .text-xxxs {
+        font-size: 0.5rem;
+        /* 8px */
+        line-height: 0.625rem;
+        /* 10px */
+    }
+
+    /* Extended Font Weights */
+    .font-medium-plus {
+        font-weight: 550;
+    }
+
+    .font-semibold-plus {
+        font-weight: 650;
+    }
+
+    /* Glassmorphism Effects */
+    .glass {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .glass-dark {
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Gradient Borders */
+    .border-gradient {
+        border: 2px solid transparent;
+        background: linear-gradient(white, white) padding-box,
+            linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899) border-box;
+    }
+
+    .border-gradient-dark {
+        border: 2px solid transparent;
+        background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
+            linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899) border-box;
+    }
+
+    /* Text Gradients */
+    .text-gradient {
+        background: linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .text-gradient-warm {
+        background: linear-gradient(45deg, #f59e0b, #ef4444, #ec4899);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* Scrollbar Styling */
+    .scrollbar-thin {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+        background: rgba(156, 163, 175, 0.5);
+        border-radius: 3px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+        background: rgba(156, 163, 175, 0.7);
+    }
+
+    /* Custom Shadows */
+    .shadow-glow {
+        box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+    }
+
+    .shadow-glow-warm {
+        box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+    }
+
+    .shadow-glow-pink {
+        box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+    }
+
+    /* Interactive States */
+    .hover-lift {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-2px);
+    }
+
+    .hover-scale {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .hover-scale:hover {
+        transform: scale(1.05);
+    }
+
+    /* Layout Utilities */
+    .center-absolute {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .full-screen {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .safe-top {
+        padding-top: env(safe-area-inset-top);
+    }
+
+    .safe-bottom {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
