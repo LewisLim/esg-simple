@@ -11,9 +11,8 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto base-padding">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <div className="flex-shrink-0">
             <a href="/" className="flex items-center">
               <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
@@ -25,7 +24,6 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a
               href="/"

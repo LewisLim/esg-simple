@@ -5,7 +5,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-50 border-t border-gray-200 mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto base-padding">
         <div className="flex flex-col sm:flex-row items-center justify-between py-6 space-y-4 sm:space-y-0">
           {/* Navigation Links */}
           <div className="hidden sm:flex items-center space-x-6">
@@ -23,7 +23,6 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Copyright */}
           <div className="flex items-center">
             <p className="text-sm text-gray-600">
               Copyright {year} © ESGtogether. All rights reserved.

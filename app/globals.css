@@ -1,7 +1,4 @@
 @import "tailwindcss";
-@import url('@/css/tailwind-animation.css');
-@import url('@/css/tailwind-custom.css');
-
 
 :root {
   --background: #ffffff;
@@ -13,6 +10,16 @@
   --neutral: #6b7280;
   --font: #374151;
   --font-light: #9ca3af;
+}
+
+@layer utilities {
+  .base-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
 }
 
 @theme inline {
@@ -48,6 +55,4 @@ body {
 
 .head-body {
   min-height: 85vh;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
