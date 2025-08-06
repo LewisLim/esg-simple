@@ -49,6 +49,6 @@ body {
   color: var(--font-light) !important;
 }
 
-.bg-primary > a:hover{
+.bg-primary>a:hover {
   color: var(--primary);
 }
