@@ -1,0 +1,16 @@
+.rc-slider-handle {
+    background-color: white !important;
+    width: 20px !important;
+    height: 20px !important;
+    left: 10;
+}
+
+.rc-slider-rail {
+    background-color: #cccccc !important;
+    width: 20px !important;
+}
+
+.rc-slider-track {
+    background-color: #777777 !important;
+    width: 20px !important;
+}

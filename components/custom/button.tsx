@@ -23,7 +23,7 @@ export default function Button({
         className={`${color ? color : "bg-gray-700 hover:bg-gray-600"} ${
           size ? size : "w-16 h-16"
         }
-        flex flex-col items-center justify-center rounded-full transition-colors duration-200 focus:outline-none active:scale-95 cursor-pointer"`}
+        flex flex-col items-center justify-center rounded-full transition-colors duration-200 focus:outline-none active:scale-95 cursor-pointer`}
       >
         {icon && (
           <div className="flex items-center justify-center w-10 h-10">

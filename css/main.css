@@ -1,2 +1,5 @@
 @import url('@/css/tailwind-animation.css');
 @import url('@/css/tailwind-custom.css');
+
+/* Custom Components */
+@import url('@/css/slider.css');
