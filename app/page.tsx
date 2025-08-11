@@ -11,7 +11,7 @@ export default function Home() {
       <Header />
       <div className="head-body pt-[80px] base-padding">
         Main Page
-        <Button text="Welcome" />
+        <Button text="Click Here" icon="/icons/pointer-click.svg" size="h-12 w-12"/>
         <Slider />
       </div>
       <Footer />

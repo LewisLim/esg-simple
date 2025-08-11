@@ -5,24 +5,29 @@ interface ButtonProps {
   text: string;
   icon?: string;
   onClick?: () => void;
+  color?: string; // Tailwind Colors class
+  size?: string; // Tailwind Colors class
 }
 
-export default function Button({ text, icon, onClick }: ButtonProps) {
+export default function Button({
+  text,
+  icon,
+  color,
+  size,
+  onClick,
+}: ButtonProps) {
   return (
     <div className="flex-col flex-center">
       <button
         onClick={onClick}
-        className="flex flex-col items-center justify-center w-16 h-16 bg-gray-700 hover:bg-gray-600 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+        className={`${color ? color : "bg-gray-700 hover:bg-gray-600"} ${
+          size ? size : "w-16 h-16"
+        }
+        flex flex-col items-center justify-center rounded-full transition-colors duration-200 focus:outline-none active:scale-95 cursor-pointer"`}
       >
         {icon && (
-          <div className="flex items-center justify-center w-8 h-8 mb-1">
-            <Image
-              src={icon}
-              alt={text}
-              width={24}
-              height={24}
-              className="w-6 h-6 text-white"
-            />
+          <div className="flex items-center justify-center w-10 h-10">
+            <Image src={icon} alt={text} width={30} height={30} />
           </div>
         )}
       </button>
