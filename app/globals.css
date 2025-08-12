@@ -20,6 +20,10 @@
   .flex-center {
     @apply flex justify-center items-center;
   }
+
+  .paper {
+    @apply bg-white shadow-lg outline-1 outline-gray-900/5 p-2 sm:p-4
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,6 +46,10 @@ body {
 .head-body {
   min-height: 90vh;
   padding-top: 80px;
+}
+
+.icon {
+  color: #f5f5f5;
 }
 
 .bg-primary {
