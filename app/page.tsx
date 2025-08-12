@@ -18,13 +18,19 @@ export default function Home() {
           icon="/icons/pointer-click.svg"
           size="h-12 w-12"
         />
-        <div className="w-100 h-100">
+        <div className="relative flex flex-col items-center w-10 h-100">
+          <p className="text-center mb-5">{sliderValue}</p>
           <Slider
             min={0}
             max={100}
             value={sliderValue}
             vertical={true}
             onChange={(value) => setSliderValue(value as number)}
+            className="flex-1"
+          />
+          <img
+            src="/icons/pointer-click.svg"
+            className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10"
           />
         </div>
       </div>

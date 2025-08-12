@@ -1,16 +1,34 @@
-.rc-slider-handle {
-    background-color: white !important;
-    width: 20px !important;
-    height: 20px !important;
-    left: 10;
+.rc-slider,
+.rc-slider-vertical {
+    width: 100% !important;
+    padding: 0 !important;
 }
 
 .rc-slider-rail {
     background-color: #cccccc !important;
-    width: 20px !important;
+    width: 100% !important;
 }
 
 .rc-slider-track {
     background-color: #777777 !important;
-    width: 20px !important;
+    width: 100% !important;
+    left: 0px !important
+}
+
+.rc-slider-handle {
+    background-color: white !important;
+    width: 100% !important;
+    height: 35px !important;
+    left: 5;
+    border-radius: 0 !important;
+    border-color: #CCCCCC !important;
+}
+
+.rc.slider-handle:hover {
+    border-color: #4bff5a !important;
+}
+
+.rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
+    border-color: #7effd4;
+    box-shadow: 0 0 0 5px #7effd4 !important;
 }
