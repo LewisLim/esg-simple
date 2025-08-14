@@ -1,0 +1,368 @@
+{
+  "pages": [
+    {
+      "pageId": 1,
+      "title": "Hook & Start",
+      "type": "landing",
+      "progress": {
+        "current": 0,
+        "total": 8,
+        "percentage": 0
+      },
+      "content": {
+        "hookLine": "Did you know your travel habits might outweigh your entire home energy use?",
+        "subtext": "Find out your real carbon impact in 2 minutes",
+        "startButton": "Let's see my footprint",
+        "features": ["Anonymous and Free"],
+        "lazyOption": {
+          "text": "Click to see your country's avg",
+          "action": "show_country_average"
+        },
+        "disclaimer": "If you are a child/dependent, you shouldn't take this survey - your emissions are attributed to the adults responsible for you."
+      }
+    },
+    {
+      "pageId": 2,
+      "title": "Location & Dependencies",
+      "categoryIntro": "Help us personalize your test and results",
+      "progress": {
+        "current": 2,
+        "total": 8,
+        "percentage": 25
+      },
+      "questions": [
+        {
+          "id": "location",
+          "type": "dropdown",
+          "question": "What country are you in?",
+          "placeholder": "Looks like you're in {{DETECTED_COUNTRY}} - is that right?",
+          "fallbackPlaceholder": "Select your country",
+          "options": [
+            { "value": "singapore", "label": "Singapore" },
+            { "value": "usa", "label": "United States" },
+            { "value": "uk", "label": "United Kingdom" },
+            { "value": "canada", "label": "Canada" },
+            { "value": "australia", "label": "Australia" },
+            { "value": "germany", "label": "Germany" },
+            { "value": "france", "label": "France" },
+            { "value": "japan", "label": "Japan" },
+            { "value": "other", "label": "Other" }
+          ],
+          "required": true
+        },
+        {
+          "id": "dependencies",
+          "type": "multi_slider",
+          "question": "Any children or pets?",
+          "sliders": [
+            {
+              "id": "children",
+              "label": "Children",
+              "min": 0,
+              "max": 10,
+              "default": 0,
+              "icon": "child_head",
+              "description": "Number of children in your household"
+            },
+            {
+              "id": "pets",
+              "label": "Pets",
+              "min": 0,
+              "max": 10,
+              "default": 0,
+              "icon": "pet_head",
+              "description": "Number of pets in your household"
+            }
+          ]
+        }
+      ],
+      "feedback": {
+        "message": "Your total carbon emission is being calculated!",
+        "emoji": "👨‍👩‍👧‍👦",
+        "type": "calculating"
+      }
+    },
+    {
+      "pageId": 3,
+      "title": "Transport",
+      "categoryIntro": "Let's start with transport",
+      "progress": {
+        "current": 4,
+        "total": 8,
+        "percentage": 50
+      },
+      "questions": [
+        {
+          "id": "transport_method",
+          "type": "buttons",
+          "question": "How do you travel?",
+          "options": [
+            {
+              "value": "walk_bike",
+              "label": "I walk/bike to most places",
+              "icon": "walk_bike"
+            },
+            {
+              "value": "public_transport",
+              "label": "I use public transport mostly",
+              "icon": "public_transport"
+            },
+            {
+              "value": "drive_occasionally",
+              "label": "I drive/cab occasionally",
+              "icon": "car_occasional"
+            },
+            {
+              "value": "drive_everywhere",
+              "label": "I drive/cab everywhere",
+              "icon": "car_frequent"
+            }
+          ],
+          "required": true
+        },
+        {
+          "id": "holiday_travel",
+          "type": "buttons",
+          "question": "How often are your holiday trips?",
+          "options": [
+            {
+              "value": "very_rare",
+              "label": "Very rare",
+              "description": "Almost no travel"
+            },
+            {
+              "value": "short_trips",
+              "label": "A few short trips",
+              "description": "~10 hours per year"
+            },
+            {
+              "value": "longer_trips",
+              "label": "Some longer trips",
+              "description": "20-50 hrs per year"
+            },
+            {
+              "value": "travel_lot",
+              "label": "I travel a lot",
+              "description": "> 50hrs"
+            },
+            {
+              "value": "always_travelling",
+              "label": "I'm always travelling",
+              "description": "> 200hrs"
+            }
+          ],
+          "required": true
+        }
+      ],
+      "feedback": {
+        "message": "You're doing better than 35% of people so far!",
+        "type": "comparative"
+      }
+    },
+    {
+      "pageId": 4,
+      "title": "Food",
+      "progress": {
+        "current": 5,
+        "total": 8,
+        "percentage": 62.5
+      },
+      "questions": [
+        {
+          "id": "diet_type",
+          "type": "buttons",
+          "question": "What kind of food do you eat?",
+          "options": [
+            {
+              "value": "plant_based",
+              "label": "Plant-based/vegan",
+              "icon": "plants"
+            },
+            {
+              "value": "vegetarian",
+              "label": "Vegetarian (dairy/eggs okay)",
+              "icon": "vegetarian"
+            },
+            {
+              "value": "meat_weekly",
+              "label": "Meat once or twice a week",
+              "icon": "meat_occasional"
+            },
+            {
+              "value": "meat_most_days",
+              "label": "Eat meat most days",
+              "icon": "meat_frequent"
+            },
+            {
+              "value": "meat_daily",
+              "label": "Eat meat everyday",
+              "icon": "meat_daily"
+            }
+          ],
+          "required": true
+        }
+      ],
+      "feedback": {
+        "message": "You're doing better than 65% of people so far!",
+        "type": "comparative"
+      }
+    },
+    {
+      "pageId": 5,
+      "title": "Home Energy",
+      "progress": {
+        "current": 7,
+        "total": 8,
+        "percentage": 87.5
+      },
+      "questions": [
+        {
+          "id": "household_size",
+          "type": "slider",
+          "question": "How many people live in your home?",
+          "label": "Staying with {{COUNT}} people",
+          "min": 1,
+          "max": 15,
+          "default": 1,
+          "icon": "person_head",
+          "description": "Including yourself"
+        },
+        {
+          "id": "home_size",
+          "type": "buttons",
+          "question": "I live in a...",
+          "options": [
+            {
+              "value": "small",
+              "label": "Small space",
+              "icon": "small_home"
+            },
+            {
+              "value": "medium",
+              "label": "Medium space",
+              "icon": "medium_home"
+            },
+            {
+              "value": "large",
+              "label": "Large space",
+              "icon": "large_home"
+            },
+            {
+              "value": "very_large",
+              "label": "Very Large space",
+              "icon": "very_large_home"
+            },
+            {
+              "value": "rural",
+              "label": "Rural home (Straw / Mud)",
+              "icon": "rural_home"
+            }
+          ],
+          "required": true
+        },
+        {
+          "id": "home_age",
+          "type": "buttons",
+          "question": "How old is your home?",
+          "options": [
+            {
+              "value": "new",
+              "label": "Less than 10 years",
+              "description": "Recently built"
+            },
+            {
+              "value": "medium_age",
+              "label": "10 - 30 years",
+              "description": "Moderately old"
+            },
+            {
+              "value": "old",
+              "label": "> 30 years",
+              "description": "Older building"
+            }
+          ],
+          "required": true
+        }
+      ],
+      "feedback": {
+        "message": "You're doing better than 85% of people so far!",
+        "type": "comparative"
+      }
+    },
+    {
+      "pageId": 6,
+      "title": "Consumption",
+      "progress": {
+        "current": 8,
+        "total": 8,
+        "percentage": 100
+      },
+      "questions": [
+        {
+          "id": "monthly_spending",
+          "type": "buttons",
+          "question": "How much do you spend on shopping?",
+          "currencyNote": "Currency based on {{COUNTRY}}",
+          "options": [
+            {
+              "value": "low",
+              "label": "Spend < {{CURRENCY}}100 a month",
+              "icon": "shopping_low"
+            },
+            {
+              "value": "medium",
+              "label": "Spend {{CURRENCY}}100 - {{CURRENCY}}1000 a month",
+              "icon": "shopping_medium"
+            },
+            {
+              "value": "high",
+              "label": "Spend {{CURRENCY}}1000 - {{CURRENCY}}5000 a month",
+              "icon": "shopping_high"
+            },
+            {
+              "value": "very_high",
+              "label": "Spend > {{CURRENCY}}5000 a month",
+              "icon": "shopping_luxury"
+            }
+          ],
+          "required": true
+        }
+      ],
+      "feedback": {
+        "message": "You're doing better than 85% of people so far!",
+        "emoji": "🛍️",
+        "type": "comparative"
+      }
+    }
+  ],
+  "feedbackTemplates": {
+    "calculating": {
+      "messages": [
+        "Your total carbon emission is being calculated!",
+        "Processing your environmental impact...",
+        "Analyzing your carbon footprint..."
+      ]
+    },
+    "comparative": {
+      "messages": [
+        "You're doing better than {{PERCENTAGE}}% of people so far!",
+        "Great! You're ahead of {{PERCENTAGE}}% of participants!",
+        "Impressive! Better than {{PERCENTAGE}}% so far!"
+      ]
+    },
+    "encouragement": {
+      "messages": [
+        "Great choices! You're on the right track!",
+        "Excellent environmental awareness!",
+        "Keep up the good work!"
+      ]
+    },
+    "completion": {
+      "messages": [
+        "Almost there! Just a few more questions.",
+        "You're nearly done!",
+        "Final stretch - great job so far!"
+      ]
+    }
+  }
+}
