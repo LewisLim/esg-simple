@@ -43,8 +43,8 @@ body {
 }
 
 .head-body {
-  min-height: 90vh;
-  padding-top: 80px;
+  min-height: calc(100vh - 25px) !important;
+  padding-top: 65px;
 }
 
 .icon {
@@ -59,3 +59,4 @@ body {
 .bg-primary>a:hover {
   color: var(--primary);
 }
+

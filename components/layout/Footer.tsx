@@ -4,28 +4,28 @@ export default function Footer() {
   let year = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-200 mt-auto">
+    <footer className="h-[25px] text-xs bg-gray-50 border-t border-gray-200 mt-auto">
       <div className="mx-auto base-padding">
-        <div className="flex flex-col sm:flex-row items-center justify-between py-6 space-y-4 sm:space-y-0">
+        <div className="flex flex-col sm:flex-row items-center justify-between">
           {/* Navigation Links */}
           <div className="hidden sm:flex items-center space-x-6">
             <a
               href="/help"
-              className="text-sm text-gray-600 hover:text-green-600 transition-colors"
+              className="text-gray-600 hover:text-green-600 transition-colors"
             >
               Contact
             </a>
             <a
               href="/privacy"
-              className="text-sm text-gray-600 hover:text-green-600 transition-colors"
+              className="text-gray-600 hover:text-green-600 transition-colors"
             >
               Privacy Policy
             </a>
           </div>
 
           <div className="flex items-center">
-            <p className="text-sm text-gray-600">
-              Copyright {year} © ESGtogether. All rights reserved.
+            <p className="text-gray-600">
+              {year} © ESGtogether. All rights reserved.
             </p>
           </div>
         </div>
