@@ -17,7 +17,13 @@ export default function Home() {
         <div className="paper w-50 h-50"></div>
         <Button
           text="Click Here"
-          icon="/icons/pointer-click.svg"
+          icon={
+            <HandPointingIcon
+              size={32}
+              color="#EFEFEF"
+              className="icon absolute left-1/2 -translate-x-1/2 z-1"
+            />
+          }
           size="h-12 w-12"
         />
         <div className="relative flex flex-col items-center w-10 h-100 ">
@@ -32,8 +38,8 @@ export default function Home() {
           />
           <HandPointingIcon
             size={32}
-            color="#f5f5f5"
-            className="icon absolute bottom-3 left-1/2 -translate-x-1/2 z-10"
+            color="#454545"
+            className="icon absolute -bottom-12 left-1/2 -translate-x-1/2 z-1"
           />
         </div>
       </div>

@@ -7,8 +7,8 @@
   --success: #00ABBD;
   --warning: #FF9933;
   --neutral: #A1C7E0;
-  --font: #374151;
-  --font-light: #ececec;
+  --font: #454545;
+  --font-light: #ECECEC;
 }
 
 @layer utilities {
