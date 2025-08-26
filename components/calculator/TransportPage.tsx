@@ -19,6 +19,8 @@ export default function TransportPage() {
         <ButtonBig text="Answer 5" />
         <ButtonBig text="Answer 6" />
       </div>
+
+      <p>Extensive Travel habits might outweigh your entire home energy use</p>
     </section>
   );
 }

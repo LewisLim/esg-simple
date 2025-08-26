@@ -4,27 +4,25 @@ import questions from "@/lib/questions.json";
 
 export default function WelcomePage() {
   return (
-    <section className="calc-page paper">
-      {/* Question */}
-      <div className="calc-question flex-center">
+    <section className="calc-page-center paper">
+      <div className="flex-col flex-center">
         <p className="text-lg">Hello!</p>
         <h2 className="text-xl">Find out your carbon impact in 2 minutes</h2>
-        <p>Anonymous and Free</p>
-      </div>
-
-      {/* Answers */}
-      <div className="calc-answer">
-        <div className="flex-col flex-center">
-          <p>
-            Did you know your travel habits might outweigh your entire home
-            energy use?
+        <p className="mb-4">Anonymous and Free</p>
+        <div className="text-lg flex-center">
+          <p className="border-b border-dotted border-black">Average USA Citizen</p>
+          <p className="border-b border-dotted border-transparent">
+            : 12 tonnes CO₂ a year
           </p>
-          <Button text="Let's see my footprint" />
         </div>
-        <div className="flex-col flex-center mt-4">
-          <p>Skip calculator</p>
-          <Button text="See your country's average" />
-        </div>
+      </div>
+      <div className="h-[120px]"></div>
+      <div className="flex-col flex-center space-y-4">
+        <p>
+          Getting to 6 tonnes helps keep warming under 2degree increase by 2050.
+          Find out how close you already are.
+        </p>
+        <Button text="Let's see my footprint" />
       </div>
     </section>
   );

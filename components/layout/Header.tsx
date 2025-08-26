@@ -10,7 +10,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed h-[55px] top-0 left-0 right-0 z-50 bg-primary shadow-sm border-b border-gray-200">
+    <header className="fixed h-[55px] top-0 left-0 right-0 z-50 bg-nav shadow-sm border-b border-gray-200">
       <div className="mx-auto base-padding">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
