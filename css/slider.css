@@ -1,35 +1,41 @@
 .rc-slider,
 .rc-slider-vertical {
-    width: 100% !important;
-    padding: 0 !important;
+  width: 100% !important;
+  padding: 0 !important;
 }
 
 .rc-slider-rail {
-    background-color: #cccccc !important;
-    width: 100% !important;
+  background-color: #cccccc !important;
+  width: 100% !important;
+  height: calc(100% + 32px) !important;
+  margin-top: -32px !important;
 }
 
 .rc-slider-track {
-    background-color: #777777 !important;
-    width: 100% !important;
-    left: 0px !important
+  background-color: #a8d2e5 !important;
+  width: 100% !important;
+  left: 0px !important;
 }
 
 .rc-slider-handle {
-    background-color: white !important;
-    width: 100% !important;
-    height: 35px !important;
-    left: 5;
-    border-radius: 0 !important;
-    border-color: #CCCCCC !important;
-    z-index: 100;
+  background-color: white !important;
+  width: 100% !important;
+  height: 35px !important;
+  left: 5;
+  margin-bottom: 15px;
+  border-top-left-radius: 5px !important;
+  border-top-right-radius: 5px !important;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-color: #cccccc !important;
+  z-index: 100;
 }
 
 .rc.slider-handle:hover {
-    border-color: #4bff5a !important;
+  border-color: #4bff5a !important;
 }
 
 .rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
-    border-color: #7effd4;
-    box-shadow: 0 0 0 5px #7effd4 !important;
+  border-color: #7effd4;
+  box-shadow: 0 0 0 3px #7effd4 !important;
 }

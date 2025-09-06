@@ -4,7 +4,7 @@ import data from "@/lib/questions.json";
 import Slider from "rc-slider";
 
 export default function HousePeoplePage() {
-  const [sliderValue, setSliderValue] = useState<number>(0);
+  const [sliderValue, setSliderValue] = useState<number>(1);
 
   const page = data?.pages[5];
   const question = page?.questions?.[0];
@@ -50,21 +50,24 @@ export default function HousePeoplePage() {
 
       <div className="calc-answer">
         {sliderOptions && (
-          <div className="relative flex flex-col items-center w-10 h-3/4 ">
-            <p className="text-center mb-5">{sliderValue}</p>
-            <Slider
-              min={0}
-              max={100}
-              value={sliderValue}
-              vertical={true}
-              onChange={(value) => setSliderValue(value as number)}
-              className="flex-1"
-            />
-            <HandPointingIcon
-              size={32}
-              color="#454545"
-              className="icon absolute -bottom-12 left-1/2 -translate-x-1/2 z-1"
-            />
+          <div className="flex justify-center h-full">
+            <div className="relative flex flex-col items-center w-10 h-10/12">
+              <p className="text-center mb-3">{sliderValue}</p>
+              <Slider
+                min={sliderOptions.min}
+                max={sliderOptions.max}
+                value={sliderValue}
+                vertical={true}
+                onChange={(value) => setSliderValue(value as number)}
+                className="flex-1 mt-7"
+              />
+              <HandPointingIcon
+                size={32}
+                color="#454545"
+                className="icon absolute -bottom-9 left-1/2 -ßßtranslate-x-1/2 z-1"
+              />
+              <p className="text-center text-sm mt-3">People</p>
+            </div>
           </div>
         )}
       </div>

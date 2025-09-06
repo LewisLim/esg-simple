@@ -54,21 +54,20 @@ export default function DependancyPage() {
         <h2 className="text-xl">{questionCountry?.question ?? "Error"}</h2>
       </div>
 
-      {/* Second Question - Multi Sliders */}
+      {/* Second Question - Sliders */}
       <div className="calc-question flex-center mt-8">
         <h2 className="text-xl">{questionDependancy?.question ?? "Error"}</h2>
       </div>
 
       <div className="calc-answer">
         {sliderOptions && (
-          <div className="flex space-x-8">
+          <div className="flex space-x-8 h-full">
             {sliderOptions.map((slider) => (
               <div
                 key={slider.id}
-                className="relative flex flex-col items-center w-10 h-64"
+                className="relative flex flex-col items-center w-10 h-10/12"
               >
-                <p className="text-center mb-2">{slider.label}</p>
-                <p className="text-center mb-5">
+                <p className="text-center mb-3">
                   {slider.id === "children" ? childrenValue : petsValue}
                 </p>
                 <Slider
@@ -83,13 +82,14 @@ export default function DependancyPage() {
                       setPetsValue(value as number);
                     }
                   }}
-                  className="flex-1"
+                  className="flex-1 mt-7"
                 />
                 <HandPointingIcon
                   size={32}
                   color="#454545"
-                  className="icon absolute -bottom-12 left-1/2 -translate-x-1/2 z-1"
+                  className="icon absolute -bottom-9 left-1/2 -translate-x-1/2 z-1"
                 />
+                <p className="text-center text-sm mt-3">{slider.label}</p>
               </div>
             ))}
           </div>
