@@ -1,12 +1,16 @@
-import ButtonBig from "../custom/button-big";
+import { useState } from "react";
+import { HandPointingIcon } from "@phosphor-icons/react";
 import data from "@/lib/questions.json";
+import Slider from "rc-slider";
 
-export default function TransportPage() {
-  const page = data?.pages[2];
+export default function HousePeoplePage() {
+  const [sliderValue, setSliderValue] = useState<number>(0);
+
+  const page = data?.pages[5];
   const question = page?.questions?.[0];
-  const buttonOptions =
-    question?.type === "buttons" && "options" in question
-      ? question.options
+  const sliderOptions =
+    question?.type === "slider" && "min" in question && "max" in question
+      ? question
       : null;
 
   return (
@@ -45,14 +49,24 @@ export default function TransportPage() {
       </div>
 
       <div className="calc-answer">
-        {buttonOptions &&
-          buttonOptions.map((option) => (
-            <ButtonBig
-              key={option.value}
-              text={option.label}
-              // icon={option.icon}
+        {sliderOptions && (
+          <div className="relative flex flex-col items-center w-10 h-3/4 ">
+            <p className="text-center mb-5">{sliderValue}</p>
+            <Slider
+              min={0}
+              max={100}
+              value={sliderValue}
+              vertical={true}
+              onChange={(value) => setSliderValue(value as number)}
+              className="flex-1"
             />
-          ))}
+            <HandPointingIcon
+              size={32}
+              color="#454545"
+              className="icon absolute -bottom-12 left-1/2 -translate-x-1/2 z-1"
+            />
+          </div>
+        )}
       </div>
 
       <div className="mt-6">

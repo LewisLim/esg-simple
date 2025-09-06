@@ -3,6 +3,11 @@ import data from "@/lib/questions.json";
 
 export default function TravelPage() {
   const page = data?.pages[3];
+  const question = page?.questions?.[0];
+  const buttonOptions =
+    question?.type === "buttons" && "options" in question
+      ? question.options
+      : null;
 
   return (
     <section className="calc-page paper">
@@ -36,12 +41,12 @@ export default function TravelPage() {
 
       {/* First Question */}
       <div className="calc-question flex-center">
-        <h2 className="text-xl">{page?.questions?.[0]?.question ?? "Error"}</h2>
+        <h2 className="text-xl">{question?.question ?? "Error"}</h2>
       </div>
 
       <div className="calc-answer">
-        {page?.questions?.[0] &&
-          page?.questions[0]?.options?.map((option) => (
+        {buttonOptions &&
+          buttonOptions.map((option) => (
             <ButtonBig
               key={option.value}
               text={option.label}

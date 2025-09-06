@@ -1,8 +1,8 @@
 import ButtonBig from "../custom/button-big";
 import data from "@/lib/questions.json";
 
-export default function TransportPage() {
-  const page = data?.pages[2];
+export default function ShoppingPage() {
+  const page = data?.pages[8];
   const question = page?.questions?.[0];
   const buttonOptions =
     question?.type === "buttons" && "options" in question

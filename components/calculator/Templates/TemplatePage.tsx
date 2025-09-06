@@ -1,4 +1,4 @@
-import ButtonBig from "../custom/button-big";
+import ButtonBig from "../../custom/button-big";
 
 export default function TemplatePage() {
   return (
