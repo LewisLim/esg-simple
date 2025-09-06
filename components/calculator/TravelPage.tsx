@@ -1,8 +1,8 @@
 import ButtonBig from "../custom/button-big";
 import data from "@/lib/questions.json";
 
-export default function TransportPage() {
-  const page = data?.pages[2];
+export default function TravelPage() {
+  const page = data?.pages[3];
 
   return (
     <section className="calc-page paper">

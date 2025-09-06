@@ -17,6 +17,7 @@ export default function TemplatePage() {
         <ButtonBig text="Answer 4" />
         <ButtonBig text="Answer 5" />
         <ButtonBig text="Answer 6" />
+        <button>Don't know. Skip.</button>
       </div>
     </section>
   );

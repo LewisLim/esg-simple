@@ -1,4 +1,3 @@
-import Button from "../custom/button";
 import ButtonBig from "../custom/button-big";
 import questions from "@/lib/questions.json";
 
@@ -22,7 +21,7 @@ export default function WelcomePage() {
           Getting to 6 tonnes helps keep warming under 2degree increase by 2050.
           Find out how close you already are.
         </p>
-        <Button text="Let's see my footprint" />
+        <ButtonBig text="Let's go!" />
       </div>
     </section>
   );

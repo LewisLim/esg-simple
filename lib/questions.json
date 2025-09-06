@@ -6,8 +6,7 @@
       "type": "landing",
       "progress": {
         "current": 0,
-        "total": 8,
-        "percentage": 0
+        "total": 8
       },
       "content": {
         "hookLine": "Did you know your travel habits might outweigh your entire home energy use?",
@@ -26,9 +25,8 @@
       "title": "Location & Dependencies",
       "categoryIntro": "Help us personalize your test and results",
       "progress": {
-        "current": 2,
-        "total": 8,
-        "percentage": 25
+        "current": 0,
+        "total": 8
       },
       "questions": [
         {
@@ -76,20 +74,18 @@
           ]
         }
       ],
+      "tip": "Your location affects your carbon footprint due to different energy and city infrastructure",
       "feedback": {
-        "message": "Your total carbon emission is being calculated!",
-        "emoji": "👨‍👩‍👧‍👦",
-        "type": "calculating"
+        "message": "Calculator has been personalised!"
       }
     },
     {
       "pageId": 3,
-      "title": "Transport",
+      "title": "Transport - Daily Travel",
       "categoryIntro": "Let's start with transport",
       "progress": {
-        "current": 4,
-        "total": 8,
-        "percentage": 50
+        "current": 2,
+        "total": 8
       },
       "questions": [
         {
@@ -119,7 +115,22 @@
             }
           ],
           "required": true
-        },
+        }
+      ],
+      "tip": "Public transport can reduce your footprint by 45% compared to driving alone",
+      "feedback": {
+        "result": "0.8 tonne so far"
+      }
+    },
+    {
+      "pageId": 4,
+      "title": "Transport - Holiday Travel",
+      "categoryIntro": "Now let's talk about holiday travel",
+      "progress": {
+        "current": 3,
+        "total": 8
+      },
+      "questions": [
         {
           "id": "holiday_travel",
           "type": "buttons",
@@ -154,18 +165,18 @@
           "required": true
         }
       ],
+      "tip": "Extensive Travel habits can outweigh your entire home energy use",
       "feedback": {
-        "message": "You're doing better than 35% of people so far!",
-        "type": "comparative"
+        "result": "1.2 tonne so far"
       }
     },
     {
-      "pageId": 4,
+      "pageId": 5,
       "title": "Food",
+      "categoryIntro": "Let's talk about your diet",
       "progress": {
-        "current": 5,
-        "total": 8,
-        "percentage": 62.5
+        "current": 4,
+        "total": 8
       },
       "questions": [
         {
@@ -202,18 +213,18 @@
           "required": true
         }
       ],
+      "tip": "Beef has 10x higher carbon footprint than chicken. Lamb is 12x higher.",
       "feedback": {
-        "message": "You're doing better than 65% of people so far!",
-        "type": "comparative"
+        "result": "1.8 tonne so far"
       }
     },
     {
-      "pageId": 5,
-      "title": "Home Energy",
+      "pageId": 6,
+      "title": "Home Energy - Household",
+      "categoryIntro": "Let's look at your home",
       "progress": {
-        "current": 7,
-        "total": 8,
-        "percentage": 87.5
+        "current": 5,
+        "total": 8
       },
       "questions": [
         {
@@ -259,7 +270,22 @@
             }
           ],
           "required": true
-        },
+        }
+      ],
+      "tip": "LED bulbs use 75% less energy than traditional bulbs and last 25x longer.",
+      "feedback": {
+        "result": "2.1 tonne so far"
+      }
+    },
+    {
+      "pageId": 7,
+      "title": "Home Energy - Building Details",
+      "categoryIntro": "Tell us about your building",
+      "progress": {
+        "current": 6,
+        "total": 8
+      },
+      "questions": [
         {
           "id": "home_age",
           "type": "buttons",
@@ -284,18 +310,18 @@
           "required": true
         }
       ],
+      "tip": "Heavy curtains or blinds can cut heat loss through windows by 25%",
       "feedback": {
-        "message": "You're doing better than 85% of people so far!",
-        "type": "comparative"
+        "result": "2.4 tonne so far"
       }
     },
     {
-      "pageId": 6,
+      "pageId": 8,
       "title": "Consumption",
+      "categoryIntro": "Finally, let's talk about shopping",
       "progress": {
-        "current": 8,
-        "total": 8,
-        "percentage": 100
+        "current": 7,
+        "total": 8
       },
       "questions": [
         {
@@ -328,10 +354,9 @@
           "required": true
         }
       ],
+      "tip": "Buying recycled products can dramatically reduce your consumption footprint",
       "feedback": {
-        "message": "You're doing better than 85% of people so far!",
-        "emoji": "🛍️",
-        "type": "comparative"
+        "result": "Final calculation complete!"
       }
     }
   ],
