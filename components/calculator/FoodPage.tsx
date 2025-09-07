@@ -1,8 +1,14 @@
 import ButtonBig from "../custom/button-big";
-import data from "@/lib/questions.json";
+import survey from "@/lib/questions.json";
+import { BaseSurvey } from "@/types/interface";
 
-export default function FoodPage() {
-  const page = data?.pages[4];
+interface Props {
+  data: BaseSurvey;
+  setData: React.Dispatch<React.SetStateAction<BaseSurvey>>;
+}
+
+export default function FoodPage({ data, setData }: Props) {
+  const page = survey?.pages[3];
   const question = page?.questions?.[0];
   const buttonOptions =
     question?.type === "buttons" && "options" in question

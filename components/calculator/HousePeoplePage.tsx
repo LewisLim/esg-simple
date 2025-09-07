@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { HandPointingIcon } from "@phosphor-icons/react";
-import data from "@/lib/questions.json";
+import survey from "@/lib/questions.json";
 import Slider from "rc-slider";
+import { BaseSurvey } from "@/types/interface";
 
-export default function HousePeoplePage() {
+interface Props {
+  data: BaseSurvey;
+  setData: React.Dispatch<React.SetStateAction<BaseSurvey>>;
+}
+
+export default function HousePeoplePage({ data, setData }: Props) {
   const [sliderValue, setSliderValue] = useState<number>(1);
 
-  const page = data?.pages[5];
+  const page = survey?.pages[4];
   const question = page?.questions?.[0];
   const sliderOptions =
     question?.type === "slider" && "min" in question && "max" in question

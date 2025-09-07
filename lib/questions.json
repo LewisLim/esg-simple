@@ -2,26 +2,6 @@
   "pages": [
     {
       "pageId": 1,
-      "title": "Hook & Start",
-      "type": "landing",
-      "progress": {
-        "current": 0,
-        "total": 9
-      },
-      "content": {
-        "hookLine": "Did you know your travel habits might outweigh your entire home energy use?",
-        "subtext": "Find out your real carbon impact in 2 minutes",
-        "startButton": "Let's see my footprint",
-        "features": ["Anonymous and Free"],
-        "lazyOption": {
-          "text": "Click to see your country's avg",
-          "action": "show_country_average"
-        },
-        "disclaimer": "If you are a child/dependent, you shouldn't take this survey - your emissions are attributed to the adults responsible for you."
-      }
-    },
-    {
-      "pageId": 2,
       "title": "Location & Dependencies",
       "categoryIntro": "Help us personalize your test and results",
       "progress": {
@@ -80,7 +60,7 @@
       }
     },
     {
-      "pageId": 3,
+      "pageId": 2,
       "title": "Transport - Daily Travel",
       "categoryIntro": "Let's start with transport",
       "progress": {
@@ -123,7 +103,7 @@
       }
     },
     {
-      "pageId": 4,
+      "pageId": 3,
       "title": "Transport - Holiday Travel",
       "categoryIntro": "Now let's talk about holiday travel",
       "progress": {
@@ -171,7 +151,7 @@
       }
     },
     {
-      "pageId": 5,
+      "pageId": 4,
       "title": "Food",
       "categoryIntro": "Let's talk about your diet",
       "progress": {
@@ -219,7 +199,7 @@
       }
     },
     {
-      "pageId": 6,
+      "pageId": 5,
       "title": "Home Energy - Household Size",
       "categoryIntro": "Let's look at your home",
       "progress": {
@@ -245,7 +225,7 @@
       }
     },
     {
-      "pageId": 7,
+      "pageId": 6,
       "title": "Home Energy - Home Size",
       "categoryIntro": "Tell us about your living space",
       "progress": {
@@ -293,7 +273,7 @@
       }
     },
     {
-      "pageId": 8,
+      "pageId": 7,
       "title": "Home Energy - Building Details",
       "categoryIntro": "Tell us about your building",
       "progress": {
@@ -331,7 +311,7 @@
       }
     },
     {
-      "pageId": 9,
+      "pageId": 8,
       "title": "Consumption",
       "categoryIntro": "Finally, let's talk about shopping",
       "progress": {

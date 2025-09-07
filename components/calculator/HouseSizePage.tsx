@@ -1,8 +1,14 @@
 import ButtonBig from "../custom/button-big";
-import data from "@/lib/questions.json";
+import survey from "@/lib/questions.json";
+import { BaseSurvey } from "@/types/interface";
 
-export default function HouseSizePage() {
-  const page = data?.pages[6];
+interface Props {
+  data: BaseSurvey;
+  setData: React.Dispatch<React.SetStateAction<BaseSurvey>>;
+}
+
+export default function HouseSizePage({ data, setData }: Props) {
+  const page = survey?.pages[5];
   const question = page?.questions?.[0];
   const buttonOptions =
     question?.type === "buttons" && "options" in question

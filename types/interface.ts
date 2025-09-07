@@ -1,4 +1,4 @@
-export interface BaseCalculator {
+export interface BaseSurvey {
   country: string;
   dependency: number;
   pets: number;

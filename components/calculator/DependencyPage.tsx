@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { HandPointingIcon } from "@phosphor-icons/react";
-import data from "@/lib/questions.json";
+import survey from "@/lib/questions.json";
 import Slider from "rc-slider";
+import { BaseSurvey } from "@/types/interface";
 
-export default function DependencyPage() {
+interface Props {
+  data: BaseSurvey;
+  setData: React.Dispatch<React.SetStateAction<BaseSurvey>>;
+}
+
+export default function DependencyPage({ data, setData }: Props) {
   const [childrenValue, setChildrenValue] = useState<number>(0);
   const [petsValue, setPetsValue] = useState<number>(0);
 
-  const page = data?.pages[1];
+  const page = survey?.pages[0];
   const questionCountry = page?.questions?.[0];
   const questionDependency = page?.questions?.[1];
   const dropdownOptions =
