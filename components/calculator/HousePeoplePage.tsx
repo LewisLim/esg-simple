@@ -57,7 +57,7 @@ export default function HousePeoplePage({ data, setData }: Props) {
       <div className="calc-answer">
         {sliderOptions && (
           <div className="flex justify-center h-full">
-            <div className="relative flex flex-col items-center w-10 h-10/12">
+            <div className="relative flex-center flex-col w-10 h-10/12">
               <p className="text-center mb-3">{sliderValue}</p>
               <Slider
                 id="people"
@@ -69,11 +69,14 @@ export default function HousePeoplePage({ data, setData }: Props) {
                 className="flex-1 mt-7"
               />
               <HandPointingIcon
-                size={32}
+                size={30}
                 color="#454545"
-                className="icon absolute -bottom-9 left-1/2 -ßßtranslate-x-1/2 z-1"
+                className="icon absolute -bottom-9 left-1/2 -translate-x-1/2 z-1"
               />
-              <label htmlFor="people" className="text-center text-sm mt-3">
+              <label
+                htmlFor="people"
+                className="text-center text-xs sm:text-sm mt-3"
+              >
                 People
               </label>
             </div>
@@ -81,9 +84,9 @@ export default function HousePeoplePage({ data, setData }: Props) {
         )}
       </div>
 
-      <div className="mt-6">
-        <p>Tip: {page?.tip ?? "Error"}</p>
-        <div className="flex-center space-x-3 my-4">
+      <div className="mt-2">
+        <p className="tip">Tip: {page?.tip ?? "Error"}</p>
+        <div className="flex items-center justify-around my-2 sm:my-4">
           <button className="btn">Back</button>
           <button className="btn">Next</button>
         </div>

@@ -52,12 +52,12 @@ export default function DependencyPage({ data, setData }: Props) {
       </div>
 
       <div className="category-intro">
-        <p className="text-lg">{page?.categoryIntro}</p>
+        <p className="text-base">{page?.categoryIntro}</p>
       </div>
 
       {/* First Question - Dropdown */}
       <div className="calc-question flex-center">
-        <label htmlFor="country" className="text-xl">
+        <label htmlFor="country" className="text-lg">
           {questionCountry?.question ?? "Error"}
         </label>
       </div>
@@ -72,13 +72,13 @@ export default function DependencyPage({ data, setData }: Props) {
       </select>
 
       {/* Second Question - Sliders */}
-      <div className="calc-question flex-center mt-8">
-        <h2 className="text-xl">{questionDependency?.question ?? "Error"}</h2>
+      <div className="calc-question flex-center mt-4">
+        <h2 className="text-lg">{questionDependency?.question ?? "Error"}</h2>
       </div>
 
       <div className="calc-answer">
         {sliderOptions && (
-          <div className="flex space-x-8 h-full">
+          <div className="flex items-start justify-around w-full h-full">
             {sliderOptions.map((slider) => (
               <div
                 key={slider.id}
@@ -103,24 +103,23 @@ export default function DependencyPage({ data, setData }: Props) {
                   className="flex-1 mt-7"
                 />
                 <HandPointingIcon
-                  size={32}
+                  size={28}
                   color="#454545"
                   className="icon absolute -bottom-9 left-1/2 -translate-x-1/2 z-1"
                 />
-                <label htmlFor={slider.id} className="text-center text-sm mt-3">
+                <label htmlFor={slider.id} className="text-center text-xs sm:text-sm mt-3">
                   {slider.label}
                 </label>
               </div>
             ))}
           </div>
         )}
-      </div>
-
-      <div className="mt-6">
-        <p>Tip: {page?.tip ?? "Error"}</p>
-        <div className="flex-center space-x-3 my-4">
-          <button className="btn">Back</button>
-          <button className="btn">Next</button>
+        <div className="mt-2">
+          <p className="tip">Tip: {page?.tip ?? "Error"}</p>
+          <div className="flex items-center justify-around my-2 sm:my-4">
+            <button className="btn">Back</button>
+            <button className="btn">Next</button>
+          </div>
         </div>
       </div>
     </section>

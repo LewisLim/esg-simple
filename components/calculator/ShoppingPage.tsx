@@ -61,9 +61,9 @@ export default function ShoppingPage({ data, setData }: Props) {
           ))}
       </div>
 
-      <div className="mt-6">
-        <p>Tip: {page?.tip ?? "Error"}</p>
-        <div className="flex-center space-x-3 my-4">
+      <div className="mt-2">
+        <p className="tip">Tip: {page?.tip ?? "Error"}</p>
+        <div className="flex items-center justify-around my-2 sm:my-4">
           <button className="btn">Back</button>
           <button className="btn">Next</button>
         </div>
