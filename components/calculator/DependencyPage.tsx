@@ -3,20 +3,20 @@ import { HandPointingIcon } from "@phosphor-icons/react";
 import data from "@/lib/questions.json";
 import Slider from "rc-slider";
 
-export default function DependancyPage() {
+export default function DependencyPage() {
   const [childrenValue, setChildrenValue] = useState<number>(0);
   const [petsValue, setPetsValue] = useState<number>(0);
 
   const page = data?.pages[1];
   const questionCountry = page?.questions?.[0];
-  const questionDependancy = page?.questions?.[1];
+  const questionDependency = page?.questions?.[1];
   const dropdownOptions =
     questionCountry?.type === "dropdown" && "options" in questionCountry
       ? questionCountry.options
       : null;
   const sliderOptions =
-    questionDependancy?.type === "slider" && "sliders" in questionDependancy
-      ? questionDependancy.sliders
+    questionDependency?.type === "slider" && "sliders" in questionDependency
+      ? questionDependency.sliders
       : null;
 
   return (
@@ -51,12 +51,23 @@ export default function DependancyPage() {
 
       {/* First Question - Dropdown */}
       <div className="calc-question flex-center">
-        <h2 className="text-xl">{questionCountry?.question ?? "Error"}</h2>
+        <label htmlFor="country" className="text-xl">
+          {questionCountry?.question ?? "Error"}
+        </label>
       </div>
+
+      <select name="country" id="country">
+        <option value="">Select your country</option>
+        <option value="singapore">Singapore</option>
+        <option value="usa">United States</option>
+        <option value="uk">United Kingdom</option>
+        <option value="canada">Canada</option>
+        <option value="australia">Australia</option>
+      </select>
 
       {/* Second Question - Sliders */}
       <div className="calc-question flex-center mt-8">
-        <h2 className="text-xl">{questionDependancy?.question ?? "Error"}</h2>
+        <h2 className="text-xl">{questionDependency?.question ?? "Error"}</h2>
       </div>
 
       <div className="calc-answer">
@@ -71,6 +82,7 @@ export default function DependancyPage() {
                   {slider.id === "children" ? childrenValue : petsValue}
                 </p>
                 <Slider
+                  id={slider.id}
                   min={slider.min}
                   max={slider.max}
                   value={slider.id === "children" ? childrenValue : petsValue}
@@ -89,7 +101,9 @@ export default function DependancyPage() {
                   color="#454545"
                   className="icon absolute -bottom-9 left-1/2 -translate-x-1/2 z-1"
                 />
-                <p className="text-center text-sm mt-3">{slider.label}</p>
+                <label htmlFor={slider.id} className="text-center text-sm mt-3">
+                  {slider.label}
+                </label>
               </div>
             ))}
           </div>

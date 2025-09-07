@@ -1,6 +1,6 @@
 "use client"
 
-import DependancyPage from "@/components/calculator/DependancyPage";
+import DependencyPage from "@/components/calculator/DependencyPage";
 import FoodPage from "@/components/calculator/FoodPage";
 import HouseAgePage from "@/components/calculator/HouseAgePage";
 import HousePeoplePage from "@/components/calculator/HousePeoplePage";
@@ -14,7 +14,7 @@ export default function Calculator() {
   return (
     <div className="w-full flex-col flex-center">
       <WelcomePage />
-      <DependancyPage />
+      <DependencyPage />
       <TransportPage />
       <TravelPage />
       <FoodPage />

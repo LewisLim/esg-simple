@@ -54,6 +54,7 @@ export default function HousePeoplePage() {
             <div className="relative flex flex-col items-center w-10 h-10/12">
               <p className="text-center mb-3">{sliderValue}</p>
               <Slider
+                id="people"
                 min={sliderOptions.min}
                 max={sliderOptions.max}
                 value={sliderValue}
@@ -66,7 +67,9 @@ export default function HousePeoplePage() {
                 color="#454545"
                 className="icon absolute -bottom-9 left-1/2 -ßßtranslate-x-1/2 z-1"
               />
-              <p className="text-center text-sm mt-3">People</p>
+              <label htmlFor="people" className="text-center text-sm mt-3">
+                People
+              </label>
             </div>
           </div>
         )}
