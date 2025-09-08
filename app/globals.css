@@ -8,6 +8,7 @@
   --warning: #FF9933;
   --neutral: #A1C7E0;
   --font: #454545;
+  --font-muted: #717182;
   --font-light: #ECECEC;
 }
 
@@ -33,15 +34,15 @@
   }
 
   .calc-question {
-    @apply p-4 h-[110px] flex-col space-y-2 text-center;
+    @apply p-3 mb-2 min-h-[50px] flex-col space-y-2 text-center;
   }
 
   .calc-answer {
-    @apply px-3 py-0 sm:p-5 min-h-[330px] w-full flex flex-col items-center justify-start space-y-3 bg-blue-100;
+    @apply px-3 py-0 sm:p-5 sm:pt-0 min-h-[330px] w-full flex flex-col items-center justify-start space-y-3;
   }
 
   .category-intro {
-    @apply text-center text-sm;
+    @apply text-center text-sm mb-6;
   }
 
   .tip {
@@ -91,4 +92,8 @@ body {
 
 .bg-nav>a:hover {
   color: var(--background);
+}
+
+.font-muted {
+  color: var(--font-muted);
 }

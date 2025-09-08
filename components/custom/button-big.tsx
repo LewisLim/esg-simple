@@ -26,7 +26,7 @@ export default function ButtonBig({
             <Image src={icon} alt={text} width={30} height={30} />
           </div>
         )}
-        <span className="text-black text-xs font-medium text-center leading-tight mt-1">
+        <span className="text-black text-xs sm:text-sm font-medium text-center leading-tight mt-1">
           {text}
         </span>
       </button>
