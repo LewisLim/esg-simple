@@ -1,20 +1,21 @@
-import ButtonBig from "@/components/custom/button-big";
 import survey from "@/lib/questions.json";
 import { BaseSurvey } from "@/types/interface";
 import ProgressBar from "@/components/custom/ProgressBar";
 
 interface Props {
+  pageNum: number;
   data: BaseSurvey;
   setData: React.Dispatch<React.SetStateAction<BaseSurvey>>;
   hasNextButton?: boolean;
 }
 
-export default function TransportPage({
+export default function ButtonsPage({
+  pageNum,
   data,
   setData,
   hasNextButton = false,
 }: Props) {
-  const page = survey?.pages[1];
+  const page = survey?.pages[pageNum];
   const question = page?.questions?.[0];
   const buttonOptions =
     question?.type === "buttons" && "options" in question

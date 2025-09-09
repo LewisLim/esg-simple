@@ -1,16 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import DependencyPage from "@/components/calculator/DependencyPage";
-import FoodPage from "@/components/calculator/FoodPage";
-import HouseAgePage from "@/components/calculator/HouseAgePage";
-import HousePeoplePage from "@/components/calculator/HousePeoplePage";
-import HouseSizePage from "@/components/calculator/HouseSizePage";
-import ShoppingPage from "@/components/calculator/ShoppingPage";
-import TransportPage from "@/components/calculator/TransportPage";
-import TravelPage from "@/components/calculator/TravelPage";
-import WelcomePage from "@/components/calculator/WelcomePage";
 import { BaseSurvey } from "@/types/interface";
+import ButtonsPage from "@/components/calculator/Templates/ButtonsPage";
+import DependencyPage from "@/components/calculator/DependencyPage";
+import HousePeoplePage from "@/components/calculator/HousePeoplePage";
+import WelcomePage from "@/components/calculator/WelcomePage";
 
 export default function Calculator() {
   const [baseSurveyData, setBaseSurveyData] = useState<BaseSurvey>({
@@ -30,13 +25,21 @@ export default function Calculator() {
     <div className="w-full flex-col flex-center">
       <WelcomePage />
       <DependencyPage data={baseSurveyData} setData={setBaseSurveyData} />
-      <TransportPage data={baseSurveyData} setData={setBaseSurveyData} />
-      <TravelPage data={baseSurveyData} setData={setBaseSurveyData} />
-      <FoodPage data={baseSurveyData} setData={setBaseSurveyData} />
+      {/* Transport */}
+      <ButtonsPage pageNum={1} data={baseSurveyData} setData={setBaseSurveyData} /> 
+      {/* Trip */}
+      <ButtonsPage pageNum={2} data={baseSurveyData} setData={setBaseSurveyData} /> 
+      {/* Trip */}      
+      <ButtonsPage pageNum={3} data={baseSurveyData} setData={setBaseSurveyData} /> 
+
       <HousePeoplePage data={baseSurveyData} setData={setBaseSurveyData} />
-      <HouseSizePage data={baseSurveyData} setData={setBaseSurveyData} />
-      <HouseAgePage data={baseSurveyData} setData={setBaseSurveyData} />
-      <ShoppingPage data={baseSurveyData} setData={setBaseSurveyData} />
+
+      {/* Living Space Size */}
+      <ButtonsPage pageNum={5} data={baseSurveyData} setData={setBaseSurveyData} /> 
+      {/* Living Space Age */}
+      <ButtonsPage pageNum={6} data={baseSurveyData} setData={setBaseSurveyData} /> 
+      {/* Shopping Habits */}
+      <ButtonsPage pageNum={7} data={baseSurveyData} setData={setBaseSurveyData} /> 
     </div>
   );
 }
