@@ -30,7 +30,7 @@
         },
         {
           "id": "dependencies",
-          "type": "slider",
+          "type": "sliders",
           "question": "Any children or pets?",
           "sliders": [
             {
@@ -201,7 +201,7 @@
     {
       "pageId": 5,
       "title": "Home Energy - Household Size",
-      "categoryIntro": "Let's look at your home",
+      "categoryIntro": "Including yourself",
       "progress": {
         "current": 6,
         "total": 9
@@ -209,14 +209,19 @@
       "questions": [
         {
           "id": "household_size",
-          "type": "slider",
+          "type": "sliders",
           "question": "How many people live in your home?",
-          "label": "Staying with {{COUNT}} people",
-          "min": 1,
-          "max": 15,
-          "default": 1,
-          "icon": "person_head",
-          "description": "Including yourself"
+          "sliders": [
+            {
+              "id": "people",
+              "label": "People",
+              "min": 1,
+              "max": 10,
+              "default": 1,
+              "icon": "person_head",
+              "description": "Including yourself"
+            }
+          ]
         }
       ],
       "tip": "Sharing your living space reduces your per-person carbon footprint significantly",

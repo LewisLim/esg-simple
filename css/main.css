@@ -2,4 +2,5 @@
 @import url('@/css/tailwind-custom.css');
 
 /* Custom Components */
-@import url('@/css/slider.css');
+/* Deprecated on 15/9/2025 (Mon) */
+/* @import url('@/css/slider.css'); */

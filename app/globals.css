@@ -41,6 +41,10 @@
     @apply px-3 py-0 sm:p-5 sm:pt-0 min-h-[330px] w-full flex flex-col items-center justify-start space-y-3;
   }
 
+  .calc-answer-full {
+    @apply px-3 py-0 sm:p-5 sm:pt-0 min-h-[380px] w-full flex flex-col items-center justify-start space-y-3;
+  }
+
   .category-intro {
     @apply text-center text-sm mb-6;
   }
