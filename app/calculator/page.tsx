@@ -31,13 +31,13 @@ export default function Calculator() {
       <ButtonsPage pageNum={1} data={baseSurveyData} setData={setBaseSurveyData} /> 
       {/* Trip */}
       <ButtonsPage pageNum={2} data={baseSurveyData} setData={setBaseSurveyData} /> 
-      {/* Trip */}      
+      {/* Food */}      
       <ButtonsPage pageNum={3} data={baseSurveyData} setData={setBaseSurveyData} /> 
-      {/* Living Space People */}
+      {/* Living Space - People */}
       <SlidersPage pageNum={4} data={baseSurveyData} setData={setBaseSurveyData} hasNextButton={true} /> 
-      {/* Living Space Size */}
+      {/* Living Space - Size */}
       <ButtonsPage pageNum={5} data={baseSurveyData} setData={setBaseSurveyData} /> 
-      {/* Living Space Age */}
+      {/* Living Space - Age */}
       <ButtonsPage pageNum={6} data={baseSurveyData} setData={setBaseSurveyData} /> 
       {/* Shopping Habits */}
       <ButtonsPage pageNum={7} data={baseSurveyData} setData={setBaseSurveyData} /> 
