@@ -17,7 +17,6 @@ export default function HybridPage({
   hasNextButton = false,
 }: Props) {
   const page = survey?.pages[pageNum];
-  const question = page?.questions?.[0];
 
   return (
     <section className="calc-page paper">
@@ -55,7 +54,15 @@ export default function HybridPage({
 
             {/* Dropdown Question */}
             {question?.type === "dropdown" && (
-              <div>Show Dropdown for {question.id}</div>
+              <div className="flex-col flex-center">
+                <select name="country" id="country">
+                  <option value="singapore">Singapore</option>
+                  <option value="usa">United States</option>
+                  <option value="uk">United Kingdom</option>
+                  <option value="canada">Canada</option>
+                  <option value="australia">Australia</option>
+                </select>
+              </div>
             )}
 
             {/* Sliders Question */}

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { BaseSurvey } from "@/types/interface";
 import ButtonsPage from "@/components/calculator/Templates/ButtonsPage";
-import DependencyPage from "@/components/calculator/DependencyPage";
 import WelcomePage from "@/components/calculator/WelcomePage";
 import SlidersPage from "@/components/calculator/Templates/SlidersPage";
 import HybridPage from "@/components/calculator/Templates/HybridPage";
@@ -24,12 +23,10 @@ export default function Calculator() {
 
   return (
     <div className="w-full flex-col flex-center">
+      {/* Starting Page */}
       <WelcomePage />
-
       {/* Dependencies */}
-      <DependencyPage data={baseSurveyData} setData={setBaseSurveyData} />
-      <HybridPage pageNum={0} data={baseSurveyData} setData={setBaseSurveyData} hasNextButton={true} /> 
-      
+      <HybridPage pageNum={0} data={baseSurveyData} setData={setBaseSurveyData} hasNextButton={true} />       
       {/* Transport */}
       <ButtonsPage pageNum={1} data={baseSurveyData} setData={setBaseSurveyData} /> 
       {/* Trip */}
