@@ -46,7 +46,7 @@ export default function HybridPage({
       {/* Question and Answer - Hybrid Section */}
       <div className="calc-answer-full">
         {page?.questions?.map((question, questionIndex) => (
-          <div key={question.id || questionIndex} className="mb-8">
+          <div key={question.id || questionIndex} className="mb-5">
             {/* Question Title */}
             <div className="calc-question flex-center mb-4">
               <h2 className="text-lg">{question?.question ?? "Error"}</h2>
@@ -81,14 +81,16 @@ export default function HybridPage({
                       >
                         {slider.label}
                       </label>
-                      <Slider
-                        id={slider.id}
-                        min={slider.min}
-                        max={slider.max}
-                        value={slider.default || 0}
-                        vertical={true}
-                        className="flex-1 my-3 min-h-[140px]"
-                      />
+                      <div className="w-[16px] h-full mt-[16px]">
+                        <Slider
+                          id={slider.id}
+                          min={slider.min}
+                          max={slider.max}
+                          // value={slider.default || 0}
+                          vertical={true}
+                          className="flex-1 my-3 min-h-[150px]"
+                        />
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -106,6 +108,7 @@ export default function HybridPage({
               bg-slate-200 hover:bg-slate-300 hover:scale-[1.02]  
               rounded-md 
               font-medium 
+              text-gray-600
               transition-all duration-200 
               cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-200
             `}
@@ -116,9 +119,10 @@ export default function HybridPage({
             <button
               className={`
               px-4 py-2 
-              bg-teal-200 hover:bg-teal-300 hover:scale-[1.02]  
+              bg-emerald-300 hover:bg-teal-300 hover:scale-[1.02]  
               rounded-md 
               font-medium 
+              text-gray-600
               transition-all duration-200 
               cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-200
             `}

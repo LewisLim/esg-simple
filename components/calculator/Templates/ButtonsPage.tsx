@@ -78,6 +78,7 @@ export default function ButtonsPage({
               bg-slate-200 hover:bg-slate-300 hover:scale-[1.02]  
               rounded-md 
               font-medium 
+              text-gray-600
               transition-all duration-200 
               cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-200
             `}
@@ -90,9 +91,10 @@ export default function ButtonsPage({
               // disabled={disabled}
               className={`
               px-4 py-2 
-              bg-teal-200 hover:bg-teal-300 hover:scale-[1.02]  
+              bg-emerald-300 hover:bg-teal-300 hover:scale-[1.02]  
               rounded-md 
               font-medium 
+              text-gray-600
               transition-all duration-200 
               cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-200
             `}
