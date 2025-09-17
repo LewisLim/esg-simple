@@ -10,17 +10,15 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed h-[55px] top-0 left-0 right-0 z-50 bg-nav shadow-sm border-b border-gray-200">
+    <header className="fixed h-[44px] top-0 left-0 right-0 z-50 bg-nav shadow-sm border-b border-gray-200">
       <div className="mx-auto base-padding">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-11">
           <div className="flex-shrink-0">
             <a href="/" className="flex items-center">
-              <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
+              <div className="w-7 h-7 bg-green-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">C</span>
               </div>
-              <span className="ml-2 text-xl font-semibold">
-                CarbonCalc
-              </span>
+              <span className="ml-2 text-xl font-semibold">CarbonCalc</span>
             </a>
           </div>
 
@@ -41,7 +39,7 @@ export default function Header() {
               href="/tips"
               className="px-3 py-2 text-sm font-medium transition-colors"
             >
-              Tips
+              Learn
             </a>
             <a
               href="/about"

@@ -34,6 +34,18 @@ export default function Button({
   );
 }
 
-// <div className="flex items-center justify-center w-10 h-10">
-//   <Image src={icon} alt={text} width={30} height={30} />
-// </div>
+/* Sample Usage
+<div className="relative">
+  <Button
+    text="Click Here"
+    icon={
+      <HandPointingIcon
+        size={30}
+        color="#EFEFEF"
+        className="icon absolute left-1/2 -translate-x-1/2 z-1"
+      />
+    }
+    size="h-12 w-12"
+  />
+</div>
+*/

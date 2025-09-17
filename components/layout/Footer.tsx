@@ -4,8 +4,8 @@ export default function Footer() {
   let year = new Date().getFullYear();
 
   return (
-    <footer className="h-[25px] text-xs bg-gray-50 border-t border-gray-200 mt-auto">
-      <div className="mx-auto base-padding">
+    <footer className="h-[50px] w-full flex justify-between items-center text-xs bg-gray-50 border-t border-gray-200 mt-auto">
+      <div className="base-padding w-full">
         <div className="flex flex-col sm:flex-row items-center justify-between">
           {/* Navigation Links */}
           <div className="hidden sm:flex items-center space-x-6">
@@ -31,18 +31,18 @@ export default function Footer() {
         </div>
 
         {/* Mobile Navigation Links */}
-        <div className="sm:hidden border-t border-gray-200 pt-4 pb-2">
+        <div className="sm:hidden border-t border-gray-200">
           <div className="flex flex-col space-y-2 items-center">
             <div className="flex space-x-6">
               <a
                 href="/help"
-                className="text-sm text-gray-600 hover:text-green-600 transition-colors"
+                className="text-gray-600 hover:text-green-600 transition-colors"
               >
                 Contact
               </a>
               <a
                 href="/privacy"
-                className="text-sm text-gray-600 hover:text-green-600 transition-colors"
+                className="text-gray-600 hover:text-green-600 transition-colors"
               >
                 Privacy Policy
               </a>

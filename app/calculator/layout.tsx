@@ -13,7 +13,7 @@ const ContactLayout = ({ children }: { children: React.ReactNode }) => {
     <>
       <Header />
       <div className="bg-img-city"></div>
-        <main className="head-body base-padding max-w-6xl w-full flex-center mx-auto">
+        <main className="head-body base-padding max-w-4xl w-full flex-center mx-auto">
           {children}
         </main>
       {/* <Footer /> */}
