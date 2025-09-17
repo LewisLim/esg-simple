@@ -58,7 +58,7 @@ export default function SlidersPage({
                 key={slider.id || index}
                 className="flex justify-center h-full"
               >
-                <div className="relative flex-center flex-col w-10">
+                <div className="relative flex-center flex-col h-full">
                   <p className="text-center">{slider.default || 0}</p>
                   <label
                     htmlFor={slider.id}
@@ -66,14 +66,16 @@ export default function SlidersPage({
                   >
                     {slider.label}
                   </label>
-                  <Slider
-                    id={slider.id}
-                    min={slider.min}
-                    max={slider.max}
-                    value={slider.default || 0}
-                    vertical={true}
-                    className="flex-1 mt-5"
-                  />
+                  <div className="w-[16px] h-full mt-[32px]">
+                    <Slider
+                      id={slider.id}
+                      min={slider.min}
+                      max={slider.max}
+                      // value={slider.default || 0}
+                      vertical={true}
+                      className="flex-1"
+                    />
+                  </div>
                 </div>
               </div>
             ))}

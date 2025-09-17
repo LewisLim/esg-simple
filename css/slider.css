@@ -7,35 +7,31 @@
 .rc-slider-rail {
   background-color: #cccccc !important;
   width: 100% !important;
-  height: calc(100% + 32px) !important;
-  margin-top: -32px !important;
+  height: calc(100% + 16px) !important;
+  margin-top: -16px !important;
 }
 
 .rc-slider-track {
-  background-color: #a8d2e5 !important;
+  background-color: #57b8e6 !important;
   width: 100% !important;
   left: 0px !important;
 }
 
 .rc-slider-handle {
   background-color: white !important;
-  width: 100% !important;
-  height: 35px !important;
-  left: 5;
-  margin-bottom: 15px;
-  border-top-left-radius: 5px !important;
-  border-top-right-radius: 5px !important;
-  border-bottom-left-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
-  border-color: #cccccc !important;
+  border: 2px solid #DDDDDD !important;
+  left: 3;
+  width: 128% !important;
+  height: 20px !important;
+  margin-bottom: 8px;
   z-index: 100;
 }
 
 .rc.slider-handle:hover {
-  border-color: #4bff5a !important;
+  border-color: #DDDDDD !important;
 }
 
 .rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
-  border-color: #7effd4;
-  box-shadow: 0 0 0 3px #7effd4 !important;
+  border-color: #a1e1ff;
+  box-shadow: 0 0 0 3px #a1e1ff !important;
 }
