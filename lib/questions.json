@@ -1,0 +1,393 @@
+{
+  "pages": [
+    {
+      "pageId": 1,
+      "title": "Location & Dependencies",
+      "categoryIntro": "Help us personalize your test and results",
+      "progress": {
+        "current": 1,
+        "total": 9
+      },
+      "questions": [
+        {
+          "id": "location",
+          "type": "dropdown",
+          "question": "What country are you in?",
+          "placeholder": "Looks like you're in {{DETECTED_COUNTRY}} - is that right?",
+          "fallbackPlaceholder": "Select your country",
+          "options": [
+            { "value": "singapore", "label": "Singapore" },
+            { "value": "usa", "label": "United States" },
+            { "value": "uk", "label": "United Kingdom" },
+            { "value": "canada", "label": "Canada" },
+            { "value": "australia", "label": "Australia" },
+            { "value": "germany", "label": "Germany" },
+            { "value": "france", "label": "France" },
+            { "value": "japan", "label": "Japan" },
+            { "value": "other", "label": "Other" }
+          ],
+          "required": true
+        },
+        {
+          "id": "dependencies",
+          "type": "sliders",
+          "question": "Any children or pets?",
+          "sliders": [
+            {
+              "id": "children",
+              "label": "Children",
+              "min": 0,
+              "max": 10,
+              "default": 0,
+              "icon": "child_head",
+              "description": "Number of children in your household"
+            },
+            {
+              "id": "pets",
+              "label": "Pets",
+              "min": 0,
+              "max": 10,
+              "default": 0,
+              "icon": "pet_head",
+              "description": "Number of pets in your household"
+            }
+          ]
+        }
+      ],
+      "tip": "Your location affects your carbon footprint due to different energy and city infrastructure",
+      "feedback": {
+        "message": "Calculator has been personalised!"
+      }
+    },
+    {
+      "pageId": 2,
+      "title": "Transport - Daily Travel",
+      "categoryIntro": "Transportation is sometimes the biggest part of our carbon footprint",
+      "progress": {
+        "current": 3,
+        "total": 9
+      },
+      "questions": [
+        {
+          "id": "transport_method",
+          "type": "buttons",
+          "question": "How do you travel?",
+          "options": [
+            {
+              "value": "walk_bike",
+              "label": "I walk/bike to most places",
+              "icon": "walk_bike"
+            },
+            {
+              "value": "public_transport",
+              "label": "I use public transport mostly",
+              "icon": "public_transport"
+            },
+            {
+              "value": "drive_occasionally",
+              "label": "I drive/cab occasionally",
+              "icon": "car_occasional"
+            },
+            {
+              "value": "drive_everywhere",
+              "label": "I drive/cab everywhere",
+              "icon": "car_frequent"
+            }
+          ],
+          "required": true
+        }
+      ],
+      "tip": "Public transport can reduce your footprint by 45% compared to driving alone",
+      "feedback": {
+        "result": "0.8 tonne so far"
+      }
+    },
+    {
+      "pageId": 3,
+      "title": "Transport - Holiday Travel",
+      "categoryIntro": "Now let's talk about holiday travel",
+      "progress": {
+        "current": 4,
+        "total": 9
+      },
+      "questions": [
+        {
+          "id": "holiday_travel",
+          "type": "buttons",
+          "question": "How often are your holiday trips?",
+          "options": [
+            {
+              "value": "very_rare",
+              "label": "Very rare",
+              "description": "Almost no travel"
+            },
+            {
+              "value": "short_trips",
+              "label": "A few short trips",
+              "description": "~10 hours per year"
+            },
+            {
+              "value": "longer_trips",
+              "label": "Some longer trips",
+              "description": "20-50 hrs per year"
+            },
+            {
+              "value": "travel_lot",
+              "label": "I travel a lot",
+              "description": "> 50hrs"
+            },
+            {
+              "value": "always_travelling",
+              "label": "I'm always travelling",
+              "description": "> 200hrs"
+            }
+          ],
+          "required": true
+        }
+      ],
+      "tip": "Extensive Travel habits can outweigh your entire home energy use",
+      "feedback": {
+        "result": "1.2 tonne so far"
+      }
+    },
+    {
+      "pageId": 4,
+      "title": "Food",
+      "categoryIntro": "Let's talk about your diet",
+      "progress": {
+        "current": 5,
+        "total": 9
+      },
+      "questions": [
+        {
+          "id": "diet_type",
+          "type": "buttons",
+          "question": "What kind of food do you eat?",
+          "options": [
+            {
+              "value": "plant_based",
+              "label": "Plant-based/vegan",
+              "icon": "plants"
+            },
+            {
+              "value": "vegetarian",
+              "label": "Vegetarian (dairy/eggs okay)",
+              "icon": "vegetarian"
+            },
+            {
+              "value": "meat_weekly",
+              "label": "Meat once or twice a week",
+              "icon": "meat_occasional"
+            },
+            {
+              "value": "meat_most_days",
+              "label": "Eat meat most days",
+              "icon": "meat_frequent"
+            },
+            {
+              "value": "meat_daily",
+              "label": "Eat meat everyday",
+              "icon": "meat_daily"
+            }
+          ],
+          "required": true
+        }
+      ],
+      "tip": "Beef has 10x higher carbon footprint than chicken. Lamb is 12x higher.",
+      "feedback": {
+        "result": "1.8 tonne so far"
+      }
+    },
+    {
+      "pageId": 5,
+      "title": "Home Energy - Household Size",
+      "categoryIntro": "Including yourself",
+      "progress": {
+        "current": 6,
+        "total": 9
+      },
+      "questions": [
+        {
+          "id": "household_size",
+          "type": "sliders",
+          "question": "How many people live in your home?",
+          "sliders": [
+            {
+              "id": "people",
+              "label": "People",
+              "min": 1,
+              "max": 10,
+              "default": 1,
+              "icon": "person_head",
+              "description": "Including yourself"
+            }
+          ]
+        }
+      ],
+      "tip": "Sharing your living space reduces your per-person carbon footprint significantly",
+      "feedback": {
+        "result": "1.9 tonne so far"
+      }
+    },
+    {
+      "pageId": 6,
+      "title": "Home Energy - Home Size",
+      "categoryIntro": "Tell us about your living space",
+      "progress": {
+        "current": 7,
+        "total": 9
+      },
+      "questions": [
+        {
+          "id": "home_size",
+          "type": "buttons",
+          "question": "I live in a...",
+          "options": [
+            {
+              "value": "small",
+              "label": "Small space",
+              "icon": "small_home"
+            },
+            {
+              "value": "medium",
+              "label": "Medium space",
+              "icon": "medium_home"
+            },
+            {
+              "value": "large",
+              "label": "Large space",
+              "icon": "large_home"
+            },
+            {
+              "value": "very_large",
+              "label": "Very Large space",
+              "icon": "very_large_home"
+            },
+            {
+              "value": "rural",
+              "label": "Rural home (Straw / Mud)",
+              "icon": "rural_home"
+            }
+          ],
+          "required": true
+        }
+      ],
+      "tip": "LED bulbs use 75% less energy than traditional bulbs and last 25x longer.",
+      "feedback": {
+        "result": "2.1 tonne so far"
+      }
+    },
+    {
+      "pageId": 7,
+      "title": "Home Energy - Building Details",
+      "categoryIntro": "Tell us about your building",
+      "progress": {
+        "current": 8,
+        "total": 9
+      },
+      "questions": [
+        {
+          "id": "home_age",
+          "type": "buttons",
+          "question": "How old is your home?",
+          "options": [
+            {
+              "value": "new",
+              "label": "Less than 10 years",
+              "description": "Recently built"
+            },
+            {
+              "value": "medium_age",
+              "label": "10 - 30 years",
+              "description": "Moderately old"
+            },
+            {
+              "value": "old",
+              "label": "> 30 years",
+              "description": "Older building"
+            }
+          ],
+          "required": true
+        }
+      ],
+      "tip": "Heavy curtains or blinds can cut heat loss through windows by 25%",
+      "feedback": {
+        "result": "2.4 tonne so far"
+      }
+    },
+    {
+      "pageId": 8,
+      "title": "Consumption",
+      "categoryIntro": "Lastly, let's talk about shopping",
+      "progress": {
+        "current": 9,
+        "total": 9
+      },
+      "questions": [
+        {
+          "id": "monthly_spending",
+          "type": "buttons",
+          "question": "How much do you spend on shopping?",
+          "currencyNote": "Currency based on {{COUNTRY}}",
+          "options": [
+            {
+              "value": "low",
+              "label": "Spend < {{CURRENCY}}100 a month",
+              "icon": "shopping_low"
+            },
+            {
+              "value": "medium",
+              "label": "Spend {{CURRENCY}}100 - {{CURRENCY}}1000 a month",
+              "icon": "shopping_medium"
+            },
+            {
+              "value": "high",
+              "label": "Spend {{CURRENCY}}1000 - {{CURRENCY}}5000 a month",
+              "icon": "shopping_high"
+            },
+            {
+              "value": "very_high",
+              "label": "Spend > {{CURRENCY}}5000 a month",
+              "icon": "shopping_luxury"
+            }
+          ],
+          "required": true
+        }
+      ],
+      "tip": "Buying recycled products can dramatically reduce your consumption footprint",
+      "feedback": {
+        "result": "2.4 tonne so far"
+      }
+    }
+  ],
+  "feedbackTemplates": {
+    "calculating": {
+      "messages": [
+        "Your total carbon emission is being calculated!",
+        "Processing your environmental impact...",
+        "Analyzing your carbon footprint..."
+      ]
+    },
+    "comparative": {
+      "messages": [
+        "You're doing better than {{PERCENTAGE}}% of people so far!",
+        "Great! You're ahead of {{PERCENTAGE}}% of participants!",
+        "Impressive! Better than {{PERCENTAGE}}% so far!"
+      ]
+    },
+    "encouragement": {
+      "messages": [
+        "Great choices! You're on the right track!",
+        "Excellent environmental awareness!",
+        "Keep up the good work!"
+      ]
+    },
+    "completion": {
+      "messages": [
+        "Almost there! Just a few more questions.",
+        "You're nearly done!",
+        "Final stretch - great job so far!"
+      ]
+    }
+  }
+}

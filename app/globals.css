@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --primary: #0d9488;
+  --secondary: #0099DD;
+  --success: #00ABBD;
+  --warning: #FF9933;
+  --neutral: #A1C7E0;
+  --font: #454545;
+  --font-muted: #717182;
+  --font-light: #ECECEC;
+}
+
+@layer utilities {
+  .base-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .paper {
+    @apply bg-white shadow-lg outline-1 outline-gray-900/5 p-2 sm:p-4 rounded-lg;
+  }
+
+  .calc-page {
+    @apply w-full h-[calc(100vh-80px)] flex flex-col justify-start items-center p-2 sm:p-6;
+  }
+
+  .calc-page-center {
+    @apply w-full h-[calc(100vh-170px)] flex flex-col justify-center items-center p-6;
+  }
+
+  .calc-question {
+    @apply p-3 mb-2 min-h-[50px] flex-col space-y-2 text-center;
+  }
+
+  .calc-answer {
+    @apply px-3 py-0 sm:p-5 sm:pt-0 min-h-[330px] w-full flex flex-col items-center justify-start space-y-3;
+  }
+
+  .calc-answer-full {
+    @apply px-3 py-0 sm:p-5 sm:pt-0 min-h-[380px] w-full flex flex-col items-center justify-start space-y-3;
+  }
+
+  .category-intro {
+    @apply text-center text-sm mb-6;
+  }
+
+  .tip {
+    @apply text-xs sm:text-sm text-center
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --font: #374151;
+    --font-light: #ececec;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--font);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.head-body {
+  min-height: calc(100vh - 25px) !important;
+  padding-top: 65px;
+  position: relative;
+  z-index: 1;
+}
+
+.icon {
+  color: #f5f5f5;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+  color: var(--font-light) !important;
+}
+
+.bg-primary>a:hover {
+  color: var(--primary);
+}
+
+.bg-nav {
+  background-color: var(--background) !important;
+  color: var(--font) !important;
+}
+
+.bg-nav>a:hover {
+  color: var(--background);
+}
+
+.bg-img-city {
+  background-image:
+    linear-gradient(rgba(250, 250, 250, 0.7), rgba(5, 5, 5, 0.2)),
+    url('/images/vector-city.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.font-muted {
+  color: var(--font-muted);
+}
