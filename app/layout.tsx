@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { createTheme, MantineProvider } from "@mantine/core";
 import "./globals.css";
-import "@/css/main.css"
-import 'rc-slider/assets/index.css';
+import "@/css/main.css";
+import "rc-slider/assets/index.css";
+import "@mantine/core/styles.css";
 import ClientToaster from "./clientToaster";
+import LayoutWrapper from "./layoutWrapper";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -75,14 +78,16 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-    // yahoo: "your-yahoo-verification-code",
   },
   alternates: {
     canonical: "https://your-domain.com",
   },
   category: "technology",
 };
+
+const theme = createTheme({
+  /** Put your mantine theme override here */
+});
 
 export default function RootLayout({
   children,
@@ -92,8 +97,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body>
-        {children}
-        <ClientToaster />
+        <MantineProvider theme={theme}>
+          <LayoutWrapper>{children}</LayoutWrapper>
+          <ClientToaster />
+        </MantineProvider>
       </body>
     </html>
   );

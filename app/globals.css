@@ -21,16 +21,20 @@
     @apply flex justify-center items-center;
   }
 
+  .paper-light {
+    @apply bg-white shadow-sm outline-1 outline-gray-900/5 p-2 sm:p-4 rounded-lg;
+  }
+
   .paper {
     @apply bg-white shadow-lg outline-1 outline-gray-900/5 p-2 sm:p-4 rounded-lg;
   }
 
   .calc-page {
-    @apply w-full h-[calc(100vh-80px)] flex flex-col justify-start items-center p-2 sm:p-6;
+    @apply w-full h-[calc(100vh-85px)] flex flex-col justify-start items-start p-2 sm:p-6;
   }
 
   .calc-page-center {
-    @apply w-full h-[calc(100vh-170px)] flex flex-col justify-center items-center p-6;
+    @apply w-full h-[calc(100vh-85px)] flex flex-col justify-center items-center p-6;
   }
 
   .calc-question {
