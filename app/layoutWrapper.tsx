@@ -7,8 +7,12 @@ import { ReactNode } from "react";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Learn", href: "/learn" },
+  { type: "header", label: "Learn" },
+  { label: "Start Here", href: "/learn" },
+  { type: "header", label: "Tools" },
   { label: "Calculator", href: "/calculator" },
+  { type: "header", label: "Info" },
+  { label: "Data", href: "/data" },
   { label: "About", href: "/about" },
 ];
 
@@ -23,13 +27,13 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
       layout="alt"
       header={{ height: 50 }}
       navbar={{
-        width: 250,
+        width: 240,
         breakpoint: "sm",
         collapsed: { mobile: !opened },
       }}
       padding="md"
     >
-      <AppShell.Header>
+      <AppShell.Header className="bg-bg">
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           {/* <Header /> */}
@@ -43,19 +47,32 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
           </div>
         </Group>
       </AppShell.Header>
-      <AppShell.Navbar>
+      <AppShell.Navbar className="bg-bg">
         <Group>
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
         </Group>
-        <AppShell.Section
-          className="bg-primary"
-          component={ScrollArea}
-          grow
-          p="sm"
-        >
-          {navLinks.map((link, index) => (
-            <NavLink href={link?.href} key={index} label={link?.label} />
-          ))}
+        <AppShell.Section component={ScrollArea} grow p="sm">
+          {navLinks.map((item, index) => {
+            if (item.type === "header") {
+              return (
+                <div
+                  key={index}
+                  className="px-3 pt-5 pb-1 text-xs font-semibold text-black uppercase"
+                >
+                  {item.label}
+                </div>
+              );
+            }
+            return (
+              <NavLink
+                href={item.href}
+                key={index}
+                label={item.label}
+                className="bg-nav"
+                // leftSection={<IconHome2 size={16} stroke={1.5} />}
+              />
+            );
+          })}
         </AppShell.Section>
         <AppShell.Section>
           <Footer />

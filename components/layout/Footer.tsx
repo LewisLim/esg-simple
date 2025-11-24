@@ -4,7 +4,7 @@ export default function Footer() {
   let year = new Date().getFullYear();
 
   return (
-    <footer className="w-full flex justify-between items-center text-xs bg-primary">
+    <footer className="w-full flex justify-between items-center text-xs">
       <div className="w-full">
         <div className="flex flex-col sm:flex-row items-center justify-between">
           {/* Navigation Links */}

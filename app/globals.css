@@ -1,13 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f5f6fa;
+  --background2: #fafcff;
+  --background-hover: #e5f1ff;
   --primary: #0d9488;
   --secondary: #0099DD;
   --success: #00ABBD;
   --warning: #FF9933;
   --neutral: #A1C7E0;
   --font: #454545;
+  --font-dark: #000000;
   --font-muted: #717182;
   --font-light: #ECECEC;
 }
@@ -68,7 +71,7 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--background) !important;
   color: var(--font);
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -95,13 +98,24 @@ body {
   color: var(--primary) !important;
 }
 
+.bg-content {
+  background-color: var(--background2) !important;
+  color: var(--font) !important;
+}
+
+.bg-bg {
+  background-color: var(--background) !important;
+  color: var(--font) !important;
+}
+
 .bg-nav {
   background-color: var(--background) !important;
   color: var(--font) !important;
 }
 
-.bg-nav>a:hover {
-  color: var(--background);
+.bg-nav:hover {
+  background-color: var(--background-hover) !important;
+  color: var(--font-dark) !important;
 }
 
 .bg-img-city {
