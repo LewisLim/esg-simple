@@ -48,7 +48,7 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
         </Group>
         <AppShell.Section
-          className="bg-blue-100"
+          className="bg-primary"
           component={ScrollArea}
           grow
           p="sm"

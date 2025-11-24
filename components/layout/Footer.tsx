@@ -4,14 +4,12 @@ export default function Footer() {
   let year = new Date().getFullYear();
 
   return (
-    <footer className="w-full flex justify-between items-center text-xs bg-gray-50 border-t border-gray-200 py-1">
-      <div className="base-padding w-full">
+    <footer className="w-full flex justify-between items-center text-xs bg-primary">
+      <div className="w-full">
         <div className="flex flex-col sm:flex-row items-center justify-between">
           {/* Navigation Links */}
-          <div className="flex items-center">
-            <p className="text-gray-600">
-              {year} © LookAtGaia 
-            </p>
+          <div className="flex items-center px-6 py-2">
+            <p>{year} © LookAtGaia</p>
           </div>
         </div>
       </div>
