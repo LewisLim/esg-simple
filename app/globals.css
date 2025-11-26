@@ -25,11 +25,11 @@
   }
 
   .paper-light {
-    @apply bg-white shadow-sm outline-1 outline-gray-900/5 p-2 sm:p-4 rounded-lg;
+    @apply bg-white outline-1 outline-gray-900/5 p-2 sm:p-4 rounded-lg;
   }
 
   .paper {
-    @apply bg-white shadow-lg outline-1 outline-gray-900/5 p-2 sm:p-4 rounded-lg;
+    @apply bg-white outline-1 outline-gray-900/5 p-2 sm:p-4 rounded-lg;
   }
 
   .calc-page {

@@ -11,12 +11,12 @@ export default function AboutPage() {
           <ImageWithFallback
               src="https://images.unsplash.com/photo-1496016943515-7d33598c11e6?w=400"
               alt="Smiley face"
-              className="w-32 h-32 rounded-full object-cover shadow-md"
+              className="w-32 h-32 rounded-full object-cover"
             />
         </div> */}
 
         {/* What You'll Find Here */}
-        <section className="bg-white rounded-2xl shadow-sm p-6 mb-6">
+        <section className="bg-white rounded-2xl p-6 mb-6">
           <h2 className="text-green-600 mb-6">You'll Find Here</h2>
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
@@ -41,7 +41,7 @@ export default function AboutPage() {
         </section>
 
         {/* Mission */}
-        <section className="bg-white rounded-2xl shadow-sm p-6 mb-6">
+        <section className="bg-white rounded-2xl p-6 mb-6">
           <h2 className="text-green-600 mb-4">Mission</h2>
           <p className="text-gray-700">
             Make environmental learning easy and free for everyone
@@ -49,7 +49,7 @@ export default function AboutPage() {
         </section>
 
         {/* About the Author */}
-        <section className="bg-white rounded-2xl shadow-sm p-6 mb-6">
+        <section className="bg-white rounded-2xl p-6 mb-6">
           <h2 className="text-green-600 mb-6">About the Author</h2>
           <p className="text-gray-700 mb-6">
             Hey there, I'm George, and I built this site because environmental
@@ -60,7 +60,7 @@ export default function AboutPage() {
         </section>
 
         {/* Contact */}
-        <section className="bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl shadow-sm p-8 text-center">
+        <section className="bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl p-8 text-center">
           <h2 className="text-white mb-4">Get in Touch?</h2>
           <div className="flex items-center justify-center gap-3 text-white">
             {/* <Mail className="w-5 h-5" /> */}
