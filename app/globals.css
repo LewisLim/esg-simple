@@ -13,6 +13,7 @@
   --font-dark: #000000;
   --font-muted: #717182;
   --font-light: #ECECEC;
+  --highlight: #00ABBD;
 }
 
 @layer utilities {
@@ -68,6 +69,11 @@
     --font: #374151;
     --font-light: #ececec;
   }
+}
+
+::selection {
+  background-color: var(--highlight) !important;
+  color: #FFFFFF !important;
 }
 
 body {
