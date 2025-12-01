@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f5f6fa;
-  --background2: #fafcff;
+  --background: #f7f8fa;
+  --background2: #fbfdff;
   --background-hover: #e5f1ff;
   --primary: #0d9488;
   --secondary: #0099DD;
@@ -10,7 +10,7 @@
   --warning: #FF9933;
   --neutral: #A1C7E0;
   --font: #454545;
-  --font-dark: #000000;
+  --font-dark: #111111;
   --font-muted: #717182;
   --font-light: #ECECEC;
   --highlight: #00ABBD;
@@ -117,11 +117,16 @@ body {
 .bg-nav {
   background-color: var(--background) !important;
   color: var(--font) !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
 }
 
 .bg-nav:hover {
   background-color: var(--background-hover) !important;
   color: var(--font-dark) !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+
 }
 
 .bg-img-city {
@@ -142,4 +147,8 @@ body {
 
 .font-muted {
   color: var(--font-muted);
+}
+
+.font-black-mild {
+  color: var(--font-dark);
 }

@@ -57,7 +57,7 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
               return (
                 <div
                   key={index}
-                  className="px-3 pt-5 pb-1 text-xs font-semibold text-black uppercase"
+                  className="px-3 pt-5 pb-1 text-xs font-bold font-black-mild uppercase"
                 >
                   {item.label}
                 </div>
