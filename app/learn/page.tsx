@@ -5,10 +5,9 @@ import ArticleWrapper from "@/components/layout/ArticleWrapper";
 export default function LearnEnvironment() {
   return (
     <div className="paper-light calc-page w-full h-full relative">
-      <ArticleWrapper title="Environment">
+      <ArticleWrapper title="Earth">
         <p>
-          Environment: Everything in the world around us - the air, water, land,
-          plants, and animals.
+          The Complete Picture: How Everything Connects on Earth
         </p>
         <p>How our activities affect the world?</p>
         <p>Insert general diagram</p>
