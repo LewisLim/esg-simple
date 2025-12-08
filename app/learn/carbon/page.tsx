@@ -31,68 +31,66 @@ export default function LearnEnvironment() {
 
         <div>
           <h2>Carbon on Earth - The Numbers</h2>
-          <div>
+          <div className="grid grid-cols-3">
             <p>Amount of Carbon on surface of Earth = [X] gigatons</p>
             <p>Amount of Carbon inside Earth = Estimated [Y] gigatons</p>
             <p>Carbon in atmosphere: [Z] gigatons (and rising)</p>
           </div>
         </div>
 
-        <div>
-          <h2>The Natural Carbon Cycle (How Earth Recycles Carbon)</h2>
-          <p>For millions of years, carbon cycled naturally:</p>
-          <p>→ Plants absorb CO2 from air (photosynthesis)</p>
-          <p>→ Animals eat plants, breathe out CO2</p>
-          <p>→ Dead organisms decompose, return carbon to soil</p>
-          <p>→ Oceans absorb and release CO2</p>
-          <p>→ Volcanic activity releases some back</p>
-          <p>
-            <strong>This cycle was BALANCED</strong> ✓
-          </p>
-        </div>
+        <div className="space-y-6">
+          <div>
+            <h2>The Natural Carbon Cycle (How Earth Recycles Carbon)</h2>
+            <p>For millions of years, carbon cycled naturally:</p>
+            <p>→ Plants absorb CO2 from air (photosynthesis)</p>
+            <p>→ Animals eat plants, breathe out CO2</p>
+            <p>→ Dead organisms decompose, return carbon to soil</p>
+            <p>→ Oceans absorb and release CO2</p>
+            <p>→ Volcanic activity releases some back</p>
+            <p>
+              <strong>This cycle was balanced</strong> ✓
+            </p>
+          </div>
 
-        <div>
-          <h2>Carbon Sinks: Nature's Carbon Capture</h2>
-          <p>
-            Carbon sinks are natural systems that absorb more carbon than they
-            release:
-          </p>
-          <p>→ Forests (especially tropical rainforests)</p>
-          <p>→ Oceans (but they're becoming saturated AND acidifying)</p>
-          <p>→ Soil (healthy soil stores massive amounts of carbon)</p>
-          <p>→ Wetlands and peatlands</p>
-          <p>
-            <strong>The problem:</strong> We're both:
-          </p>
-          <p>1. Destroying carbon sinks (deforestation, ocean warming)</p>
-          <p>2. Adding more carbon than remaining sinks can absorb</p>
-        </div>
+          <div>
+            <h3>Carbon Sinks: Nature's Carbon Capture</h3>
+            <p>
+              Carbon sinks are natural systems that absorb more carbon than they
+              release:
+            </p>
+            <p>→ Forests (especially tropical rainforests)</p>
+            <p>→ Oceans (but they're becoming saturated AND acidifying)</p>
+            <p>→ Soil (healthy soil stores massive amounts of carbon)</p>
+            <p>→ Wetlands and peatlands</p>
+            <p>
+              <strong>The problem:</strong> We're both:
+            </p>
+            <p>1. Destroying carbon sinks (deforestation, ocean warming)</p>
+            <p>2. Adding more carbon than remaining sinks can absorb</p>
+          </div>
 
-        <div>
-          <h2>How Humans Changed the Cycle</h2>
-          <p>
-            For millions of years, dead plants and animals were buried and
-            compressed into fossil fuels (coal, oil, gas). This carbon was
-            LOCKED UNDERGROUND.
-          </p>
-          <p>
-            Then humans discovered these fossil fuels and started burning them -
-            releasing millions of years of stored carbon in just 200 years.
-          </p>
+          <div>
+            <h3>How Humans Changed the Cycle</h3>
+            <p>
+              For millions of years, dead plants and animals were buried and
+              compressed into fossil fuels (coal, oil, gas). This carbon was
+              LOCKED UNDERGROUND.
+            </p>
+            <p>
+              Then humans discovered these fossil fuels and started burning them
+              - releasing millions of years of stored carbon in just 200 years.
+            </p>
+          </div>
         </div>
 
         <div>
           <h2>How Carbon is Released Today</h2>
-          <p>
-            <strong>Natural sources (part of balanced cycle):</strong>
-          </p>
+          <h3>Natural sources (part of balanced cycle):</h3>
           <p>→ Plant and animal respiration</p>
           <p>→ Decomposition</p>
           <p>→ Volcanic activity</p>
 
-          <p>
-            <strong>Human sources (creating imbalance):</strong>
-          </p>
+          <h3>Human sources (creating imbalance):</h3>
           <p>→ Electricity generation (coal, gas power plants)</p>
           <p>→ Transportation (cars, planes, ships)</p>
           <p>→ Manufacturing and industry</p>
@@ -102,55 +100,47 @@ export default function LearnEnvironment() {
         <div>
           <h2>Dangerous Feedback Loops</h2>
           <p>
-            Carbon doesn't just accumulate - it triggers processes that release
-            EVEN MORE carbon:
+            Carbon doesn't just accumulate - it creates a spiral process that
+            release even more carbon:
           </p>
-
-          <h2>Not All Carbon is Equal</h2>
           <p>
-            <strong>Biogenic carbon:</strong> Carbon cycling through living
-            systems (neutral if balanced)
-          </p>
-          <p>→ Plant growth → animals eat → decompose → plants regrow</p>
-
-          <p>
-            <strong>Fossil carbon:</strong> Ancient carbon locked underground
-            (PROBLEM when released)
-          </p>
-          <p>→ Took millions of years to store</p>
-          <p>→ We release in centuries</p>
-          <p>→ Adds NEW carbon to the active cycle</p>
-
-          <p>
-            This is why burning wood CAN be carbon-neutral (if trees regrow) but
-            burning coal is NEVER neutral (adding ancient carbon).
-          </p>
-
-          <p>
-            <strong>Permafrost feedback:</strong>
+            <h3>Permafrost feedback:</h3>
           </p>
           <p>→ Warming melts Arctic permafrost</p>
           <p>→ Releases methane (25x stronger than CO2)</p>
           <p>→ Causes more warming</p>
           <p>→ Melts more permafrost...</p>
-
           <p>
-            <strong>Forest feedback:</strong>
+            <h3>Forest feedback:</h3>
           </p>
           <p>→ Warming causes droughts and fires</p>
           <p>→ Forests die, release stored carbon</p>
           <p>→ Less trees to absorb CO2</p>
           <p>→ More warming...</p>
-
           <p>
-            <strong>Ocean feedback:</strong>
+            <h3>Ocean feedback:</h3>
           </p>
           <p>→ Warm water holds less CO2</p>
           <p>→ Oceans absorb less carbon</p>
           <p>→ More stays in atmosphere</p>
           <p>→ More warming...</p>
-
           <p>These feedback loops can make warming self-reinforcing!</p>
+        </div>
+
+        <div>
+          <h2>Different types of Carbon</h2>
+          <h3>Biogenic carbon:</h3> Carbon cycling through living systems
+          (neutral if balanced)
+          <p>→ Plant growth → animals eat → decompose → plants regrow</p>
+          <h3>Fossil carbon:</h3> Ancient carbon locked underground (PROBLEM
+          when released)
+          <p>→ Took millions of years to store</p>
+          <p>→ We release in centuries</p>
+          <p>→ Adds NEW carbon to the active cycle</p>
+          <p>
+            This is why burning wood CAN be carbon-neutral (if trees regrow) but
+            burning coal is NEVER neutral (adding ancient carbon).
+          </p>
         </div>
 
         <div>
@@ -170,8 +160,9 @@ export default function LearnEnvironment() {
           </p>
         </div>
 
-        <h2>Future Projections</h2>
         <div>
+          <h2>Future Projections</h2>
+
           <p>
             Estimated atmospheric carbon and global temperature if we continue:
           </p>
@@ -198,23 +189,18 @@ export default function LearnEnvironment() {
 
         <div>
           <h2>How Carbon Affects Us</h2>
-          <p>
-            <strong>Climate impacts:</strong>
-          </p>
+
+          <h3>Climate impacts:</h3>
           <p>→ Rising temperatures → heatwaves, droughts</p>
           <p>→ Extreme weather → stronger hurricanes, floods</p>
           <p>→ Sea level rise → coastal cities threatened</p>
 
-          <p>
-            <strong>Ecosystem impacts:</strong>
-          </p>
+          <h3>Ecosystem impacts:</h3>
           <p>→ Coral reef bleaching (ocean acidification)</p>
           <p>→ Species extinction</p>
           <p>→ Agricultural disruption</p>
 
-          <p>
-            <strong>Human impacts:</strong>
-          </p>
+          <h3>Human impacts:</h3>
           <p>→ Food and water scarcity</p>
           <p>→ Climate refugees and displacement</p>
           <p>→ Health problems (heat stress, air quality)</p>
@@ -222,7 +208,7 @@ export default function LearnEnvironment() {
         </div>
 
         <div>
-          <h2>What Can We Do? (Individual Actions)</h2>
+          <h2>What Can We Do? (Individuals)</h2>
           <p>Since carbon cannot be destroyed, we must manage the flows:</p>
           <p>→ Reduce energy consumption</p>
           <p>→ Choose renewable energy when possible</p>
@@ -238,7 +224,9 @@ export default function LearnEnvironment() {
           <p>→ Measure and report carbon emissions</p>
           <p>→ Invest in carbon capture technology</p>
           <p>→ Support sustainable supply chains</p>
+        </div>
 
+        <div>
           <h2>What Society Can Do</h2>
           <p>→ Government policies (carbon pricing, regulations)</p>
           <p>→ Invest in clean technology (solar, wind, nuclear)</p>
@@ -271,7 +259,7 @@ export default function LearnEnvironment() {
           </p>
           <p>→ [More fascinating facts]</p>
         </div>
-        
+
         <div>
           <h2>Hope & Progress</h2>
           <p>

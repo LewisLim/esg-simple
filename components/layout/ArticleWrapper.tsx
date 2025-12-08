@@ -15,7 +15,7 @@ export default function ArticleWrapper({ title, children }: Props) {
         </button>
         <h1 className="header">{title}</h1>
       </div>
-      <div className="pt-4 pb-12 space-y-4">{children}</div>
+      <div className="pt-4 pb-12 space-y-8">{children}</div>
     </div>
   );
 }
