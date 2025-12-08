@@ -21,6 +21,14 @@
     @apply px-4 sm:px-6 lg:px-8;
   }
 
+  .header {
+    @apply text-lg font-medium;
+  }
+
+  .article h2 {
+    @apply text-lg font-medium;
+  }
+
   .flex-center {
     @apply flex justify-center items-center;
   }
@@ -152,3 +160,4 @@ body {
 .font-black-mild {
   color: var(--font-dark);
 }
+
