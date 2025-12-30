@@ -33,36 +33,33 @@ export default function GreenhouseGasesPage() {
             variant="card"
           >
             <p>
-              Greenhouse gases are gases in our atmosphere that trap heat, like
-              a blanket wrapped around Earth. They let sunlight in but stop heat
-              from escaping back into space.
+              Greenhouse gases are gases in our air that trap heat. They work
+              like a blanket wrapped around Earth. They let sunlight in but stop
+              heat from escaping back into space.
             </p>
 
             <InfoBox icon={SunIcon} title="How It Works" variant="info">
               <div className="space-y-2">
                 <p>1. Sunlight reaches Earth and warms the surface</p>
                 <p>2. Earth releases this heat back toward space</p>
-                <p>
-                  3. Greenhouse gases catch some of this heat and hold it in the
-                  atmosphere
-                </p>
+                <p>3. These gases catch some heat and hold it in the air</p>
                 <p>4. This trapped heat keeps our planet warm</p>
               </div>
             </InfoBox>
 
             <p>
-              We actually <strong>need</strong> some greenhouse gases - without
-              them, Earth would be frozen at around -18°C (0°F), too cold for
-              life as we know it. The greenhouse effect is natural and
-              essential.
+              We actually <strong>need</strong> some of these gases. Without
+              them, Earth would be frozen at around -18°C (0°F). That's too cold
+              for life as we know it. Trapping some heat is natural and
+              necessary.
             </p>
 
             <InfoBox icon={WarningIcon} title="The Problem" variant="warning">
               <p>
-                Humans are adding greenhouse gases to the atmosphere much faster
-                than natural processes can remove them. It's like turning up the
-                heat on Earth's thermostat - we're making the blanket thicker
-                and thicker, trapping more heat than the planet can handle.
+                Humans are adding these gases to the air much faster than nature
+                can remove them. It's like turning up the heat. We're making the
+                blanket thicker and thicker. This traps more heat than the
+                planet can handle.
               </p>
             </InfoBox>
           </ArticleSection>
@@ -71,13 +68,13 @@ export default function GreenhouseGasesPage() {
           <ArticleSection
             icon={ThermometerIcon}
             iconColor="text-red-600"
-            title="The Main Greenhouse Gases Causing Climate Change"
+            title="The Main Heat-Trapping Gases Causing Climate Change"
             variant="gradient"
           >
             <p>
-              Not all greenhouse gases are equal. Some trap more heat than
-              others, and some last longer in the atmosphere. Here's how much
-              each one contributes to global warming:
+              Not all of these gases are equal. Some trap more heat than others.
+              Some last longer in the air. Here's how much each one causes
+              warming:
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mt-4">
@@ -89,19 +86,19 @@ export default function GreenhouseGasesPage() {
               />
               <StatCard
                 icon={CowIcon}
-                title="Methane (CH4)"
+                title="Methane"
                 value="17% of warming"
                 iconColor="text-orange-600"
               />
               <StatCard
                 icon={PlantIcon}
-                title="Nitrous Oxide (N2O)"
+                title="Nitrous Oxide"
                 value="6% of warming"
                 iconColor="text-amber-600"
               />
               <StatCard
                 icon={SnowflakeIcon}
-                title="Fluorinated Gases"
+                title="F-gases (cooling chemicals)"
                 value="2% of warming"
                 iconColor="text-blue-600"
               />
@@ -121,8 +118,8 @@ export default function GreenhouseGasesPage() {
               variant="danger"
             >
               <p>
-                CO2 is responsible for three-quarters of human-caused climate
-                change. It's the main villain in the climate story.
+                CO2 causes three-quarters of human-made climate change. It's the
+                main problem in the climate story.
               </p>
             </InfoBox>
 
@@ -131,10 +128,10 @@ export default function GreenhouseGasesPage() {
               <div className="flex items-start gap-3">
                 <FactoryIcon className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Burning fossil fuels (coal, oil, gas)</strong>
+                  <strong>Burning coal, oil, and gas</strong>
                   <p>
-                    For electricity, heating, transportation, and manufacturing.
-                    This is by far the biggest source.
+                    For electricity, heating, cars, and factories. This is by
+                    far the biggest source.
                   </p>
                 </div>
               </div>
@@ -142,10 +139,10 @@ export default function GreenhouseGasesPage() {
               <div className="flex items-start gap-3">
                 <PlantIcon className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Cutting down forests (deforestation)</strong>
+                  <strong>Cutting down forests</strong>
                   <p>
                     Trees absorb CO2. When we cut them down or burn them, that
-                    stored carbon is released back into the air.
+                    stored carbon goes back into the air.
                   </p>
                 </div>
               </div>
@@ -153,24 +150,22 @@ export default function GreenhouseGasesPage() {
               <div className="flex items-start gap-3">
                 <FactoryIcon className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Making cement and other industrial processes</strong>
-                  <p>
-                    Some manufacturing processes release CO2 as a byproduct.
-                  </p>
+                  <strong>Making cement and other products</strong>
+                  <p>Some manufacturing releases CO2 as a side effect.</p>
                 </div>
               </div>
             </div>
 
-            <h3>Why it's so problematic:</h3>
+            <h3>Why it's such a big problem:</h3>
             <div className="space-y-2">
               <div className="flex items-start gap-3">
                 <ClockIcon className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
                 <div>
                   <strong>It lasts for centuries</strong>
                   <p>
-                    CO2 stays in the atmosphere for hundreds to thousands of
-                    years. The CO2 we release today will be warming the planet
-                    for generations.
+                    CO2 stays in the air for hundreds to thousands of years. The
+                    CO2 we release today will be warming the planet for
+                    generations.
                   </p>
                 </div>
               </div>
@@ -178,9 +173,9 @@ export default function GreenhouseGasesPage() {
               <div className="flex items-start gap-3">
                 <TrendUpIcon className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>We produce enormous amounts</strong>
+                  <strong>We produce huge amounts</strong>
                   <p>
-                    Humans release about 40 billion tons of CO2 every year - and
+                    Humans release about 40 billion tons of CO2 every year. And
                     it's still increasing.
                   </p>
                 </div>
@@ -202,7 +197,7 @@ export default function GreenhouseGasesPage() {
           <ArticleSection
             icon={CowIcon}
             iconColor="text-orange-600"
-            title="Methane (CH4) - The Powerful Short-Termer"
+            title="Methane - Very Powerful but Doesn't Last Long"
             variant="highlight"
           >
             <InfoBox
@@ -211,9 +206,9 @@ export default function GreenhouseGasesPage() {
               variant="warning"
             >
               <p>
-                Methane is the second-biggest contributor to climate change.
-                It's much more powerful than CO2 at trapping heat, but it
-                doesn't last as long in the atmosphere.
+                Methane is the second-biggest cause of climate change. It's much
+                more powerful than CO2 at trapping heat. But it doesn't last as
+                long in the air.
               </p>
             </InfoBox>
 
@@ -222,10 +217,10 @@ export default function GreenhouseGasesPage() {
               <div className="flex items-start gap-3">
                 <CowIcon className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Livestock farming (especially cattle)</strong>
+                  <strong>Farm animals (especially cows)</strong>
                   <p>
-                    Cows and other ruminant animals produce methane in their
-                    digestive systems. This is the biggest source of
+                    Cows and similar animals produce methane in their stomachs
+                    when they digest food. This is the biggest source of
                     human-caused methane.
                   </p>
                 </div>
@@ -236,8 +231,8 @@ export default function GreenhouseGasesPage() {
                 <div>
                   <strong>Rice farming</strong>
                   <p>
-                    Flooded rice paddies create conditions where bacteria
-                    produce methane.
+                    Flooded rice fields create conditions where tiny living
+                    things produce methane.
                   </p>
                 </div>
               </div>
@@ -247,8 +242,8 @@ export default function GreenhouseGasesPage() {
                 <div>
                   <strong>Oil and gas operations</strong>
                   <p>
-                    Methane leaks from drilling, pipelines, and processing
-                    facilities. Natural gas is mostly methane.
+                    Methane leaks from drilling, pipes, and processing places.
+                    Natural gas is mostly methane.
                   </p>
                 </div>
               </div>
@@ -256,10 +251,10 @@ export default function GreenhouseGasesPage() {
               <div className="flex items-start gap-3">
                 <CloudIcon className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Landfills</strong>
+                  <strong>Garbage dumps</strong>
                   <p>
-                    When organic waste decomposes without oxygen (like in
-                    landfills), it produces methane.
+                    When waste breaks down without air (like in garbage dumps),
+                    it produces methane.
                   </p>
                 </div>
               </div>
@@ -272,9 +267,9 @@ export default function GreenhouseGasesPage() {
                 <div>
                   <strong>It's extremely powerful</strong>
                   <p>
-                    Methane traps about 25-30 times more heat than CO2 over a
-                    100-year period. Over 20 years, it's even worse - about 80
-                    times more powerful.
+                    Methane traps about 25-30 times more heat than CO2 over 100
+                    years. Over 20 years, it's even worse - about 80 times more
+                    powerful.
                   </p>
                 </div>
               </div>
@@ -284,9 +279,9 @@ export default function GreenhouseGasesPage() {
                 <div>
                   <strong>But it breaks down faster</strong>
                   <p>
-                    Methane only lasts about 12 years in the atmosphere
-                    (compared to centuries for CO2). This means cutting methane
-                    emissions has a fast impact on slowing warming.
+                    Methane only lasts about 12 years in the air (compared to
+                    centuries for CO2). This means cutting methane has a fast
+                    impact on slowing warming.
                   </p>
                 </div>
               </div>
@@ -298,10 +293,9 @@ export default function GreenhouseGasesPage() {
               variant="success"
             >
               <p>
-                Because methane is so powerful but short-lived, reducing methane
-                emissions is one of the fastest ways to slow climate change.
-                Cutting methane now would have a noticeable impact within a
-                decade.
+                Because methane is so powerful but doesn't last long, reducing
+                it is one of the fastest ways to slow climate change. Cutting
+                methane now would have a clear impact within 10 years.
               </p>
             </InfoBox>
 
@@ -320,7 +314,7 @@ export default function GreenhouseGasesPage() {
           <ArticleSection
             icon={PlantIcon}
             iconColor="text-amber-600"
-            title="Nitrous Oxide (N2O) - The Agricultural Problem"
+            title="Nitrous Oxide - The Farming Problem"
             variant="card"
           >
             <InfoBox
@@ -329,8 +323,8 @@ export default function GreenhouseGasesPage() {
               variant="warning"
             >
               <p>
-                Nitrous oxide might seem minor at 6%, but it's an incredibly
-                powerful greenhouse gas and very long-lasting.
+                Nitrous oxide might seem small at 6%. But it's incredibly
+                powerful at trapping heat. And it lasts a very long time.
               </p>
             </InfoBox>
 
@@ -339,11 +333,11 @@ export default function GreenhouseGasesPage() {
               <div className="flex items-start gap-3">
                 <PlantIcon className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Synthetic fertilizers in agriculture</strong>
+                  <strong>Farm fertilizers</strong>
                   <p>
-                    This is the biggest source. When farmers use nitrogen-based
-                    fertilizers, bacteria in the soil convert some of that
-                    nitrogen into nitrous oxide.
+                    This is the biggest source. When farmers use fertilizers
+                    with nitrogen, tiny living things in the soil turn some into
+                    nitrous oxide.
                   </p>
                 </div>
               </div>
@@ -351,10 +345,10 @@ export default function GreenhouseGasesPage() {
               <div className="flex items-start gap-3">
                 <FactoryIcon className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Industrial processes</strong>
+                  <strong>Making certain products</strong>
                   <p>
-                    Manufacturing of certain chemicals and materials releases
-                    N2O.
+                    Manufacturing some chemicals and materials releases nitrous
+                    oxide.
                   </p>
                 </div>
               </div>
@@ -362,7 +356,7 @@ export default function GreenhouseGasesPage() {
               <div className="flex items-start gap-3">
                 <CowIcon className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Livestock manure</strong>
+                  <strong>Animal waste</strong>
                   <p>Animal waste produces nitrous oxide as it breaks down.</p>
                 </div>
               </div>
@@ -373,10 +367,10 @@ export default function GreenhouseGasesPage() {
               <div className="flex items-start gap-3">
                 <ThermometerIcon className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Extremely powerful heat-trapper</strong>
+                  <strong>Extremely powerful</strong>
                   <p>
-                    N2O traps about 300 times more heat than CO2 - that's even
-                    more powerful than methane.
+                    Nitrous oxide traps about 300 times more heat than CO2.
+                    That's even more powerful than methane.
                   </p>
                 </div>
               </div>
@@ -384,10 +378,10 @@ export default function GreenhouseGasesPage() {
               <div className="flex items-start gap-3">
                 <ClockIcon className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>It sticks around for over a century</strong>
+                  <strong>It stays around for over 100 years</strong>
                   <p>
-                    N2O stays in the atmosphere for about 120 years, so the
-                    effects of today's emissions will last for generations.
+                    Nitrous oxide stays in the air for about 120 years. The
+                    effects of what we release today will last for generations.
                   </p>
                 </div>
               </div>
@@ -408,7 +402,7 @@ export default function GreenhouseGasesPage() {
           <ArticleSection
             icon={SnowflakeIcon}
             iconColor="text-blue-600"
-            title="Fluorinated Gases (F-gases) - Small Amount, Big Punch"
+            title="F-gases (Cooling Chemicals) - Small Amount, Big Power"
             variant="highlight"
           >
             <InfoBox
@@ -417,9 +411,8 @@ export default function GreenhouseGasesPage() {
               variant="info"
             >
               <p>
-                F-gases contribute only 2% to global warming, but that's because
-                we produce much smaller amounts. Pound for pound, they're the
-                most powerful greenhouse gases.
+                F-gases cause only 2% of warming. That's because we produce much
+                smaller amounts. But they're the most powerful heat-trappers.
               </p>
             </InfoBox>
 
@@ -428,11 +421,11 @@ export default function GreenhouseGasesPage() {
               <div className="flex items-start gap-3">
                 <SnowflakeIcon className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Refrigeration and air conditioning</strong>
+                  <strong>Fridges and air conditioners</strong>
                   <p>
                     Most F-gases are used as coolants in fridges, freezers, and
-                    air conditioners. When these appliances leak or are
-                    improperly disposed of, the gases escape.
+                    air conditioners. When these machines leak or get thrown
+                    away improperly, the gases escape.
                   </p>
                 </div>
               </div>
@@ -440,24 +433,24 @@ export default function GreenhouseGasesPage() {
               <div className="flex items-start gap-3">
                 <FactoryIcon className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Industrial applications</strong>
+                  <strong>Making electronics and other products</strong>
                   <p>
-                    Some manufacturing processes, electronics production, and
-                    specialized equipment use F-gases.
+                    Some factories use F-gases to make electronics and other
+                    specialized products.
                   </p>
                 </div>
               </div>
             </div>
 
-            <h3>Why they're unique:</h3>
+            <h3>What makes them special:</h3>
             <div className="space-y-2">
               <div className="flex items-start gap-3">
                 <WarningIcon className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Entirely human-made</strong>
+                  <strong>Completely human-made</strong>
                   <p>
-                    Unlike the other greenhouse gases, F-gases don't occur
-                    naturally at all. They only exist because we created them.
+                    Unlike the other gases, F-gases don't exist in nature at
+                    all. They only exist because we created them.
                   </p>
                 </div>
               </div>
@@ -468,7 +461,7 @@ export default function GreenhouseGasesPage() {
                   <strong>Incredibly powerful</strong>
                   <p>
                     Some F-gases can trap thousands of times more heat than CO2.
-                    A tiny amount goes a long way.
+                    A tiny amount has a huge effect.
                   </p>
                 </div>
               </div>
@@ -476,10 +469,10 @@ export default function GreenhouseGasesPage() {
               <div className="flex items-start gap-3">
                 <ClockIcon className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Last for decades to centuries</strong>
+                  <strong>Last for decades or centuries</strong>
                   <p>
-                    Different F-gases have different lifespans, but many last
-                    for thousands of years in the atmosphere.
+                    Different F-gases last different amounts of time. But many
+                    last for thousands of years in the air.
                   </p>
                 </div>
               </div>
@@ -491,10 +484,9 @@ export default function GreenhouseGasesPage() {
               variant="success"
             >
               <p>
-                Many countries are phasing out the most harmful F-gases and
-                replacing them with alternatives that don't warm the planet. The
-                Montreal Protocol (originally created to protect the ozone
-                layer) now also regulates F-gases.
+                Many countries are stopping the use of the most harmful F-gases.
+                They're replacing them with alternatives that don't warm the
+                planet.
               </p>
             </InfoBox>
 
@@ -503,7 +495,7 @@ export default function GreenhouseGasesPage() {
                 href="#"
                 className="flex items-center gap-2 text-blue-900 font-medium hover:text-blue-700"
               >
-                Learn more about Fluorinated Gases
+                Learn more about F-gases
                 <ArrowRightIcon className="w-4 h-4" />
               </a>
             </div>
@@ -511,33 +503,34 @@ export default function GreenhouseGasesPage() {
 
           {/* Summary */}
           <ArticleSection variant="card">
-            <h2>The Bottom Line</h2>
+            <h2>Summary</h2>
             <p>
-              All greenhouse gases trap heat, but they work in different ways
-              and have different impacts:
+              All these gases trap heat. But they work in different ways and
+              have different impacts:
             </p>
 
             <div className="space-y-3 mt-4">
               <div className="p-3 bg-red-50 rounded-lg">
                 <strong className="text-red-900">CO2 (75%):</strong> The biggest
-                problem. Lasts for centuries. Mainly from burning fossil fuels.
+                problem. Lasts for centuries. Mainly from burning coal, oil, and
+                gas.
               </div>
 
               <div className="p-3 bg-orange-50 rounded-lg">
                 <strong className="text-orange-900">Methane (17%):</strong> Very
-                powerful but short-lived. Mainly from agriculture and fossil
-                fuels. Cutting methane gives fast results.
+                powerful but doesn't last long. Mainly from farms and oil/gas.
+                Cutting methane gives fast results.
               </div>
 
               <div className="p-3 bg-amber-50 rounded-lg">
                 <strong className="text-amber-900">Nitrous Oxide (6%):</strong>{" "}
-                Extremely powerful and long-lasting. Mainly from fertilizers.
+                Extremely powerful and lasts long. Mainly from farm fertilizers.
               </div>
 
               <div className="p-3 bg-blue-50 rounded-lg">
                 <strong className="text-blue-900">F-gases (2%):</strong> The
-                most powerful per molecule, but we make less of them. Human-made
-                chemicals mainly in cooling systems.
+                most powerful. But we make less of them. Human-made chemicals
+                mainly in cooling systems.
               </div>
             </div>
 
@@ -547,13 +540,77 @@ export default function GreenhouseGasesPage() {
               variant="warning"
             >
               <p>
-                To stop climate change, we need to reduce all of these gases -
-                but especially CO2 and methane. CO2 requires a complete
-                transformation of our energy systems. Methane can be reduced
-                more quickly with changes to agriculture and fossil fuel
-                operations.
+                To stop climate change, we need to reduce all these gases. But
+                especially CO2 and methane. CO2 requires changing our entire
+                energy system. Methane can be reduced more quickly with changes
+                to farming and oil/gas operations.
               </p>
             </InfoBox>
+          </ArticleSection>
+
+          {/* Now What Section */}
+          <ArticleSection
+            icon={LightbulbIcon}
+            iconColor="text-primary"
+            title="Now That You Understand Heat-Trapping Gases..."
+            variant="gradient"
+          >
+            <h3>What you can do this week:</h3>
+            <div className="space-y-2 mb-4">
+              <p>
+                • Check if your energy company offers renewable energy plans
+                (reduces CO2)
+              </p>
+              <p>
+                • Try 2-3 plant-based meals this week (reduces methane from farm
+                animals)
+              </p>
+              <p>
+                • If you have old fridges or AC units, make sure they're
+                disposed of properly (prevents F-gas leaks)
+              </p>
+            </div>
+
+            <h3>Learn more:</h3>
+            <div className="space-y-2 mb-4">
+              <p>
+                •{" "}
+                <a href="#" className="text-primary hover:underline">
+                  Take the Greenhouse Gas Quiz
+                </a>{" "}
+                - Test what you learned
+              </p>
+              <p>
+                •{" "}
+                <a href="#" className="text-primary hover:underline">
+                  Calculate Your Carbon Footprint
+                </a>{" "}
+                - See which gases you produce most
+              </p>
+              <p>
+                •{" "}
+                <a href="#" className="text-primary hover:underline">
+                  Read: Carbon
+                </a>{" "}
+                - Learn more about CO2 (the biggest contributor)
+              </p>
+              <p>
+                •{" "}
+                <a href="#" className="text-primary hover:underline">
+                  Read: Climate Impacts
+                </a>{" "}
+                - See what happens if we don't reduce these gases
+              </p>
+            </div>
+
+            <h3>The big picture:</h3>
+            <p>
+              Different gases have different impacts. This means solutions need
+              to be targeted. Cutting methane gives fast results. Stopping CO2
+              requires transforming our energy systems. Both matter.
+              Understanding which gas comes from where helps you make better
+              choices about what to reduce.
+            </p>
           </ArticleSection>
         </div>
       </ArticleWrapper>

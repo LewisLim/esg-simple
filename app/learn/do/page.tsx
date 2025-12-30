@@ -29,7 +29,7 @@ export default function DoMyPart() {
           <ArticleSection variant="card">
             <p>
               Not all actions have equal impact. Some changes make a huge
-              difference, while others are mostly symbolic. Here's what actually
+              difference. Others are mostly symbolic. Here's what actually
               matters, ranked by impact.
             </p>
           </ArticleSection>
@@ -41,8 +41,8 @@ export default function DoMyPart() {
           >
             <p>
               You don't need to do everything perfectly. Focus your energy on
-              the actions that make the biggest difference. Small changes add
-              up, but big changes transform.
+              actions that make the biggest difference. Small changes add up.
+              But big changes transform.
             </p>
           </InfoBox>
 
@@ -50,7 +50,7 @@ export default function DoMyPart() {
           <ArticleSection
             icon={SunIcon}
             iconColor="text-amber-500"
-            title="1. Switch to Renewable Energy"
+            title="1. Switch to Clean Energy"
             variant="gradient"
           >
             <InfoBox
@@ -59,10 +59,10 @@ export default function DoMyPart() {
               variant="warning"
             >
               <p>
-                <strong>This is the big one.</strong> Energy production
-                (electricity, heating, transportation) accounts for 70-80% of
-                global carbon emissions. Switching from fossil fuels to clean
-                energy is the single most impactful thing we can do.
+                <strong>This is the big one.</strong> Making energy
+                (electricity, heating, cars) accounts for 70-80% of global
+                carbon. Switching from coal, oil, and gas to clean energy is the
+                single most impactful thing we can do.
               </p>
             </InfoBox>
 
@@ -75,9 +75,9 @@ export default function DoMyPart() {
                 <div>
                   <strong>Install solar panels if you can</strong>
                   <p>
-                    Upfront cost is high, but they pay for themselves over time
-                    and eliminate your electricity emissions. Many places offer
-                    incentives or financing.
+                    Starting cost is high. But they pay for themselves over
+                    time. And they eliminate your electricity carbon. Many
+                    places offer help with costs or payment plans.
                   </p>
                 </div>
               </div>
@@ -87,10 +87,10 @@ export default function DoMyPart() {
                 <div>
                   <strong>Switch to a green energy plan</strong>
                   <p>
-                    Many energy providers offer renewable energy options. It's
-                    often as simple as calling your provider or checking their
-                    website. Sometimes it costs a bit more, sometimes it's the
-                    same price.
+                    Many energy companies offer clean energy options. It's often
+                    as simple as calling your company or checking their website.
+                    Sometimes it costs a bit more. Sometimes it's the same
+                    price.
                   </p>
                 </div>
               </div>
@@ -98,26 +98,26 @@ export default function DoMyPart() {
               <div className="flex items-start gap-3">
                 <HouseIcon className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Make your home more energy-efficient</strong>
+                  <strong>Make your home use less energy</strong>
                   <p>
-                    Better insulation, double-glazed windows, LED bulbs,
-                    energy-efficient appliances - these reduce how much energy
+                    Better insulation, double-pane windows, LED bulbs,
+                    energy-efficient appliances. These reduce how much energy
                     you need in the first place.
                   </p>
                 </div>
               </div>
             </div>
 
-            <h4>Transportation</h4>
+            <h4>Getting Around</h4>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <CarIcon className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Consider an electric vehicle (EV)</strong>
+                  <strong>Consider an electric car</strong>
                   <p>
-                    If you need a car, EVs produce zero emissions while driving
-                    and are cheaper to run. As electricity grids get cleaner,
-                    EVs automatically become cleaner too.
+                    If you need a car, electric cars produce zero carbon while
+                    driving. They're cheaper to run. As electricity gets
+                    cleaner, electric cars automatically become cleaner too.
                   </p>
                 </div>
               </div>
@@ -126,27 +126,27 @@ export default function DoMyPart() {
                 <PersonSimpleBikeIcon className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
                 <div>
                   <strong>
-                    Use public transport, bike, or walk when possible
+                    Use buses, trains, bike, or walk when possible
                   </strong>
                   <p>
                     For short trips, skip the car entirely. Even replacing one
-                    car trip per day makes a significant difference.
+                    car trip per day makes a big difference.
                   </p>
                 </div>
               </div>
             </div>
 
-            <h4>Support System Change</h4>
+            <h4>Push for Bigger Changes</h4>
             <div className="space-y-3 mt-6">
               <div className="flex items-start gap-3">
                 <MegaphoneIcon className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Advocate for renewable infrastructure</strong>
+                  <strong>Support clean energy for everyone</strong>
                   <p>
-                    The biggest emissions reductions come from transitioning the
-                    entire energy grid to renewables. Vote for politicians who
-                    support clean energy. Contact your representatives. Support
-                    policies that accelerate the transition.
+                    The biggest carbon reductions come from changing the entire
+                    energy system to clean energy. Vote for leaders who support
+                    this. Contact your representatives. Support policies that
+                    speed up the change.
                   </p>
                 </div>
               </div>
@@ -167,29 +167,29 @@ export default function DoMyPart() {
             >
               <p>
                 <strong>You have the most direct control here.</strong> Every
-                product manufactured, shipped, and eventually discarded creates
-                emissions. The less we consume, the less we need to produce.
+                product made, shipped, and eventually thrown away creates
+                carbon. The less we consume, the less we need to produce.
               </p>
             </InfoBox>
 
-            <h3>The key principle: Cut waste, not necessities</h3>
+            <h3>The key idea: Cut waste, not necessities</h3>
             <p>
               This isn't about extreme sacrifice or living like a monk. It's
-              about eliminating wasteful consumption - the stuff you don't
-              really need or use.
+              about cutting wasteful consumption. The stuff you don't really
+              need or use.
             </p>
 
-            <h4>Transportation</h4>
+            <h4>Getting Around</h4>
             <div className="space-y-3 mb-6">
               <div className="flex items-start gap-3">
                 <CarIcon className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
                   <strong>Fly less</strong>
                   <p>
-                    Air travel is extremely carbon-intensive. A single long-haul
-                    flight can equal months of driving. Choose trains or video
-                    calls when possible. When you do fly, consider economy over
-                    business class (which takes up more space per person).
+                    Flying releases huge amounts of carbon. A single long flight
+                    can equal months of driving. Choose trains or video calls
+                    when possible. When you do fly, economy class uses less
+                    space per person than business class.
                   </p>
                 </div>
               </div>
@@ -199,8 +199,8 @@ export default function DoMyPart() {
                 <div>
                   <strong>Drive less</strong>
                   <p>
-                    Combine errands into one trip. Carpool. Work from home when
-                    possible. Each car trip avoided is emissions prevented.
+                    Combine errands into one trip. Share rides. Work from home
+                    when possible. Each car trip avoided prevents carbon.
                   </p>
                 </div>
               </div>
@@ -213,11 +213,10 @@ export default function DoMyPart() {
                 <div>
                   <strong>Eat less meat, especially beef</strong>
                   <p>
-                    Livestock farming - particularly beef - produces enormous
-                    amounts of methane and requires huge amounts of land, water,
-                    and feed. You don't need to go vegetarian, but reducing meat
-                    consumption by even a few meals per week makes a real
-                    difference.
+                    Farm animals (especially cows) produce huge amounts of
+                    methane. They need huge amounts of land, water, and feed.
+                    You don't need to stop eating meat. But reducing it by even
+                    a few meals per week makes a real difference.
                   </p>
                 </div>
               </div>
@@ -227,9 +226,9 @@ export default function DoMyPart() {
                 <div>
                   <strong>Waste less food</strong>
                   <p>
-                    About one-third of all food is thrown away. Plan meals, use
-                    leftovers, understand expiration dates. When food rots in
-                    landfills, it releases methane.
+                    About one-third of all food gets thrown away. Plan meals.
+                    Use leftovers. Understand expiration dates. When food rots
+                    in garbage dumps, it releases methane.
                   </p>
                 </div>
               </div>
@@ -239,9 +238,8 @@ export default function DoMyPart() {
                 <div>
                   <strong>Buy local and seasonal when you can</strong>
                   <p>
-                    Food transported long distances has a bigger carbon
-                    footprint. Local, seasonal produce is often fresher and
-                    lower-emission.
+                    Food moved long distances has bigger carbon. Local, seasonal
+                    food is often fresher and lower-carbon.
                   </p>
                 </div>
               </div>
@@ -255,9 +253,9 @@ export default function DoMyPart() {
                   <strong>Buy less, buy quality</strong>
                   <p>
                     Before buying something, ask: "Do I really need this?"
-                    Manufacturing anything releases carbon. When you do buy,
-                    choose quality items that last longer rather than cheap
-                    things you'll replace soon.
+                    Making anything releases carbon. When you do buy, choose
+                    quality items that last longer. Not cheap things you'll
+                    replace soon.
                   </p>
                 </div>
               </div>
@@ -265,11 +263,11 @@ export default function DoMyPart() {
               <div className="flex items-start gap-3">
                 <RecycleIcon className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Repair, reuse, buy secondhand</strong>
+                  <strong>Repair, reuse, buy used</strong>
                   <p>
                     Fix things instead of replacing them. Buy used when
                     possible. Reusing existing items has almost zero carbon
-                    footprint compared to manufacturing new ones.
+                    compared to making new ones.
                   </p>
                 </div>
               </div>
@@ -280,8 +278,8 @@ export default function DoMyPart() {
                   <strong>Recycle properly</strong>
                   <p>
                     Recycling uses much less energy than making things from
-                    scratch. Learn what can and can't be recycled in your area
-                    and do it right.
+                    scratch. Learn what can and can't be recycled in your area.
+                    Do it right.
                   </p>
                 </div>
               </div>
@@ -289,12 +287,12 @@ export default function DoMyPart() {
 
             <InfoBox
               icon={CheckCircleIcon}
-              title="The Goal: Eliminate Excess"
+              title="The Goal: Cut Excess"
               variant="success"
             >
               <p>
-                Focus on cutting wasteful consumption - unnecessary flights,
-                impulse purchases, food waste. You don't need to live an extreme
+                Focus on cutting wasteful consumption. Unnecessary flights.
+                Impulse purchases. Food waste. You don't need to live an extreme
                 minimalist lifestyle. Just be more intentional about what you
                 consume.
               </p>
@@ -305,20 +303,19 @@ export default function DoMyPart() {
           <ArticleSection
             icon={TreeIcon}
             iconColor="text-green-600"
-            title="3. Carbon Removal and Offsetting"
+            title="3. Carbon Removal"
             variant="card"
           >
             <InfoBox
               icon={WarningIcon}
-              title="Supplementary - Not a Substitute"
+              title="Extra Help - Not a Substitute"
               variant="warning"
             >
               <p>
-                Carbon removal is important, but it's supplementary - it removes
-                CO2 that's already in the atmosphere. It doesn't replace the
-                need to stop adding new carbon in the first place. Think of it
-                like bailing water from a sinking boat - yes, do it, but the
-                priority is plugging the hole.
+                Carbon removal is important. But it's extra help. It removes CO2
+                already in the air. It doesn't replace stopping new carbon from
+                getting added. Think of it like bailing water from a sinking
+                boat. Yes, do it. But the priority is plugging the hole.
               </p>
             </InfoBox>
 
@@ -332,18 +329,18 @@ export default function DoMyPart() {
                 </div>
                 <p className="mb-2">
                   <strong>The appeal:</strong> Everyone loves trees. They absorb
-                  CO2 and create habitats.
+                  CO2. They create homes for animals.
                 </p>
                 <p className="mb-2">
-                  <strong>The reality:</strong> Trees are vulnerable to fire,
-                  disease, logging, and decomposition. When they die or burn,
-                  the carbon goes back into the atmosphere. They're temporary
+                  <strong>The reality:</strong> Trees can burn in fires. Get
+                  diseases. Get cut down. Break down after dying. When they die
+                  or burn, the carbon goes back into the air. They're temporary
                   storage, not permanent removal.
                 </p>
                 <p>
-                  <strong>Still worth it?</strong> Yes - forests are valuable
-                  ecosystems beyond carbon. But don't count on them as a
-                  long-term carbon solution.
+                  <strong>Still worth it?</strong> Yes. Forests are valuable
+                  beyond carbon. But don't count on them as a long-term carbon
+                  solution.
                 </p>
               </div>
 
@@ -354,17 +351,17 @@ export default function DoMyPart() {
                 </div>
                 <p className="mb-2">
                   <strong>What it is:</strong> Heating plant material without
-                  oxygen to create a stable form of carbon that can be buried in
-                  soil.
+                  air. This creates a stable form of carbon that can be buried
+                  in soil.
                 </p>
                 <p className="mb-2">
-                  <strong>The good:</strong> Most effective method for long-term
-                  carbon storage. Improves soil quality.
+                  <strong>The good:</strong> Best method for long-term carbon
+                  storage. Makes soil better.
                 </p>
                 <p>
-                  <strong>The challenge:</strong> Requires organizational scale
-                  and land access. Not practical for individuals, but you can
-                  support programs that do this.
+                  <strong>The challenge:</strong> Needs large-scale operations
+                  and land. Not practical for individuals. But you can support
+                  programs that do this.
                 </p>
               </div>
 
@@ -378,33 +375,32 @@ export default function DoMyPart() {
                   that absorb CO2.
                 </p>
                 <p className="mb-2">
-                  <strong>The challenge:</strong> When kelp decomposes or is
-                  eaten, the carbon goes back into the cycle. Only works for
-                  permanent storage if specifically sunk to the deep ocean floor
-                  - which is still experimental.
+                  <strong>The challenge:</strong> When kelp breaks down or gets
+                  eaten, the carbon goes back. Only works for permanent storage
+                  if sunk to the deep ocean floor. This is still being tested.
                 </p>
                 <p>
-                  <strong>Still worth it?</strong> Maybe in the future, but it's
-                  not a reliable solution yet.
+                  <strong>Still worth it?</strong> Maybe in the future. But it's
+                  not reliable yet.
                 </p>
               </div>
 
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   <LightningIcon className="w-5 h-5 text-green-600" />
-                  <strong>Direct Air Capture (technology)</strong>
+                  <strong>Machines that pull CO2 from air</strong>
                 </div>
                 <p className="mb-2">
                   <strong>What it is:</strong> Machines that filter CO2 directly
-                  from the air and store it underground.
+                  from the air. Then store it underground.
                 </p>
                 <p className="mb-2">
                   <strong>The good:</strong> Permanent removal if stored
                   properly.
                 </p>
                 <p>
-                  <strong>The challenge:</strong> Very expensive and
-                  energy-intensive. Not yet at scale. Needs much more
+                  <strong>The challenge:</strong> Very expensive. Uses lots of
+                  energy. Not working at large scale yet. Needs much more
                   development.
                 </p>
               </div>
@@ -417,9 +413,9 @@ export default function DoMyPart() {
                 <div>
                   <strong>Support large-scale removal programs</strong>
                   <p>
-                    Donate to or advocate for organizations working on carbon
-                    removal at scale. Individual tree-planting is nice but has
-                    minimal impact compared to protecting existing forests or
+                    Donate to or support organizations working on carbon removal
+                    at large scale. Individual tree-planting is nice. But it has
+                    small impact compared to protecting existing forests or
                     funding serious removal technology.
                   </p>
                 </div>
@@ -428,12 +424,12 @@ export default function DoMyPart() {
               <div className="flex items-start gap-3">
                 <CheckCircleIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Be skeptical of "carbon offset" schemes</strong>
+                  <strong>Be skeptical of "carbon offset" programs</strong>
                   <p>
-                    Many offset programs overstate their impact or don't deliver
-                    permanent removal. If you buy offsets, research them
-                    carefully - look for third-party verification and permanent
-                    storage methods.
+                    Many offset programs claim more impact than they deliver. Or
+                    don't permanently remove carbon. If you buy offsets,
+                    research them carefully. Look for independent verification
+                    and permanent storage methods.
                   </p>
                 </div>
               </div>
@@ -441,10 +437,10 @@ export default function DoMyPart() {
               <div className="flex items-start gap-3">
                 <CheckCircleIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Protect existing forests and ecosystems</strong>
+                  <strong>Protect existing forests</strong>
                   <p>
-                    Preventing deforestation is more impactful than planting new
-                    trees. Support indigenous land rights and conservation
+                    Preventing forest cutting is more impactful than planting
+                    new trees. Support indigenous land rights and conservation
                     efforts.
                   </p>
                 </div>
@@ -465,8 +461,8 @@ export default function DoMyPart() {
               variant="info"
             >
               <p>
-                Personal choices matter, but they're not enough. We need changes
-                to infrastructure, policy, and corporate behavior. The good
+                Personal choices matter. But they're not enough. We need changes
+                to infrastructure, policy, and how companies operate. The good
                 news? As an individual, you can push for these changes.
               </p>
             </InfoBox>
@@ -477,9 +473,9 @@ export default function DoMyPart() {
                 <div>
                   <strong>Vote for climate action</strong>
                   <p>
-                    Support politicians who prioritize clean energy, climate
-                    policy, and environmental protection. Contact your
-                    representatives to demand action.
+                    Support leaders who prioritize clean energy, climate policy,
+                    and environmental protection. Contact your representatives
+                    to demand action.
                   </p>
                 </div>
               </div>
@@ -489,10 +485,9 @@ export default function DoMyPart() {
                 <div>
                   <strong>Talk about it</strong>
                   <p>
-                    Discuss climate issues with friends and family. The more
-                    people who understand and care, the more pressure for
-                    change. You don't need to preach - just share what you're
-                    learning.
+                    Discuss climate with friends and family. The more people who
+                    understand and care, the more pressure for change. You don't
+                    need to preach. Just share what you're learning.
                   </p>
                 </div>
               </div>
@@ -502,10 +497,9 @@ export default function DoMyPart() {
                 <div>
                   <strong>Support responsible businesses</strong>
                   <p>
-                    Choose companies that are genuinely working to reduce
-                    emissions. When businesses see that customers care, they
-                    respond. Be skeptical of "greenwashing" - companies that
-                    talk green but don't act green.
+                    Choose companies genuinely working to reduce carbon. When
+                    businesses see customers care, they respond. Be skeptical of
+                    companies that talk green but don't act green.
                   </p>
                 </div>
               </div>
@@ -516,8 +510,8 @@ export default function DoMyPart() {
                   <strong>Join or support climate organizations</strong>
                   <p>
                     There are groups pushing for policy change, protecting
-                    ecosystems, and developing solutions. Find ones aligned with
-                    your values and support them with time or money.
+                    nature, and developing solutions. Find ones you agree with.
+                    Support them with time or money.
                   </p>
                 </div>
               </div>
@@ -529,24 +523,24 @@ export default function DoMyPart() {
             <h2>Summary: What Actually Matters</h2>
             <div className="space-y-3">
               <p>
-                <strong>1. Renewable Energy (Highest Impact):</strong> Switch
-                your electricity, heating, and transportation to clean energy.
-                Advocate for grid-level transition.
+                <strong>1. Clean Energy (Highest Impact):</strong> Switch your
+                electricity, heating, and car to clean energy. Push for
+                system-wide transition.
               </p>
               <p>
-                <strong>2. Reduce Excess Consumption (Highest Control):</strong>{" "}
-                Cut wasteful consumption - unnecessary flights, overconsumption,
-                food waste, impulse purchases. Focus on eliminating excess, not
-                extreme sacrifice.
+                <strong>2. Reduce Excess (Highest Control):</strong> Cut
+                wasteful consumption. Unnecessary flights. Overconsumption. Food
+                waste. Impulse purchases. Focus on cutting excess, not extreme
+                sacrifice.
               </p>
               <p>
-                <strong>3. Carbon Removal (Supplementary):</strong> Support
+                <strong>3. Carbon Removal (Extra Help):</strong> Support
                 large-scale removal programs. Be skeptical of offsets. Protect
                 existing forests.
               </p>
               <p>
-                <strong>4. Use Your Voice (System Change):</strong> Vote,
-                advocate, talk about it, support responsible businesses.
+                <strong>4. Use Your Voice (System Change):</strong> Vote.
+                Advocate. Talk about it. Support responsible businesses.
               </p>
             </div>
 
@@ -558,8 +552,8 @@ export default function DoMyPart() {
               <p>
                 Do what you can. Focus on high-impact actions. Keep improving.
                 And remember - this isn't just about individual responsibility.
-                We need systemic change, and you can be part of pushing for that
-                change.
+                We need system-wide change. And you can be part of pushing for
+                that change.
               </p>
             </InfoBox>
           </ArticleSection>
