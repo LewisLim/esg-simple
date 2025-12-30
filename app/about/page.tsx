@@ -28,13 +28,13 @@ export default function AboutPage() {
             <li className="flex items-start gap-3">
               <span className="text-green-500 mt-1">✓</span>
               <span className="text-gray-700">
-                Tools and calculators to help you learn
+                Straightforward explanations and simpler wordings
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-500 mt-1">✓</span>
               <span className="text-gray-700">
-                Straightforward explanations and simpler wordings
+                Tools and calculators to help you learn
               </span>
             </li>
           </ul>
@@ -44,7 +44,7 @@ export default function AboutPage() {
         <section className="bg-white rounded-2xl p-6 mb-6">
           <h2 className="text-green-600 mb-4">Mission</h2>
           <p className="text-gray-700">
-            Make environmental learning easy and free for everyone
+            Make environmental learning easy, accurate and free for everyone
           </p>
         </section>
 
@@ -55,7 +55,9 @@ export default function AboutPage() {
             Hey there, I'm George, and I built this site because environmental
             information online is often too complicated for most people to
             understand and apply. I try to keep everything straightforward and
-            simple so that anyone can understand.
+            simple so that anyone can understand. However, there may not be a
+            one size fits all version that caters to both adults and kids. So
+            the kids version will come at a later time.
           </p>
         </section>
 
