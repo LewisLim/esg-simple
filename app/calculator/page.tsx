@@ -22,7 +22,7 @@ export default function Calculator() {
   });
 
   return (
-    <div className="w-full flex-col flex-center shadow-lg rounded-lg">
+    <div className="w-full flex-col flex-center rounded-lg">
       {/* Starting Page */}
       <WelcomePage />
       {/* Dependencies */}

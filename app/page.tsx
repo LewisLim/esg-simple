@@ -1,21 +1,25 @@
-"use client";
-
-import { useState } from "react";
-import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
-import { HandPointingIcon } from "@phosphor-icons/react";
+import { DailyPicks } from "@/components/homepage/DailyPicks";
+import { PopularTopics } from "@/components/homepage/PopularTopics";
+import { LearnCard } from "@/components/homepage/LearnCard";
 
 export default function Home() {
   return (
-    <div>
-      <Header />
-      <div className="head-body pt-[80px] base-padding">
-        <div className="paper w-50 h-full relative">
-          <h1>Main Page</h1>
-
+    <div className="paper-light bg-content w-full h-full">
+      <div className="grid grid-cols-3 gap-3 mb-8">
+        <PopularTopics />
+        <DailyPicks />
+      </div>
+      <div className="flex flex-col">
+        <h1 className="mb-6 text-lg text-center font-medium">
+          Learn Something Today
+        </h1>
+        <div className="grid grid-cols-4 gap-3">
+          <LearnCard />
+          <LearnCard />
+          <LearnCard />
+          <LearnCard />
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

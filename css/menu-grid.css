@@ -1,0 +1,33 @@
+.menu-card {
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+}
+
+.menu-title {
+  font-family: Outfit, var(--mantine-font-family);
+  font-weight: 500;
+}
+
+.menu-item,
+.menu-item-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: var(--mantine-radius-md);
+  height: 80px;
+  background-color: var(--mantine-color-body);
+  transition:
+    box-shadow 150ms ease,
+    transform 100ms ease;
+}
+
+.menu-item:hover {
+  box-shadow: var(--mantine-shadow-md);
+  transform: scale(1.05);
+}
+
+.menu-item-card:hover {
+  box-shadow: var(--mantine-shadow-sm);
+  transform: scale(1.02);
+}
