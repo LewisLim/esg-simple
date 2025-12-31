@@ -16,48 +16,48 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Carbon Calculator - Track Your Environmental Impact",
-    template: "%s | Carbon Calculator",
+    default: "Simple to Learn Environmental Topics",
+    template: "%s | LookAtGaia",
   },
   description:
-    "Calculate and track your carbon footprint with our comprehensive carbon calculator. Get personalized insights and actionable tips to reduce your environmental impact.",
+    "Learn about climate, pollution, carbon, and the environment with simple explanations for everyone. Includes quizzes, guides, and a carbon calculator.",
   keywords: [
-    "carbon calculator",
-    "carbon footprint",
     "environmental impact",
     "sustainability",
     "climate change",
-    "emissions calculator",
     "eco-friendly",
     "green living",
+    "carbon calculator",
+    "carbon footprint",
+    "emissions calculator",
   ],
-  authors: [{ name: "Your Name" }],
-  creator: "Your Name",
-  publisher: "Your Company",
+  authors: [{ name: "George" }],
+  creator: "George",
+  publisher: "Look At Gaia",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://your-domain.com",
-    title: "Carbon Calculator - Track Your Environmental Impact",
+    url: "https://lookatgaia.com",
+    title: "Simple to Learn Environmental Topics",
     description:
-      "Calculate and track your carbon footprint with our comprehensive carbon calculator. Get personalized insights and actionable tips to reduce your environmental impact.",
+      "Learn about climate, pollution, carbon, and the environment with simple explanations for everyone. Includes quizzes, guides, and a carbon calculator.",
     siteName: "Carbon Calculator",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Carbon Calculator - Environmental Impact Tracker",
+        alt: "Simple to Learn Environmental Topics",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Carbon Calculator - Track Your Environmental Impact",
+    title: "Simple to Learn Environmental Topics",
     description:
-      "Calculate and track your carbon footprint with our comprehensive carbon calculator.",
+      "Learn about climate, pollution, carbon, and the environment with simple explanations for everyone. Includes quizzes, guides, and a carbon calculator.",
     images: ["/og-image.jpg"],
-    creator: "@yourtwitterhandle",
+    creator: "@lookatgaia",
   },
   robots: {
     index: true,
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   alternates: {
-    canonical: "https://your-domain.com",
+    canonical: "https://lookatgaia.com",
   },
   category: "technology",
 };
