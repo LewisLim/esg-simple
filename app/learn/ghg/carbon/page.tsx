@@ -20,6 +20,7 @@ import {
   LightbulbIcon,
   SparkleIcon,
 } from "@phosphor-icons/react";
+import Link from "next/link";
 
 export default function LearnEnvironment() {
   return (
@@ -34,7 +35,7 @@ export default function LearnEnvironment() {
             variant="card"
           >
             <p>
-              Carbon is a basic building block found in everything alive. It's
+              Carbon is a basic building block found in everything alive. It&apos;s
               in your body, the food you eat, and the air you breathe out.
             </p>
             <p>
@@ -85,8 +86,8 @@ export default function LearnEnvironment() {
             </div>
 
             <p>
-              <strong>Here's the key:</strong> When we talk about "reducing
-              carbon," we don't make it vanish. We just keep it from moving from
+              <strong>Here&apos;s the key:</strong> When we talk about reducing
+              carbon, we don&apos;t make it vanish. We just keep it from moving from
               underground (where it was safely locked away) into the air (where
               it traps heat).
             </p>
@@ -96,7 +97,7 @@ export default function LearnEnvironment() {
           <ArticleSection
             icon={RecycleIcon}
             iconColor="text-primary"
-            title="How Carbon Moves Through Nature: Earth's Recycling System"
+            title="How Carbon Moves Through Nature: Earth&apos;s Recycling System"
             variant="highlight"
           >
             <p>
@@ -163,10 +164,10 @@ export default function LearnEnvironment() {
 
           {/* 4. Carbon Sinks (Condensed) */}
           <ArticleSection variant="card">
-            <h2>Nature's Carbon Storage: Like Warehouses for Carbon</h2>
+            <h2>Nature&apos;s Carbon Storage: Like Warehouses for Carbon</h2>
             <p>
               Some natural places absorb more carbon than they release. Think of
-              them as nature's carbon warehouses:
+              them as nature&apos;s carbon warehouses:
             </p>
             <div className="grid md:grid-cols-2 gap-4 mt-4">
               <div>
@@ -185,7 +186,7 @@ export default function LearnEnvironment() {
                   <strong>Oceans</strong>
                 </div>
                 <p>
-                  The ocean has absorbed about 30% of human CO2. But it's
+                  The ocean has absorbed about 30% of human CO2. But it&apos;s
                   becoming more acidic because of this.
                 </p>
               </div>
@@ -212,7 +213,7 @@ export default function LearnEnvironment() {
             </div>
 
             <InfoBox icon={XCircleIcon} title="The Problem" variant="danger">
-              <p>We're creating a double crisis:</p>
+              <p>We&apos;re creating a double crisis:</p>
               <ol className="list-decimal list-inside space-y-1 mt-2">
                 <li>
                   Destroying carbon storage (cutting forests, warming oceans,
@@ -235,7 +236,7 @@ export default function LearnEnvironment() {
               underground. Over time, heat and pressure turned them into coal,
               oil, and gas. This carbon was{" "}
               <strong>locked away underground</strong>. It was completely
-              removed from nature's circle.
+              removed from nature&apos;s circle.
             </p>
             <p>
               Then, about 200 years ago, humans discovered we could burn these
@@ -249,8 +250,8 @@ export default function LearnEnvironment() {
             >
               <p>
                 Nature spent millions of years slowly storing this carbon
-                underground. We're releasing it all in just a few centuries.
-                It's like fast-forwarding through millions of years in the blink
+                underground. We&apos;re releasing it all in just a few centuries.
+                It&apos;s like fast-forwarding through millions of years in the blink
                 of an eye.
               </p>
             </InfoBox>
@@ -266,7 +267,7 @@ export default function LearnEnvironment() {
             <InfoBox icon={WarningIcon} title="Critical Issue" variant="danger">
               <p>
                 Remember: Carbon cannot be destroyed. When we burn coal, oil,
-                and gas, we don't make carbon disappear. We move it from
+                and gas, we don&apos;t make carbon disappear. We move it from
                 underground into the air. In the air, it traps heat like a
                 blanket around Earth.
               </p>
@@ -278,11 +279,11 @@ export default function LearnEnvironment() {
                 <strong>The crisis in simple terms:</strong>
               </div>
               <p>
-                We're releasing carbon faster than Earth's natural systems can
-                absorb it back. Forests, oceans, and soil can't keep up.
+                We&apos;re releasing carbon faster than Earth&apos;s natural systems can
+                absorb it back. Forests, oceans, and soil can&apos;t keep up.
               </p>
               <p>
-                It's like filling a bathtub faster than the drain can empty it.
+                It&apos;s like filling a bathtub faster than the drain can empty it.
                 The water level keeps rising.
               </p>
               <div className="flex items-start gap-2 mt-3">
@@ -319,7 +320,7 @@ export default function LearnEnvironment() {
                   down. New plant absorbs that same CO2. The circle repeats.
                 </p>
                 <p className="text-green-700 mt-2">
-                  <strong>Why it's okay:</strong> The same carbon just moves
+                  <strong>Why it&apos;s okay:</strong> The same carbon just moves
                   around in a circle. No new carbon gets added to the air.
                 </p>
               </div>
@@ -340,7 +341,7 @@ export default function LearnEnvironment() {
                     • Took millions of years to store underground
                   </p>
                   <p className="text-amber-700">
-                    • We're releasing it in just centuries
+                    • We&apos;re releasing it in just centuries
                   </p>
                   <p className="text-amber-700">
                     • <strong>Adds NEW carbon</strong> to the circle. This
@@ -358,8 +359,8 @@ export default function LearnEnvironment() {
               <p>
                 This explains why burning wood <em>can</em> be okay (if we plant
                 new trees that absorb the same amount). But burning coal is{" "}
-                <em>never</em> okay. Coal adds ancient carbon that wasn't part
-                of today's circle.
+                <em>never</em> okay. Coal adds ancient carbon that wasn&apos;t part
+                of today&apos;s circle.
               </p>
             </InfoBox>
           </ArticleSection>
@@ -372,7 +373,7 @@ export default function LearnEnvironment() {
             variant="card"
           >
             <p>
-              Carbon doesn't just pile up. It can trigger other problems that
+              Carbon doesn&apos;t just pile up. It can trigger other problems that
               release even more carbon. This creates a dangerous spiral.
             </p>
 
@@ -405,7 +406,7 @@ export default function LearnEnvironment() {
 
                 <div>
                   <strong>Example 3: Warming Oceans</strong>
-                  <p>→ Warm water can't hold as much CO2 as cold water</p>
+                  <p>→ Warm water can&apos;t hold as much CO2 as cold water</p>
                   <p>→ Oceans absorb less carbon from the air</p>
                   <p>→ More CO2 stays in the air</p>
                   <p>→ More warming makes oceans even warmer...</p>
@@ -416,7 +417,7 @@ export default function LearnEnvironment() {
             <p>
               These spirals can make warming feed on itself. This is why
               scientists worry about reaching certain temperature levels. Once
-              these spirals really start, they're extremely hard to stop.
+              these spirals really start, they&apos;re extremely hard to stop.
             </p>
           </ArticleSection>
 
@@ -432,7 +433,7 @@ export default function LearnEnvironment() {
                 <SparkleIcon className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
                 <p>
                   Every carbon piece in your body was once part of a dinosaur, a
-                  tree, or mixed in the ocean. You're made of recycled star
+                  tree, or mixed in the ocean. You&apos;re made of recycled star
                   dust!
                 </p>
               </div>
@@ -440,7 +441,7 @@ export default function LearnEnvironment() {
                 <TreeIcon className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <p>
                   One big tree can absorb about 22 kilograms (48 pounds) of CO2
-                  per year. That's like taking a car off the road for a few
+                  per year. That&apos;s like taking a car off the road for a few
                   weeks.
                 </p>
               </div>
@@ -494,33 +495,33 @@ export default function LearnEnvironment() {
             <div className="space-y-2 mb-4">
               <p>
                 •{" "}
-                <a href="#" className="text-primary hover:underline">
+                <Link href="#" className="text-primary hover:underline">
                   Take the Carbon Quiz
-                </a>{" "}
+                </Link>{" "}
                 - Test what you learned
               </p>
               <p>
                 •{" "}
-                <a href="#" className="text-primary hover:underline">
+                <Link href="#" className="text-primary hover:underline">
                   Read: Greenhouse Gases
-                </a>{" "}
+                </Link>{" "}
                 - Learn about CO2 and other heat-trapping gases
               </p>
               <p>
                 •{" "}
-                <a href="#" className="text-primary hover:underline">
+                <Link href="#" className="text-primary hover:underline">
                   Read: Climate Impacts
-                </a>{" "}
-                - See what happens if we don't reduce carbon
+                </Link>{" "}
+                - See what happens if we don&apos;t reduce carbon
               </p>
             </div>
 
             <h3>The big picture:</h3>
             <p>
-              You now understand that carbon can't be destroyed. It only moves
-              around. The problem isn't carbon itself - it's that we're moving
-              too much of it from underground into the air too fast. Nature's
-              storage systems can't keep up. This is why we need to stop burning
+              You now understand that carbon can&apos;t be destroyed. It only moves
+              around. The problem isn&apos;t carbon itself - it&apos;s that we&apos;re moving
+              too much of it from underground into the air too fast. Nature&apos;s
+              storage systems can&apos;t keep up. This is why we need to stop burning
               fossil fuels and protect forests and oceans.
             </p>
           </ArticleSection>

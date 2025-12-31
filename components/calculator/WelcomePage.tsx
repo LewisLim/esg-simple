@@ -25,7 +25,7 @@ export default function WelcomePage() {
           <ButtonBig text="Let's go!" />
         </div>
         <p className="text-xs mt-6">
-          If you are a child/dependent, you shouldn't take this survey - your
+          If you are a child/dependent, you shouldn&apos;t take this survey - your
           emissions are attributed to the adults responsible for you.
         </p>
       </div>

@@ -38,12 +38,12 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           {/* <Header /> */}
           <div className="flex-shrink-0">
-            {/* <a href="/" className="flex items-center">
+            {/* <Link href="/" className="flex items-center">
               <div className="w-7 h-7 bg-green-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">C</span>
               </div>
               <span className="ml-2 text-xl font-semibold">CarbonCalc</span>
-            </a> */}
+            </Link> */}
           </div>
         </Group>
       </AppShell.Header>

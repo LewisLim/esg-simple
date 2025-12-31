@@ -12,7 +12,7 @@ export default function LearnEnvironment() {
         </div>
         <div>
           Material/Substance Article Framework
-          <p>For: Physical things that cycle through Earth's systems</p>
+          <p>For: Physical things that cycle through Earth&apos;s systems</p>
           <ol>
             <li>Methane</li>
             <li>Plastic</li>
@@ -62,7 +62,7 @@ export default function LearnEnvironment() {
           <p>How does this system naturally work?</p>
           <p>Current state</p>
           <h2>Root Causes</h2>
-          <p>What's causing [ISSUE]?</p>
+          <p>What&apos;s causing [ISSUE]?</p>
           <p>How did it develop historically?</p>
           <p>What accelerates it? (feedback loops)</p>
           <h2>The Scale of the Problem</h2>
@@ -79,7 +79,7 @@ export default function LearnEnvironment() {
           <p>Business level</p>
           <p>Policy level</p>
           <h2>Progress & Hope</h2>
-          <p>What's working</p>
+          <p>What&apos;s working</p>
           <p>Success stories</p>
           <p>Path forward</p>
         </div>

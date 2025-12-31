@@ -13,6 +13,7 @@ import {
   RecycleIcon,
   LightbulbIcon,
 } from "@phosphor-icons/react";
+import Link from "next/link";
 
 export default function SunPage() {
   return (
@@ -26,12 +27,12 @@ export default function SunPage() {
             variant="card"
           >
             <p>
-              Without the Sun, Earth would become a frozen, dead world. Here's
+              Without the Sun, Earth would become a frozen, dead world. Here&apos;s
               what would happen:
             </p>
             <ul className="space-y-2">
               <li>
-                The temperature would drop to around -200°C to -240°C. That's
+                The temperature would drop to around -200°C to -240°C. That&apos;s
                 colder than anywhere on Earth today.
               </li>
               <li>
@@ -59,7 +60,7 @@ export default function SunPage() {
             </p>
             <ul className="space-y-2">
               <li>
-                Plants are Earth's biggest absorbers of carbon from the air
+                Plants are Earth&apos;s biggest absorbers of carbon from the air
               </li>
               <li>
                 Different colors of sunlight help plants in different ways. Red
@@ -79,7 +80,7 @@ export default function SunPage() {
             title="Heat - Keeping Earth Warm and Moving"
             variant="highlight"
           >
-            <p>The Sun's heat does much more than just warm us up:</p>
+            <p>The Sun&apos;s heat does much more than just warm us up:</p>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <ThermometerIcon className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
@@ -118,7 +119,7 @@ export default function SunPage() {
                   <strong>It helps nature recycle</strong>
                   <p>
                     It helps tiny living things in soil break down dead plants
-                    and animals. These are nature's recycling system. They turn
+                    and animals. These are nature&apos;s recycling system. They turn
                     waste back into nutrients that new plants can use.
                   </p>
                 </div>
@@ -133,7 +134,7 @@ export default function SunPage() {
             variant="card"
           >
             <p>
-              The Sun's energy doesn't just sit still. It moves things around on
+              The Sun&apos;s energy doesn&apos;t just sit still. It moves things around on
               a massive scale:
             </p>
             <div className="space-y-3">
@@ -175,7 +176,7 @@ export default function SunPage() {
                 <div>
                   <strong>Climate patterns form</strong>
                   <p>
-                    Long-term weather patterns come from how the Sun's energy
+                    Long-term weather patterns come from how the Sun&apos;s energy
                     spreads around the globe.
                   </p>
                 </div>
@@ -186,9 +187,9 @@ export default function SunPage() {
           <ArticleSection variant="card">
             <h2>Summary</h2>
             <p>
-              The Sun is Earth's engine. Almost every movement, every living
+              The Sun is Earth&apos;s engine. Almost every movement, every living
               thing, and every weather event comes from energy from the Sun.
-              We're all living on solar power.
+              We&apos;re all living on solar power.
             </p>
           </ArticleSection>
 
@@ -205,7 +206,7 @@ export default function SunPage() {
                 • The Sun gives us all our energy - but we need to use it wisely
               </p>
               <p>
-                • Solar panels capture the Sun's energy directly (clean,
+                • Solar panels capture the Sun&apos;s energy directly (clean,
                 unlimited power)
               </p>
               <p>
@@ -218,25 +219,25 @@ export default function SunPage() {
             <div className="space-y-2 mb-4">
               <p>
                 •{" "}
-                <a href="#" className="text-primary hover:underline">
+                <Link href="#" className="text-primary hover:underline">
                   Read: Carbon
-                </a>{" "}
+                </Link>{" "}
                 - Understand how energy connects to carbon
               </p>
               <p>
                 •{" "}
-                <a href="#" className="text-primary hover:underline">
+                <Link href="#" className="text-primary hover:underline">
                   Read: What You Can Do
-                </a>{" "}
+                </Link>{" "}
                 - Learn about switching to solar power
               </p>
             </div>
 
             <h3>The big picture:</h3>
             <p>
-              Everything on Earth runs on the Sun's energy. Understanding this
+              Everything on Earth runs on the Sun&apos;s energy. Understanding this
               helps you see why solar and wind power make sense. They use the
-              Sun's energy directly. No digging up ancient carbon. No adding
+              Sun&apos;s energy directly. No digging up ancient carbon. No adding
               extra CO2 to the air. Just using what the Sun gives us every day.
             </p>
           </ArticleSection>

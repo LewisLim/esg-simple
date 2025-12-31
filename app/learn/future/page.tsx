@@ -16,6 +16,7 @@ import {
   ChartBarIcon,
   LightbulbIcon,
 } from "@phosphor-icons/react";
+import Link from "next/link";
 
 export default function ClimateScience() {
   return (
@@ -25,7 +26,7 @@ export default function ClimateScience() {
           <ArticleSection variant="card">
             <p>
               Scientists can predict how much Earth will warm based on how much
-              carbon we release. Here's what science tells us about our future.
+              carbon we release. Here&apos;s what science tells us about our future.
               And how much time we have to act.
             </p>
           </ArticleSection>
@@ -52,12 +53,12 @@ export default function ClimateScience() {
               <p>World leaders agreed on two key temperature limits:</p>
               <ul className="list-disc list-inside space-y-1 mt-2">
                 <li>
-                  <strong>1.5°C warmer:</strong> The "safe" limit. Beyond this,
+                  <strong>1.5°C warmer:</strong> The safe limit. Beyond this,
                   things get much worse.
                 </li>
                 <li>
                   <strong>2°C warmer:</strong> The danger zone. At this level,
-                  some changes can't be undone.
+                  some changes can&apos;t be undone.
                 </li>
               </ul>
             </InfoBox>
@@ -78,7 +79,7 @@ export default function ClimateScience() {
             </div>
 
             <p>
-              At our current rate (about 40 billion tons of CO2 per year), we'll
+              At our current rate (about 40 billion tons of CO2 per year), we&apos;ll
               hit the 1.5°C limit in less than 10 years. To stay under it, we
               need to cut global CO2 by about 45% by 2030. And reach balance by
               2050.
@@ -86,12 +87,12 @@ export default function ClimateScience() {
 
             <InfoBox
               icon={WarningIcon}
-              title="What Does 'Balance' Mean?"
+              title="What Does &apos;Balance&apos; Mean?"
               variant="info"
             >
               <p>
                 Balance means the amount of carbon we release equals the amount
-                we remove from the air. We can't stop all CO2 immediately. But
+                we remove from the air. We can&apos;t stop all CO2 immediately. But
                 we can balance what we release by protecting forests, restoring
                 wetlands, and developing technology that pulls CO2 from the air.
               </p>
@@ -102,12 +103,12 @@ export default function ClimateScience() {
           <ArticleSection
             icon={CalendarIcon}
             iconColor="text-amber-600"
-            title="What Happens If We Don't Act?"
+            title="What Happens If We Don&apos;t Act?"
             variant="card"
           >
             <p className="mb-4">
-              If we continue "business as usual" - meaning no major changes to
-              how we make energy or use resources - here's what scientists
+              If we continue business as usual - meaning no major changes to
+              how we make energy or use resources - here&apos;s what scientists
               predict:
             </p>
 
@@ -121,7 +122,7 @@ export default function ClimateScience() {
                     <strong>+1.1°C warmer</strong>
                   </p>
                   <p className="text-blue-700 text-sm mt-1">
-                    We're already seeing more heatwaves, stronger storms,
+                    We&apos;re already seeing more heatwaves, stronger storms,
                     melting ice, and rising seas. This is where we are today.
                   </p>
                 </div>
@@ -174,7 +175,7 @@ export default function ClimateScience() {
                     humans to live. Mass extinction of species. Complete
                     collapse of major natural systems. Seas rising enough to
                     displace hundreds of millions. Global food system breakdown.
-                    Multiple points of no return crossed. Some changes can't be
+                    Multiple points of no return crossed. Some changes can&apos;t be
                     reversed for thousands of years.
                   </p>
                 </div>
@@ -191,7 +192,7 @@ export default function ClimateScience() {
                   <p className="text-red-700 text-sm mt-1">
                     At this level, Earth would look completely different. Human
                     civilization would struggle to survive. Similar to past mass
-                    extinction events in Earth's history.
+                    extinction events in Earth&apos;s history.
                   </p>
                 </div>
               </div>
@@ -199,12 +200,12 @@ export default function ClimateScience() {
 
             <InfoBox
               icon={WarningIcon}
-              title="These Aren't Predictions - They're Possible Paths"
+              title="These Aren&apos;t Predictions - They&apos;re Possible Paths"
               variant="danger"
             >
               <p>
-                The future isn't decided yet. These show what happens if we
-                don't change course. We still have time to choose a different
+                The future isn&apos;t decided yet. These show what happens if we
+                don&apos;t change course. We still have time to choose a different
                 path. But that time is running out fast.
               </p>
             </InfoBox>
@@ -218,8 +219,8 @@ export default function ClimateScience() {
             variant="highlight"
           >
             <p>
-              Some changes can't be undone once they start. Think of pushing a
-              boulder off a cliff. Once it starts rolling, you can't stop it.
+              Some changes can&apos;t be undone once they start. Think of pushing a
+              boulder off a cliff. Once it starts rolling, you can&apos;t stop it.
               These are called points of no return.
             </p>
 
@@ -230,7 +231,7 @@ export default function ClimateScience() {
                 <p>
                   If we cut down too many trees and droughts get worse, the
                   Amazon could turn from rainforest to dry grassland. This would
-                  release billions of tons of stored carbon. And we'd lose a
+                  release billions of tons of stored carbon. And we&apos;d lose a
                   major carbon storage system.
                 </p>
               </div>
@@ -303,7 +304,7 @@ export default function ClimateScience() {
             variant="gradient"
           >
             <p>
-              The scary future above assumes we don't change. But what if we do?
+              The scary future above assumes we don&apos;t change. But what if we do?
               What if governments, businesses, and individuals take serious
               action to cut CO2?
             </p>
@@ -363,7 +364,7 @@ export default function ClimateScience() {
               variant="success"
             >
               <p>
-                The technology exists. The solutions are known. What's missing
+                The technology exists. The solutions are known. What&apos;s missing
                 is the will to act at large scale. Every bit of warming we
                 prevent matters. 1.5°C is much better than 2°C. And 2°C is much
                 better than 3°C. The sooner we act, the more we can save.
@@ -375,7 +376,7 @@ export default function ClimateScience() {
           <ArticleSection variant="card">
             <h2>Summary</h2>
             <p>
-              We're at a turning point. The path we're on leads to a very
+              We&apos;re at a turning point. The path we&apos;re on leads to a very
               different, dangerous planet. But we can still choose a different
               path. One where we limit warming, protect nature, and build a
               livable future.
@@ -385,7 +386,7 @@ export default function ClimateScience() {
               and more expensive to fix. Every bit of warming we prevent saves
               lives, protects nature, and preserves the world for our children.
             </p>
-            <p>The future isn't written yet. What happens next is up to us.</p>
+            <p>The future isn&apos;t written yet. What happens next is up to us.</p>
           </ArticleSection>
 
           {/* Now What Section */}
@@ -409,31 +410,31 @@ export default function ClimateScience() {
             <div className="space-y-2 mb-4">
               <p>
                 •{" "}
-                <a href="#" className="text-primary hover:underline">
+                <Link href="#" className="text-primary hover:underline">
                   Read: Climate Impacts
-                </a>{" "}
+                </Link>{" "}
                 - See the specific effects of warming
               </p>
               <p>
                 •{" "}
-                <a href="#" className="text-primary hover:underline">
+                <Link href="#" className="text-primary hover:underline">
                   Read: What You Can Do
-                </a>{" "}
+                </Link>{" "}
                 - Concrete actions to reduce CO2
               </p>
               <p>
                 •{" "}
-                <a href="#" className="text-primary hover:underline">
+                <Link href="#" className="text-primary hover:underline">
                   Read: Carbon
-                </a>{" "}
+                </Link>{" "}
                 - Understand the root cause
               </p>
             </div>
 
             <h3>The big picture:</h3>
             <p>
-              You now understand we're running out of time. But you also know
-              solutions exist. The challenge isn't technology. It's action. We
+              You now understand we&apos;re running out of time. But you also know
+              solutions exist. The challenge isn&apos;t technology. It&apos;s action. We
               need governments, businesses, and individuals all working
               together. Fast. Every action matters. Every voice counts. The
               future depends on choices we make today.

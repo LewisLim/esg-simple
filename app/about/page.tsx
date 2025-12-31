@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-blue-50">
@@ -17,7 +19,7 @@ export default function AboutPage() {
 
         {/* What You'll Find Here */}
         <section className="bg-white rounded-2xl p-6 mb-6">
-          <h2 className="text-green-600 mb-6">You'll Find Here</h2>
+          <h2 className="text-green-600 mb-6">You&apos;ll Find Here</h2>
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
               <span className="text-green-500 mt-1">✓</span>
@@ -52,7 +54,7 @@ export default function AboutPage() {
         <section className="bg-white rounded-2xl p-6 mb-6">
           <h2 className="text-green-600 mb-6">About the Author</h2>
           <p className="text-gray-700 mb-6">
-            Hey there, I'm George, and I built this site because environmental
+            Hey there, I&apos;m George, and I built this site because environmental
             information online is often too complicated for most people to
             understand and apply. I try to keep everything straightforward and
             simple so that anyone can understand. However, there may not be a
@@ -66,12 +68,12 @@ export default function AboutPage() {
           <h2 className="text-white mb-4">Get in Touch?</h2>
           <div className="flex items-center justify-center gap-3 text-white">
             {/* <Mail className="w-5 h-5" /> */}
-            <a
+            <Link
               href="mailto:hello@lookatgaia.com"
               className="hover:underline transition-all"
             >
               hello@lookatgaia.com
-            </a>
+            </Link>
           </div>
         </section>
       </div>

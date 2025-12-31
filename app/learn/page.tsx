@@ -55,9 +55,9 @@ export default function LearnEnvironment() {
         </h3>
         <p>Air and Water are mostly problematic. Land it depends on what we put underneath, plastic? biodegradables?</p>
         <p>
-          Energy does not cycle - it flows one-way from the Sun, through Earth's
+          Energy does not cycle - it flows one-way from the Sun, through Earth&apos;s
           systems, and radiates back to space as heat. This is why we need the
-          Sun's continuous input to sustain life.
+          Sun&apos;s continuous input to sustain life.
         </p>
         Level A: Planetary Health
         <h2>Climate Systems</h2>

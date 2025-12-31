@@ -29,7 +29,7 @@ export default function DoMyPart() {
           <ArticleSection variant="card">
             <p>
               Not all actions have equal impact. Some changes make a huge
-              difference. Others are mostly symbolic. Here's what actually
+              difference. Others are mostly symbolic. Here&apos;s what actually
               matters, ranked by impact.
             </p>
           </ArticleSection>
@@ -40,7 +40,7 @@ export default function DoMyPart() {
             variant="info"
           >
             <p>
-              You don't need to do everything perfectly. Focus your energy on
+              You don&apos;t need to do everything perfectly. Focus your energy on
               actions that make the biggest difference. Small changes add up.
               But big changes transform.
             </p>
@@ -87,9 +87,9 @@ export default function DoMyPart() {
                 <div>
                   <strong>Switch to a green energy plan</strong>
                   <p>
-                    Many energy companies offer clean energy options. It's often
+                    Many energy companies offer clean energy options. It&apos;s often
                     as simple as calling your company or checking their website.
-                    Sometimes it costs a bit more. Sometimes it's the same
+                    Sometimes it costs a bit more. Sometimes it&apos;s the same
                     price.
                   </p>
                 </div>
@@ -116,7 +116,7 @@ export default function DoMyPart() {
                   <strong>Consider an electric car</strong>
                   <p>
                     If you need a car, electric cars produce zero carbon while
-                    driving. They're cheaper to run. As electricity gets
+                    driving. They&apos;re cheaper to run. As electricity gets
                     cleaner, electric cars automatically become cleaner too.
                   </p>
                 </div>
@@ -174,8 +174,8 @@ export default function DoMyPart() {
 
             <h3>The key idea: Cut waste, not necessities</h3>
             <p>
-              This isn't about extreme sacrifice or living like a monk. It's
-              about cutting wasteful consumption. The stuff you don't really
+              This isn&apos;t about extreme sacrifice or living like a monk. It&apos;s
+              about cutting wasteful consumption. The stuff you don&apos;t really
               need or use.
             </p>
 
@@ -215,7 +215,7 @@ export default function DoMyPart() {
                   <p>
                     Farm animals (especially cows) produce huge amounts of
                     methane. They need huge amounts of land, water, and feed.
-                    You don't need to stop eating meat. But reducing it by even
+                    You don&apos;t need to stop eating meat. But reducing it by even
                     a few meals per week makes a real difference.
                   </p>
                 </div>
@@ -252,9 +252,9 @@ export default function DoMyPart() {
                 <div>
                   <strong>Buy less, buy quality</strong>
                   <p>
-                    Before buying something, ask: "Do I really need this?"
+                    Before buying something, ask: &quot;Do I really need this?&quot;
                     Making anything releases carbon. When you do buy, choose
-                    quality items that last longer. Not cheap things you'll
+                    quality items that last longer. Not cheap things you&apos;ll
                     replace soon.
                   </p>
                 </div>
@@ -278,7 +278,7 @@ export default function DoMyPart() {
                   <strong>Recycle properly</strong>
                   <p>
                     Recycling uses much less energy than making things from
-                    scratch. Learn what can and can't be recycled in your area.
+                    scratch. Learn what can and can&apos;t be recycled in your area.
                     Do it right.
                   </p>
                 </div>
@@ -292,7 +292,7 @@ export default function DoMyPart() {
             >
               <p>
                 Focus on cutting wasteful consumption. Unnecessary flights.
-                Impulse purchases. Food waste. You don't need to live an extreme
+                Impulse purchases. Food waste. You don&apos;t need to live an extreme
                 minimalist lifestyle. Just be more intentional about what you
                 consume.
               </p>
@@ -312,8 +312,8 @@ export default function DoMyPart() {
               variant="warning"
             >
               <p>
-                Carbon removal is important. But it's extra help. It removes CO2
-                already in the air. It doesn't replace stopping new carbon from
+                Carbon removal is important. But it&apos;s extra help. It removes CO2
+                already in the air. It doesn&apos;t replace stopping new carbon from
                 getting added. Think of it like bailing water from a sinking
                 boat. Yes, do it. But the priority is plugging the hole.
               </p>
@@ -334,12 +334,12 @@ export default function DoMyPart() {
                 <p className="mb-2">
                   <strong>The reality:</strong> Trees can burn in fires. Get
                   diseases. Get cut down. Break down after dying. When they die
-                  or burn, the carbon goes back into the air. They're temporary
+                  or burn, the carbon goes back into the air. They&apos;re temporary
                   storage, not permanent removal.
                 </p>
                 <p>
                   <strong>Still worth it?</strong> Yes. Forests are valuable
-                  beyond carbon. But don't count on them as a long-term carbon
+                  beyond carbon. But don&apos;t count on them as a long-term carbon
                   solution.
                 </p>
               </div>
@@ -380,7 +380,7 @@ export default function DoMyPart() {
                   if sunk to the deep ocean floor. This is still being tested.
                 </p>
                 <p>
-                  <strong>Still worth it?</strong> Maybe in the future. But it's
+                  <strong>Still worth it?</strong> Maybe in the future. But it&apos;s
                   not reliable yet.
                 </p>
               </div>
@@ -424,10 +424,10 @@ export default function DoMyPart() {
               <div className="flex items-start gap-3">
                 <CheckCircleIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <strong>Be skeptical of "carbon offset" programs</strong>
+                  <strong>Be skeptical of &quot;carbon offset&quot; programs</strong>
                   <p>
                     Many offset programs claim more impact than they deliver. Or
-                    don't permanently remove carbon. If you buy offsets,
+                    don&apos;t permanently remove carbon. If you buy offsets,
                     research them carefully. Look for independent verification
                     and permanent storage methods.
                   </p>
@@ -461,7 +461,7 @@ export default function DoMyPart() {
               variant="info"
             >
               <p>
-                Personal choices matter. But they're not enough. We need changes
+                Personal choices matter. But they&apos;re not enough. We need changes
                 to infrastructure, policy, and how companies operate. The good
                 news? As an individual, you can push for these changes.
               </p>
@@ -486,8 +486,8 @@ export default function DoMyPart() {
                   <strong>Talk about it</strong>
                   <p>
                     Discuss climate with friends and family. The more people who
-                    understand and care, the more pressure for change. You don't
-                    need to preach. Just share what you're learning.
+                    understand and care, the more pressure for change. You don&apos;t
+                    need to preach. Just share what you&apos;re learning.
                   </p>
                 </div>
               </div>
@@ -499,7 +499,7 @@ export default function DoMyPart() {
                   <p>
                     Choose companies genuinely working to reduce carbon. When
                     businesses see customers care, they respond. Be skeptical of
-                    companies that talk green but don't act green.
+                    companies that talk green but don&apos;t act green.
                   </p>
                 </div>
               </div>
@@ -546,12 +546,12 @@ export default function DoMyPart() {
 
             <InfoBox
               icon={CheckCircleIcon}
-              title="You Don't Have to Be Perfect"
+              title="You Don&apos;t Have to Be Perfect"
               variant="success"
             >
               <p>
                 Do what you can. Focus on high-impact actions. Keep improving.
-                And remember - this isn't just about individual responsibility.
+                And remember - this isn&apos;t just about individual responsibility.
                 We need system-wide change. And you can be part of pushing for
                 that change.
               </p>

@@ -18,6 +18,7 @@ import {
   TrendUpIcon,
   LightbulbIcon,
 } from "@phosphor-icons/react";
+import Link from "next/link";
 
 export default function ClimateImpacts() {
   return (
@@ -27,9 +28,9 @@ export default function ClimateImpacts() {
           <ArticleSection variant="card">
             <p>
               When we add too much carbon to the air, it traps more heat around
-              Earth. This extra heat doesn't just make things warmer. It changes
+              Earth. This extra heat doesn&apos;t just make things warmer. It changes
               weather, ocean currents, and natural systems that all life depends
-              on. Here's how it affects our world:
+              on. Here&apos;s how it affects our world:
             </p>
           </ArticleSection>
 
@@ -105,9 +106,9 @@ export default function ClimateImpacts() {
               variant="warning"
             >
               <p>
-                These aren't just small problems. Extreme weather kills people.
+                These aren&apos;t just small problems. Extreme weather kills people.
                 It destroys homes. It ruins crops. It costs billions in damage
-                every year. And it's getting worse.
+                every year. And it&apos;s getting worse.
               </p>
             </InfoBox>
           </ArticleSection>
@@ -150,8 +151,8 @@ export default function ClimateImpacts() {
                 <div>
                   <strong>Animals and plants going extinct</strong>
                   <p>
-                    Plants and animals can't adapt fast enough to rapid
-                    temperature changes. We're losing species 1,000 times faster
+                    Plants and animals can&apos;t adapt fast enough to rapid
+                    temperature changes. We&apos;re losing species 1,000 times faster
                     than normal. Polar bears, many insects, frogs and toads, and
                     countless others are disappearing.
                   </p>
@@ -177,7 +178,7 @@ export default function ClimateImpacts() {
                 affects everything connected to it. Coral reefs support 25% of
                 all ocean life. Bees and other insects are essential for 75% of
                 our crops. These systems took millions of years to develop. We
-                can't rebuild them.
+                can&apos;t rebuild them.
               </p>
             </InfoBox>
           </ArticleSection>
@@ -272,7 +273,7 @@ export default function ClimateImpacts() {
           <ArticleSection variant="card">
             <h2>Summary</h2>
             <p>
-              Climate change isn't just about temperature. It's about the
+              Climate change isn&apos;t just about temperature. It&apos;s about the
               stability of systems that keep us alive. Food, water, safe places
               to live, clean air, predictable weather. All of these depend on a
               stable climate.
@@ -284,7 +285,7 @@ export default function ClimateImpacts() {
               happen.
             </p>
             <p>
-              But there's still time to prevent the worst outcomes. If we act
+              But there&apos;s still time to prevent the worst outcomes. If we act
               now.
             </p>
           </ArticleSection>
@@ -310,32 +311,32 @@ export default function ClimateImpacts() {
             <div className="space-y-2 mb-4">
               <p>
                 •{" "}
-                <a href="#" className="text-primary hover:underline">
+                <Link href="#" className="text-primary hover:underline">
                   Read: Carbon
-                </a>{" "}
-                - Understand what's causing these impacts
+                </Link>{" "}
+                - Understand what&apos;s causing these impacts
               </p>
               <p>
                 •{" "}
-                <a href="#" className="text-primary hover:underline">
+                <Link href="#" className="text-primary hover:underline">
                   Read: Climate Science & The Future
-                </a>{" "}
-                - See what happens if we don't act
+                </Link>{" "}
+                - See what happens if we don&apos;t act
               </p>
               <p>
                 •{" "}
-                <a href="#" className="text-primary hover:underline">
+                <Link href="#" className="text-primary hover:underline">
                   Read: What You Can Do
-                </a>{" "}
+                </Link>{" "}
                 - Concrete actions to help
               </p>
             </div>
 
             <h3>The big picture:</h3>
             <p>
-              These impacts aren't distant future problems. They're happening
-              now. And they'll get much worse if we don't act. But understanding
-              the problem is the first step. Now you know what's at stake. Every
+              These impacts aren&apos;t distant future problems. They&apos;re happening
+              now. And they&apos;ll get much worse if we don&apos;t act. But understanding
+              the problem is the first step. Now you know what&apos;s at stake. Every
               action to reduce carbon helps prevent these impacts from getting
               worse.
             </p>

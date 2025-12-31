@@ -1,7 +1,7 @@
 "use client";
 
 export default function Footer() {
-  let year = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
   return (
     <footer className="w-full flex justify-between items-center text-xs">

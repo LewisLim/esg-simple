@@ -1,7 +1,6 @@
 import { DailyPicks } from "@/components/homepage/DailyPicks";
 import { PopularTopics } from "@/components/homepage/PopularTopics";
 import { LearnCard } from "@/components/homepage/LearnCard";
-import Image from "next/image";
 
 export default function Home() {
   return (
