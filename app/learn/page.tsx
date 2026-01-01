@@ -1,14 +1,14 @@
 "use client";
 
+import { LearnCard } from "@/components/homepage/LearnCard";
 import ArticleWrapper from "@/components/layout/ArticleWrapper";
+import { learnCards } from "@/lib/learnModules";
 
 export default function LearnEnvironment() {
   return (
     <div className="paper-light calc-page w-full h-full relative">
       <ArticleWrapper title="Earth">
-        <p>
-          The Complete Picture: How Everything Connects on Earth
-        </p>
+        <p>The Complete Picture: How Everything Connects on Earth</p>
         <p>How our activities affect the world?</p>
         <p>Insert general diagram</p>
         Level 0:
@@ -53,11 +53,14 @@ export default function LearnEnvironment() {
           Pollution Buildup crisis as a topic to talk in each component
           (plastic, chemicals, toxic waste)
         </h3>
-        <p>Air and Water are mostly problematic. Land it depends on what we put underneath, plastic? biodegradables?</p>
         <p>
-          Energy does not cycle - it flows one-way from the Sun, through Earth&apos;s
-          systems, and radiates back to space as heat. This is why we need the
-          Sun&apos;s continuous input to sustain life.
+          Air and Water are mostly problematic. Land it depends on what we put
+          underneath, plastic? biodegradables?
+        </p>
+        <p>
+          Energy does not cycle - it flows one-way from the Sun, through
+          Earth&apos;s systems, and radiates back to space as heat. This is why
+          we need the Sun&apos;s continuous input to sustain life.
         </p>
         Level A: Planetary Health
         <h2>Climate Systems</h2>
@@ -70,31 +73,37 @@ export default function LearnEnvironment() {
         <h3>Soil degradation, deforestation, desertification</h3>
         <h2>Water Systems</h2>
         <h3>Ocean acidification, freshwater depletion, coral reef die-off</h3>
-
-                    ☀️ THE SUN: Level 0
-                   (shining down on Everything)
-                        ↓
-        ┌─────────────────────────────────┬──────────────┐
-        │   THE CYCLE (circular flow)     │   LEVEL A    │
-        │                                  │              │
-        │      Level 1 (Resources)         │   Climate    │
-        │            ↓                     │   Systems    │
-        │      Level 2 (Processing)        │              │
-        │            ↓                     │   Living     │
-        │      Level 3 (Consumption)       │   Systems    │
-        │            ↓                     │              │
-        │      Level 4 (Waste)             │   Land       │
-        │            ↑                     │   Systems    │
-        │            └──(loops back)       │              │
-        │                                  │   Water      │
-        │                                  │   Systems    │
+        ☀️ THE SUN: Level 0 (shining down on Everything) ↓
+        ┌─────────────────────────────────┬──────────────┐ │ THE CYCLE (circular
+        flow) │ LEVEL A │ │ │ │ │ Level 1 (Resources) │ Climate │ │ ↓ │ Systems
+        │ │ Level 2 (Processing) │ │ │ ↓ │ Living │ │ Level 3 (Consumption) │
+        Systems │ │ ↓ │ │ │ Level 4 (Waste) │ Land │ │ ↑ │ Systems │ │ └──(loops
+        back) │ │ │ │ Water │ │ │ Systems │
         └──────────────────────────────────┴──────────────┘
-
-        <p>Wide Screen version: Simplified Circular system, hover on 1 for animated effects like animated dotted lines, and click for popup details </p>
-        <p>Mobile version: Simplified Circular system, tap on 1 for popup details </p>
-        <p>4 levels color-coded: Green (nature) → Grey (industry) → Blue (consumers) → Brown (waste) → back to Green</p>
+        <p>
+          Wide Screen version: Simplified Circular system, hover on 1 for
+          animated effects like animated dotted lines, and click for popup
+          details{" "}
+        </p>
+        <p>
+          Mobile version: Simplified Circular system, tap on 1 for popup details{" "}
+        </p>
+        <p>
+          4 levels color-coded: Green (nature) → Grey (industry) → Blue
+          (consumers) → Brown (waste) → back to Green
+        </p>
         <p>Level A: warning indicators - like gauges or thermometers</p>
-        <p>Interactive version: Speed up the cycle on 1 level(overconsumption): see Level A indicators change, Remove sun → everything stops (shows dependency), Add recycling → watch cycle become more efficient, Level A improves </p>
+        <p>
+          Interactive version: Speed up the cycle on 1 level(overconsumption):
+          see Level A indicators change, Remove sun → everything stops (shows
+          dependency), Add recycling → watch cycle become more efficient, Level
+          A improves{" "}
+        </p>
+        <div className="grid grid-cols-4 gap-3">
+          {learnCards.map((card) => (
+            <LearnCard key={card.id} {...card} />
+          ))}
+        </div>
       </ArticleWrapper>
     </div>
   );
