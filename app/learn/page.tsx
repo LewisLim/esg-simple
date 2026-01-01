@@ -3,11 +3,32 @@
 import { LearnCard } from "@/components/homepage/LearnCard";
 import ArticleWrapper from "@/components/layout/ArticleWrapper";
 import { learnCards } from "@/lib/learnModules";
+import { NavLink } from "@mantine/core";
+
+const tempAvailableLinks = [
+  { label: "Sun", link: "/learn/sun" },
+  { label: "GHG", link: "/learn/ghg" },
+  { label: "GHG - Carbon", link: "/learn/ghg/carbon" },
+  { label: "Climate", link: "/learn/climate" },
+  { label: "Future", link: "/learn/future" },
+  { label: "Do", link: "/learn/do" },
+];
 
 export default function LearnEnvironment() {
   return (
     <div className="paper-light calc-page w-full h-full relative">
       <ArticleWrapper title="Earth">
+        <div className="flex flex-col">
+          <h2>Available Article Links Now</h2>
+          {tempAvailableLinks.map((page) => (
+            <NavLink
+              href={page?.link}
+              key={page?.link}
+              label={page.label}
+              className="bg-nav"
+            />
+          ))}
+        </div>
         <p>The Complete Picture: How Everything Connects on Earth</p>
         <p>How our activities affect the world?</p>
         <p>Insert general diagram</p>
