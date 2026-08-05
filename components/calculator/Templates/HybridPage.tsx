@@ -1,7 +1,9 @@
+import { useEffect, useState } from "react";
 import survey from "@/lib/calculator/questions.json";
 import { BaseSurvey } from "@/types/interface";
 import ProgressBar from "@/components/custom/ProgressBar";
 import Slider from "rc-slider";
+import { detectUserCountryCode } from "@/lib/utils/detect-country";
 
 interface Props {
   pageNum: number;
@@ -19,9 +21,25 @@ export default function HybridPage({
   onPrevious,
 }: Props) {
   const page = survey?.pages[pageNum];
+  const [wasAutoDetected, setWasAutoDetected] = useState(false);
+
+  // Auto-detect country on mount, only if not already set — never
+  // overwrites a value the user (or a previous visit) already chose.
+  // The dropdown remains fully editable; this only pre-fills the guess.
+  useEffect(() => {
+    if (data.country === "") {
+      const detected = detectUserCountryCode();
+      if (detected) {
+        setData((prev) => ({ ...prev, country: detected }));
+        setWasAutoDetected(true);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function handleCountryChange(value: string) {
     setData((prev) => ({ ...prev, country: value }));
+    setWasAutoDetected(false); // user took over — no longer "just a guess"
   }
 
   function handleSliderChange(sliderId: string, value: number) {
@@ -79,6 +97,12 @@ export default function HybridPage({
                 };
                 return (
                   <div className="flex-col flex-center">
+                    {wasAutoDetected && (
+                      <p className="text-xs text-gray-400 mb-2">
+                        Detected automatically — change it if this isn&apos;t
+                        right
+                      </p>
+                    )}
                     <select
                       name="country"
                       id="country"
