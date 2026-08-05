@@ -68,7 +68,7 @@ export default function Calculator() {
   }
 
   return (
-    <div className="w-full flex-col flex-center rounded-lg">
+    <div className="w-full max-w-3xl flex-col flex-center rounded-lg mx-auto">
       {step === "welcome" && <WelcomePage onStart={goNext} />}
 
       {typeof step === "number" && PAGE_TEMPLATES[step] === "hybrid" && (
