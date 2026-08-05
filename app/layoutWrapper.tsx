@@ -11,9 +11,7 @@ const navLinks = [
   { label: "Start Here", href: "/learn" },
   { type: "header", label: "Tools" },
   { label: "Calculator", href: "/calculator" },
-  { type: "header", label: "Info" },
-  { label: "Data", href: "/data" },
-  { label: "About", href: "/about" },
+  // { label: "About", href: "/about" },
 ];
 
 interface LayoutWrapperProps {
