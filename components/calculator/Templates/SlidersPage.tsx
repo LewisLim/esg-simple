@@ -1,4 +1,4 @@
-import survey from "@/lib/questions.json";
+import survey from "@/lib/calculator/questions.json";
 import { BaseSurvey } from "@/types/interface";
 import ProgressBar from "@/components/custom/ProgressBar";
 import Slider from "rc-slider";
@@ -85,8 +85,8 @@ export default function SlidersPage({
         )}
       </div>
 
-      <div className="mt-2">
-        <div className="flex items-center justify-around my-2 sm:my-4 space-x-3">
+      <div className="mt-2 mx-auto">
+        <div className="flex items-center justify-center my-2 sm:my-4 space-x-3">
           <button
             className={`
               px-4 py-2 
