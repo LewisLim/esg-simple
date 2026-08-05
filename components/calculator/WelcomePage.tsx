@@ -24,11 +24,11 @@ export default function WelcomePage({ onStart }: Props) {
       <div className="h-[100px]"></div>
       <div className="text-sm md:text-base flex-col flex-center space-y-4 text-center">
         <div className="w-75">
-          <ButtonBig text="Let's go!" onClick={onStart} />
+          <ButtonBig text="Let's go!" onClick={onStart}/>
         </div>
-        <p className="text-xs mt-6">
-          If you are a child/dependent, you shouldn&apos;t take this survey -
-          your emissions are attributed to the adults responsible for you.
+        <p className="text-xs mt-6 word-break max-w-sm">
+          If you are a child/dependent, you shouldn&apos;t take this survey.
+          Your emissions are attributed to the adults responsible for you.
         </p>
       </div>
     </section>

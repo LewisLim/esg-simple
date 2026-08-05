@@ -921,14 +921,9 @@
           "question": "How do you travel?",
           "options": [
             {
-              "value": "walk_bike",
-              "label": "I walk/bike to most places",
-              "icon": "walk_bike"
-            },
-            {
-              "value": "public_transport",
-              "label": "I use public transport mostly",
-              "icon": "public_transport"
+              "value": "drive_everywhere",
+              "label": "I drive/cab everywhere",
+              "icon": "car_frequent"
             },
             {
               "value": "drive_occasionally",
@@ -936,9 +931,14 @@
               "icon": "car_occasional"
             },
             {
-              "value": "drive_everywhere",
-              "label": "I drive/cab everywhere",
-              "icon": "car_frequent"
+              "value": "public_transport",
+              "label": "I use public transport mostly",
+              "icon": "public_transport"
+            },
+            {
+              "value": "walk_bike",
+              "label": "I walk/bike to most places",
+              "icon": "walk_bike"
             }
           ],
           "required": true
@@ -964,19 +964,9 @@
           "question": "How often are your holiday trips?",
           "options": [
             {
-              "value": "very_rare",
-              "label": "Very rare",
-              "description": "Almost no travel"
-            },
-            {
-              "value": "short_trips",
-              "label": "A few short trips",
-              "description": "~10 hours per year"
-            },
-            {
-              "value": "longer_trips",
-              "label": "Some longer trips",
-              "description": "20-50 hrs per year"
+              "value": "always_travelling",
+              "label": "I'm always travelling",
+              "description": "> 200hrs"
             },
             {
               "value": "travel_lot",
@@ -984,9 +974,19 @@
               "description": "> 50hrs"
             },
             {
-              "value": "always_travelling",
-              "label": "I'm always travelling",
-              "description": "> 200hrs"
+              "value": "longer_trips",
+              "label": "Some longer trips",
+              "description": "20-50 hrs per year"
+            },
+            {
+              "value": "short_trips",
+              "label": "A few short trips",
+              "description": "~10 hours per year"
+            },
+            {
+              "value": "very_rare",
+              "label": "Very rare",
+              "description": "Almost no travel"
             }
           ],
           "required": true
@@ -1012,6 +1012,21 @@
           "question": "What kind of food do you eat?",
           "options": [
             {
+              "value": "meat_daily",
+              "label": "Eat meat everyday",
+              "icon": "meat_daily"
+            },
+            {
+              "value": "meat_most_days",
+              "label": "Eat meat most days",
+              "icon": "meat_frequent"
+            },
+            {
+              "value": "meat_weekly",
+              "label": "Meat once or twice a week",
+              "icon": "meat_occasional"
+            },
+            {
               "value": "plant_based",
               "label": "Plant-based/vegan",
               "icon": "plants"
@@ -1020,21 +1035,6 @@
               "value": "vegetarian",
               "label": "Vegetarian (dairy/eggs okay)",
               "icon": "vegetarian"
-            },
-            {
-              "value": "meat_weekly",
-              "label": "Meat once or twice a week",
-              "icon": "meat_occasional"
-            },
-            {
-              "value": "meat_most_days",
-              "label": "Eat meat most days",
-              "icon": "meat_frequent"
-            },
-            {
-              "value": "meat_daily",
-              "label": "Eat meat everyday",
-              "icon": "meat_daily"
             }
           ],
           "required": true
@@ -1063,7 +1063,7 @@
               "id": "homePeople",
               "label": "People",
               "min": 1,
-              "max": 10,
+              "max": 20,
               "default": 1,
               "icon": "person_head",
               "description": "Including yourself"
@@ -1091,14 +1091,9 @@
           "question": "I live in a...",
           "options": [
             {
-              "value": "small",
-              "label": "Small space",
-              "icon": "small_home"
-            },
-            {
-              "value": "medium",
-              "label": "Medium space",
-              "icon": "medium_home"
+              "value": "very_large",
+              "label": "Very Large space",
+              "icon": "very_large_home"
             },
             {
               "value": "large",
@@ -1106,9 +1101,14 @@
               "icon": "large_home"
             },
             {
-              "value": "very_large",
-              "label": "Very Large space",
-              "icon": "very_large_home"
+              "value": "medium",
+              "label": "Medium space",
+              "icon": "medium_home"
+            },
+            {
+              "value": "small",
+              "label": "Small space",
+              "icon": "small_home"
             },
             {
               "value": "rural",
@@ -1139,9 +1139,9 @@
           "question": "How old is your home?",
           "options": [
             {
-              "value": "new",
-              "label": "Less than 10 years",
-              "description": "Recently built"
+              "value": "old",
+              "label": "> 30 years",
+              "description": "Older building"
             },
             {
               "value": "medium_age",
@@ -1149,9 +1149,9 @@
               "description": "Moderately old"
             },
             {
-              "value": "old",
-              "label": "> 30 years",
-              "description": "Older building"
+              "value": "new",
+              "label": "Less than 10 years",
+              "description": "Recently built"
             }
           ],
           "required": true
@@ -1178,14 +1178,9 @@
           "currencyNote": "Currency based on {{COUNTRY}}",
           "options": [
             {
-              "value": "low",
-              "label": "Spend < {{CURRENCY}}100 a month",
-              "icon": "shopping_low"
-            },
-            {
-              "value": "medium",
-              "label": "Spend {{CURRENCY}}100 - {{CURRENCY}}1000 a month",
-              "icon": "shopping_medium"
+              "value": "very_high",
+              "label": "Spend > {{CURRENCY}}5000 a month",
+              "icon": "shopping_luxury"
             },
             {
               "value": "high",
@@ -1193,9 +1188,14 @@
               "icon": "shopping_high"
             },
             {
-              "value": "very_high",
-              "label": "Spend > {{CURRENCY}}5000 a month",
-              "icon": "shopping_luxury"
+              "value": "medium",
+              "label": "Spend {{CURRENCY}}100 - {{CURRENCY}}1000 a month",
+              "icon": "shopping_medium"
+            },
+            {
+              "value": "low",
+              "label": "Spend < {{CURRENCY}}100 a month",
+              "icon": "shopping_low"
             }
           ],
           "required": true
