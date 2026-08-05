@@ -1584,18 +1584,18 @@ export const DIET_BASKETS_KG_PER_DAY: Record<
     other_vegetables: 0.2,
     other_fruit: 0.15,
   },
-  meat_most_days: {
-    // meat: ~0.15 kg/day (~55 kg/year — meat 5-6 days/week)
-    poultry_meat: 0.15 * MEAT_MIX.poultry,
-    fish_farmed: 0.15 * MEAT_MIX.fish,
-    beef_beef_herd: 0.15 * MEAT_MIX.red_meat * RED_MEAT_SPLIT.beef,
-    lamb_mutton: 0.15 * MEAT_MIX.red_meat * RED_MEAT_SPLIT.lamb,
+  meat_daily_heavy: {
+    // meat: ~0.49 kg/day (~179 kg/year) — 1.75x the meat_daily quantity
+    poultry_meat: 0.49 * MEAT_MIX.poultry,
+    fish_farmed: 0.49 * MEAT_MIX.fish,
+    beef_beef_herd: 0.49 * MEAT_MIX.red_meat * RED_MEAT_SPLIT.beef,
+    lamb_mutton: 0.49 * MEAT_MIX.red_meat * RED_MEAT_SPLIT.lamb,
     eggs: 0.03,
-    cheese: 0.02,
+    cheese: 0.03,
     rice: 0.2,
     wheat_rye: 0.1,
-    other_vegetables: 0.15,
-    other_fruit: 0.1,
+    other_vegetables: 0.1,
+    other_fruit: 0.06,
   },
   meat_daily: {
     // meat: ~0.28 kg/day (~102 kg/year). Deliberately calibrated to land
@@ -1715,6 +1715,6 @@ export const GOODS_RELEVANT_SPEND_FRACTION = {
 // kg CO2e per $ of goods-relevant spend (manufacturing, packaging,
 // shipping). Flat across buckets - the decline is modeled via
 // GOODS_RELEVANT_SPEND_FRACTION above, not the rate itself.
-export const GOODS_EMISSION_RATE_KG_CO2E_PER_USD = 0.5;
+export const GOODS_EMISSION_RATE_KG_CO2E_PER_USD = 0.2;
 
 export type ShoppingBucket = keyof typeof ASSUMED_MONTHLY_SPEND_USD;

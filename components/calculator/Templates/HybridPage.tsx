@@ -4,6 +4,7 @@ import { BaseSurvey } from "@/types/interface";
 import ProgressBar from "@/components/custom/ProgressBar";
 import Slider from "rc-slider";
 import { detectUserCountryCode } from "@/lib/utils/detect-country";
+import { prefetchExchangeRates } from "@/lib/utils/currency-convert";
 
 interface Props {
   pageNum: number;
@@ -32,6 +33,7 @@ export default function HybridPage({
       if (detected) {
         setData((prev) => ({ ...prev, country: detected }));
         setWasAutoDetected(true);
+        prefetchExchangeRates();
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -40,6 +42,7 @@ export default function HybridPage({
   function handleCountryChange(value: string) {
     setData((prev) => ({ ...prev, country: value }));
     setWasAutoDetected(false); // user took over — no longer "just a guess"
+    prefetchExchangeRates(); // warm the FX cache ahead of the shopping page
   }
 
   function handleSliderChange(sliderId: string, value: number) {
@@ -99,8 +102,7 @@ export default function HybridPage({
                   <div className="flex-col flex-center">
                     {wasAutoDetected && (
                       <p className="text-xs text-gray-400 mb-2">
-                        Detected automatically — change it if this isn&apos;t
-                        right
+                        Detected automatically — change it if this isn&apos;t right
                       </p>
                     )}
                     <select
@@ -151,7 +153,7 @@ export default function HybridPage({
                     {sliderQuestion.sliders.map((slider, index) => {
                       const currentValue = getCurrentValue(
                         slider.id,
-                        slider.default ?? slider.min,
+                        slider.default ?? slider.min
                       );
                       return (
                         <div

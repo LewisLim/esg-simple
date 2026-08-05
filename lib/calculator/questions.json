@@ -1012,29 +1012,29 @@
           "question": "What kind of food do you eat?",
           "options": [
             {
+              "value": "meat_daily_heavy",
+              "label": "Eat alot of meat everyday",
+              "icon": "meat_daily_heavy"
+            },
+            {
               "value": "meat_daily",
               "label": "Eat meat everyday",
               "icon": "meat_daily"
             },
             {
-              "value": "meat_most_days",
-              "label": "Eat meat most days",
-              "icon": "meat_frequent"
-            },
-            {
               "value": "meat_weekly",
-              "label": "Meat once or twice a week",
+              "label": "Eat meat sometimes",
               "icon": "meat_occasional"
-            },
-            {
-              "value": "plant_based",
-              "label": "Plant-based/vegan",
-              "icon": "plants"
             },
             {
               "value": "vegetarian",
               "label": "Vegetarian (dairy/eggs okay)",
               "icon": "vegetarian"
+            },
+            {
+              "value": "plant_based",
+              "label": "Plant-based/vegan",
+              "icon": "plants"
             }
           ],
           "required": true

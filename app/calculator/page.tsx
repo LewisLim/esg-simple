@@ -8,9 +8,13 @@ import SlidersPage from "@/components/calculator/Templates/SlidersPage";
 import HybridPage from "@/components/calculator/Templates/HybridPage";
 import ResultsPage from "@/components/calculator/ResultsPage";
 import survey from "@/lib/calculator/questions.json";
+import ShoppingPage from "@/components/calculator/ShoppingPage";
 
 // pageId -> which template component renders it
-const PAGE_TEMPLATES: Record<number, "hybrid" | "buttons" | "sliders"> = {
+const PAGE_TEMPLATES: Record<
+  number,
+  "hybrid" | "buttons" | "sliders" | "shopping"
+> = {
   0: "hybrid", // country + dependency/pets sliders
   1: "buttons", // transport
   2: "buttons", // travel
@@ -18,7 +22,7 @@ const PAGE_TEMPLATES: Record<number, "hybrid" | "buttons" | "sliders"> = {
   4: "sliders", // homePeople
   5: "buttons", // homeSize
   6: "buttons", // homeAge
-  7: "buttons", // shopping
+  7: "shopping", // shopping — needs live currency conversion
 };
 
 const TOTAL_PAGES = survey.pages.length; // 8
@@ -93,6 +97,16 @@ export default function Calculator() {
 
       {typeof step === "number" && PAGE_TEMPLATES[step] === "sliders" && (
         <SlidersPage
+          pageNum={step}
+          data={baseSurveyData}
+          setData={setBaseSurveyData}
+          onNext={goNext}
+          onPrevious={goPrevious}
+        />
+      )}
+
+      {typeof step === "number" && PAGE_TEMPLATES[step] === "shopping" && (
+        <ShoppingPage
           pageNum={step}
           data={baseSurveyData}
           setData={setBaseSurveyData}
