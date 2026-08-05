@@ -1,6 +1,10 @@
 import ButtonBig from "../custom/button-big";
 
-export default function WelcomePage() {
+interface Props {
+  onStart: () => void;
+}
+
+export default function WelcomePage({ onStart }: Props) {
   return (
     <section className="calc-page-center paper">
       <div className="flex-col flex-center space-y-4">
@@ -22,11 +26,11 @@ export default function WelcomePage() {
       <div className="text-sm md:text-base flex-col flex-center space-y-4 text-center">
         <p>We will show you how to reasonably reduce your emissions</p>
         <div className="w-75">
-          <ButtonBig text="Let's go!" />
+          <ButtonBig text="Let's go!" onClick={onStart} />
         </div>
         <p className="text-xs mt-6">
-          If you are a child/dependent, you shouldn&apos;t take this survey - your
-          emissions are attributed to the adults responsible for you.
+          If you are a child/dependent, you shouldn&apos;t take this survey -
+          your emissions are attributed to the adults responsible for you.
         </p>
       </div>
     </section>
