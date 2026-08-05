@@ -34,15 +34,6 @@
           "question": "Any children, pets, adults you are supporting?",
           "sliders": [
             {
-              "id": "adult-non-working",
-              "label": "Adult",
-              "min": 0,
-              "max": 20,
-              "default": 0,
-              "icon": "adult_head",
-              "description": "Number of non working adults"
-            },
-            {
               "id": "children",
               "label": "Children",
               "min": 0,

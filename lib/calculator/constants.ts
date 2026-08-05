@@ -3,868 +3,1310 @@
 // Source: Global Carbon Budget (2025); Population various sources (2024) - OWID processing
 // CC BY 4.0 - ourworldindata.org/co2-and-greenhouse-gas-emissions
 
-export interface CountryEmissions {
+// Country-level energy/emissions data
+// co2PerCapitaTonnes: Global Carbon Budget (2025) via OWID, CC BY 4.0
+// gridIntensityGCo2PerKwh: Ember (2026) via OWID, lifecycle basis, CC BY 4.0
+// null = no data available for this country (mostly small island states; Ukraine also missing, likely due to wartime data disruption)
+
+// Country-level energy/emissions data
+// co2PerCapitaTonnes: Global Carbon Budget (2025) via OWID, CC BY 4.0
+// gridIntensityGCo2PerKwh: Ember (2026) via OWID, lifecycle basis, CC BY 4.0
+// electricityDemandKwhPerCapita: Ember (2026) via OWID (per-capita electricity DEMAND,
+//   not generation - closer to actual consumption incl. residential+commercial+industrial), CC BY 4.0
+//   null = no data available for this country
+
+export interface CountryEnergyData {
   name: string;
-  tonnesPerCapita: number;
+  co2PerCapitaTonnes: number;
+  gridIntensityGCo2PerKwh: number | null;
+  electricityDemandKwhPerCapita: number | null;
 }
 
-export const co2PerCapita: Record<string, CountryEmissions> = {
-  ABW: {
-    name: "Aruba",
-    tonnesPerCapita: 8.52,
-  },
-  AFG: {
-    name: "Afghanistan",
-    tonnesPerCapita: 0.25,
-  },
-  AGO: {
-    name: "Angola",
-    tonnesPerCapita: 0.59,
-  },
-  AIA: {
-    name: "Anguilla",
-    tonnesPerCapita: 10.13,
-  },
-  ALB: {
-    name: "Albania",
-    tonnesPerCapita: 1.59,
-  },
-  AND: {
-    name: "Andorra",
-    tonnesPerCapita: 5.18,
-  },
-  ARE: {
-    name: "United Arab Emirates",
-    tonnesPerCapita: 20.13,
-  },
-  ARG: {
-    name: "Argentina",
-    tonnesPerCapita: 3.74,
-  },
-  ARM: {
-    name: "Armenia",
-    tonnesPerCapita: 2.5,
-  },
-  ATG: {
-    name: "Antigua and Barbuda",
-    tonnesPerCapita: 7.09,
-  },
-  AUS: {
-    name: "Australia",
-    tonnesPerCapita: 14.48,
-  },
-  AUT: {
-    name: "Austria",
-    tonnesPerCapita: 6.18,
-  },
-  AZE: {
-    name: "Azerbaijan",
-    tonnesPerCapita: 3.85,
-  },
-  BDI: {
-    name: "Burundi",
-    tonnesPerCapita: 0.07,
-  },
-  BEL: {
-    name: "Belgium",
-    tonnesPerCapita: 7.28,
-  },
-  BEN: {
-    name: "Benin",
-    tonnesPerCapita: 0.42,
-  },
-  BES: {
-    name: "Bonaire Sint Eustatius and Saba",
-    tonnesPerCapita: 4.95,
-  },
-  BFA: {
-    name: "Burkina Faso",
-    tonnesPerCapita: 0.28,
-  },
-  BGD: {
-    name: "Bangladesh",
-    tonnesPerCapita: 0.62,
-  },
-  BGR: {
-    name: "Bulgaria",
-    tonnesPerCapita: 4.68,
-  },
-  BHR: {
-    name: "Bahrain",
-    tonnesPerCapita: 24.27,
-  },
-  BHS: {
-    name: "Bahamas",
-    tonnesPerCapita: 7.65,
-  },
-  BIH: {
-    name: "Bosnia and Herzegovina",
-    tonnesPerCapita: 6.14,
-  },
-  BLR: {
-    name: "Belarus",
-    tonnesPerCapita: 6.16,
-  },
-  BLZ: {
-    name: "Belize",
-    tonnesPerCapita: 1.91,
-  },
-  BMU: {
-    name: "Bermuda",
-    tonnesPerCapita: 8.51,
-  },
-  BOL: {
-    name: "Bolivia",
-    tonnesPerCapita: 2.31,
-  },
-  BRA: {
-    name: "Brazil",
-    tonnesPerCapita: 2.28,
-  },
-  BRB: {
-    name: "Barbados",
-    tonnesPerCapita: 4.83,
-  },
-  BRN: {
-    name: "Brunei",
-    tonnesPerCapita: 26.05,
-  },
-  BTN: {
-    name: "Bhutan",
-    tonnesPerCapita: 2.09,
-  },
-  BWA: {
-    name: "Botswana",
-    tonnesPerCapita: 2.96,
-  },
-  CAF: {
-    name: "Central African Republic",
-    tonnesPerCapita: 0.07,
-  },
-  CAN: {
-    name: "Canada",
-    tonnesPerCapita: 13.42,
-  },
-  CHE: {
-    name: "Switzerland",
-    tonnesPerCapita: 3.59,
-  },
-  CHL: {
-    name: "Chile",
-    tonnesPerCapita: 3.98,
-  },
-  CHN: {
-    name: "China",
-    tonnesPerCapita: 8.66,
-  },
-  CIV: {
-    name: "Cote d'Ivoire",
-    tonnesPerCapita: 0.46,
-  },
-  CMR: {
-    name: "Cameroon",
-    tonnesPerCapita: 0.33,
-  },
-  COD: {
-    name: "Democratic Republic of Congo",
-    tonnesPerCapita: 0.05,
-  },
-  COG: {
-    name: "Congo",
-    tonnesPerCapita: 1.4,
-  },
-  COK: {
-    name: "Cook Islands",
-    tonnesPerCapita: 5.82,
-  },
-  COL: {
-    name: "Colombia",
-    tonnesPerCapita: 1.75,
-  },
-  COM: {
-    name: "Comoros",
-    tonnesPerCapita: 0.64,
-  },
-  CPV: {
-    name: "Cape Verde",
-    tonnesPerCapita: 1.13,
-  },
-  CRI: {
-    name: "Costa Rica",
-    tonnesPerCapita: 1.71,
-  },
-  CUB: {
-    name: "Cuba",
-    tonnesPerCapita: 2.23,
-  },
-  CUW: {
-    name: "Curacao",
-    tonnesPerCapita: 12.34,
-  },
-  CYP: {
-    name: "Cyprus",
-    tonnesPerCapita: 5.37,
-  },
-  CZE: {
-    name: "Czechia",
-    tonnesPerCapita: 7.04,
-  },
-  DEU: {
-    name: "Germany",
-    tonnesPerCapita: 6.77,
-  },
-  DJI: {
-    name: "Djibouti",
-    tonnesPerCapita: 0.48,
-  },
-  DMA: {
-    name: "Dominica",
-    tonnesPerCapita: 2.58,
-  },
-  DNK: {
-    name: "Denmark",
-    tonnesPerCapita: 4.75,
-  },
-  DOM: {
-    name: "Dominican Republic",
-    tonnesPerCapita: 2.9,
-  },
-  DZA: {
-    name: "Algeria",
-    tonnesPerCapita: 4.23,
-  },
-  ECU: {
-    name: "Ecuador",
-    tonnesPerCapita: 2.54,
-  },
-  EGY: {
-    name: "Egypt",
-    tonnesPerCapita: 2.22,
-  },
-  ERI: {
-    name: "Eritrea",
-    tonnesPerCapita: 0.21,
-  },
-  ESP: {
-    name: "Spain",
-    tonnesPerCapita: 4.6,
-  },
-  EST: {
-    name: "Estonia",
-    tonnesPerCapita: 6.11,
-  },
-  ETH: {
-    name: "Ethiopia",
-    tonnesPerCapita: 0.14,
-  },
-  FIN: {
-    name: "Finland",
-    tonnesPerCapita: 5.3,
-  },
-  FJI: {
-    name: "Fiji",
-    tonnesPerCapita: 1.56,
-  },
-  FRA: {
-    name: "France",
-    tonnesPerCapita: 3.97,
-  },
-  FRO: {
-    name: "Faroe Islands",
-    tonnesPerCapita: 13.09,
-  },
-  FSM: {
-    name: "Micronesia (country)",
-    tonnesPerCapita: 1.33,
-  },
-  GAB: {
-    name: "Gabon",
-    tonnesPerCapita: 2.13,
-  },
-  GBR: {
-    name: "United Kingdom",
-    tonnesPerCapita: 4.53,
-  },
-  GEO: {
-    name: "Georgia",
-    tonnesPerCapita: 3.09,
-  },
-  GHA: {
-    name: "Ghana",
-    tonnesPerCapita: 0.61,
-  },
-  GIN: {
-    name: "Guinea",
-    tonnesPerCapita: 0.27,
-  },
-  GMB: {
-    name: "Gambia",
-    tonnesPerCapita: 0.29,
-  },
-  GNB: {
-    name: "Guinea-Bissau",
-    tonnesPerCapita: 0.16,
-  },
-  GNQ: {
-    name: "Equatorial Guinea",
-    tonnesPerCapita: 3.7,
-  },
-  GRC: {
-    name: "Greece",
-    tonnesPerCapita: 5.31,
-  },
-  GRD: {
-    name: "Grenada",
-    tonnesPerCapita: 3.22,
-  },
-  GRL: {
-    name: "Greenland",
-    tonnesPerCapita: 11.08,
-  },
-  GTM: {
-    name: "Guatemala",
-    tonnesPerCapita: 1.08,
-  },
-  GUY: {
-    name: "Guyana",
-    tonnesPerCapita: 5.43,
-  },
-  HKG: {
-    name: "Hong Kong",
-    tonnesPerCapita: 4.49,
-  },
-  HND: {
-    name: "Honduras",
-    tonnesPerCapita: 1.19,
-  },
-  HRV: {
-    name: "Croatia",
-    tonnesPerCapita: 4.76,
-  },
-  HTI: {
-    name: "Haiti",
-    tonnesPerCapita: 0.25,
-  },
-  HUN: {
-    name: "Hungary",
-    tonnesPerCapita: 4.14,
-  },
-  IDN: {
-    name: "Indonesia",
-    tonnesPerCapita: 2.87,
-  },
-  IND: {
-    name: "India",
-    tonnesPerCapita: 2.2,
-  },
-  IRL: {
-    name: "Ireland",
-    tonnesPerCapita: 6.34,
-  },
-  IRN: {
-    name: "Iran",
-    tonnesPerCapita: 8.66,
-  },
-  IRQ: {
-    name: "Iraq",
-    tonnesPerCapita: 5.07,
-  },
-  ISL: {
-    name: "Iceland",
-    tonnesPerCapita: 9.67,
-  },
-  ISR: {
-    name: "Israel",
-    tonnesPerCapita: 5.61,
-  },
-  ITA: {
-    name: "Italy",
-    tonnesPerCapita: 5.09,
-  },
-  JAM: {
-    name: "Jamaica",
-    tonnesPerCapita: 2.96,
-  },
-  JOR: {
-    name: "Jordan",
-    tonnesPerCapita: 2.01,
-  },
-  JPN: {
-    name: "Japan",
-    tonnesPerCapita: 7.77,
-  },
-  KAZ: {
-    name: "Kazakhstan",
-    tonnesPerCapita: 13.94,
-  },
-  KEN: {
-    name: "Kenya",
-    tonnesPerCapita: 0.38,
-  },
-  KGZ: {
-    name: "Kyrgyzstan",
-    tonnesPerCapita: 1.64,
-  },
-  KHM: {
-    name: "Cambodia",
-    tonnesPerCapita: 1.24,
-  },
-  KIR: {
-    name: "Kiribati",
-    tonnesPerCapita: 0.54,
-  },
-  KNA: {
-    name: "Saint Kitts and Nevis",
-    tonnesPerCapita: 5.54,
-  },
-  KOR: {
-    name: "South Korea",
-    tonnesPerCapita: 11.29,
-  },
-  KWT: {
-    name: "Kuwait",
-    tonnesPerCapita: 26.25,
-  },
-  LAO: {
-    name: "Laos",
-    tonnesPerCapita: 3.14,
-  },
-  LBN: {
-    name: "Lebanon",
-    tonnesPerCapita: 2.7,
-  },
-  LBR: {
-    name: "Liberia",
-    tonnesPerCapita: 0.15,
-  },
-  LBY: {
-    name: "Libya",
-    tonnesPerCapita: 8.84,
-  },
-  LCA: {
-    name: "Saint Lucia",
-    tonnesPerCapita: 2.99,
-  },
-  LIE: {
-    name: "Liechtenstein",
-    tonnesPerCapita: 3.3,
-  },
-  LKA: {
-    name: "Sri Lanka",
-    tonnesPerCapita: 0.9,
-  },
-  LSO: {
-    name: "Lesotho",
-    tonnesPerCapita: 1.1,
-  },
-  LTU: {
-    name: "Lithuania",
-    tonnesPerCapita: 4.39,
-  },
-  LUX: {
-    name: "Luxembourg",
-    tonnesPerCapita: 10.46,
-  },
-  LVA: {
-    name: "Latvia",
-    tonnesPerCapita: 3.45,
-  },
-  MAC: {
-    name: "Macao",
-    tonnesPerCapita: 1.47,
-  },
-  MAR: {
-    name: "Morocco",
-    tonnesPerCapita: 1.81,
-  },
-  MDA: {
-    name: "Moldova",
-    tonnesPerCapita: 1.76,
-  },
-  MDG: {
-    name: "Madagascar",
-    tonnesPerCapita: 0.14,
-  },
-  MDV: {
-    name: "Maldives",
-    tonnesPerCapita: 4.37,
-  },
-  MEX: {
-    name: "Mexico",
-    tonnesPerCapita: 3.52,
-  },
-  MHL: {
-    name: "Marshall Islands",
-    tonnesPerCapita: 4.11,
-  },
-  MKD: {
-    name: "North Macedonia",
-    tonnesPerCapita: 3.63,
-  },
-  MLI: {
-    name: "Mali",
-    tonnesPerCapita: 0.29,
-  },
-  MLT: {
-    name: "Malta",
-    tonnesPerCapita: 3.2,
-  },
-  MMR: {
-    name: "Myanmar",
-    tonnesPerCapita: 0.58,
-  },
-  MNE: {
-    name: "Montenegro",
-    tonnesPerCapita: 3.72,
-  },
-  MNG: {
-    name: "Mongolia",
-    tonnesPerCapita: 12.86,
-  },
-  MOZ: {
-    name: "Mozambique",
-    tonnesPerCapita: 0.25,
-  },
-  MRT: {
-    name: "Mauritania",
-    tonnesPerCapita: 1.01,
-  },
-  MSR: {
-    name: "Montserrat",
-    tonnesPerCapita: 6.02,
-  },
-  MUS: {
-    name: "Mauritius",
-    tonnesPerCapita: 3.68,
-  },
-  MWI: {
-    name: "Malawi",
-    tonnesPerCapita: 0.09,
-  },
-  MYS: {
-    name: "Malaysia",
-    tonnesPerCapita: 8.16,
-  },
-  NAM: {
-    name: "Namibia",
-    tonnesPerCapita: 1.14,
-  },
-  NCL: {
-    name: "New Caledonia",
-    tonnesPerCapita: 18.06,
-  },
-  NER: {
-    name: "Niger",
-    tonnesPerCapita: 0.12,
-  },
-  NGA: {
-    name: "Nigeria",
-    tonnesPerCapita: 0.58,
-  },
-  NIC: {
-    name: "Nicaragua",
-    tonnesPerCapita: 0.81,
-  },
-  NIU: {
-    name: "Niue",
-    tonnesPerCapita: 4.14,
-  },
-  NLD: {
-    name: "Netherlands",
-    tonnesPerCapita: 6.3,
-  },
-  NOR: {
-    name: "Norway",
-    tonnesPerCapita: 6.67,
-  },
-  NPL: {
-    name: "Nepal",
-    tonnesPerCapita: 0.63,
-  },
-  NRU: {
-    name: "Nauru",
-    tonnesPerCapita: 5.13,
-  },
-  NZL: {
-    name: "New Zealand",
-    tonnesPerCapita: 6.23,
-  },
-  OMN: {
-    name: "Oman",
-    tonnesPerCapita: 15.65,
-  },
-  OWID_KOS: {
-    name: "Kosovo",
-    tonnesPerCapita: 4.78,
-  },
-  PAK: {
-    name: "Pakistan",
-    tonnesPerCapita: 0.72,
-  },
-  PAN: {
-    name: "Panama",
-    tonnesPerCapita: 2.8,
-  },
-  PER: {
-    name: "Peru",
-    tonnesPerCapita: 2.05,
-  },
-  PHL: {
-    name: "Philippines",
-    tonnesPerCapita: 1.51,
-  },
-  PLW: {
-    name: "Palau",
-    tonnesPerCapita: 12.76,
-  },
-  PNG: {
-    name: "Papua New Guinea",
-    tonnesPerCapita: 0.79,
-  },
-  POL: {
-    name: "Poland",
-    tonnesPerCapita: 7.08,
-  },
-  PRK: {
-    name: "North Korea",
-    tonnesPerCapita: 2.36,
-  },
-  PRT: {
-    name: "Portugal",
-    tonnesPerCapita: 3.41,
-  },
-  PRY: {
-    name: "Paraguay",
-    tonnesPerCapita: 1.15,
-  },
-  PSE: {
-    name: "Palestine",
-    tonnesPerCapita: 0.87,
-  },
-  PYF: {
-    name: "French Polynesia",
-    tonnesPerCapita: 3.27,
-  },
-  QAT: {
-    name: "Qatar",
-    tonnesPerCapita: 41.27,
-  },
-  ROU: {
-    name: "Romania",
-    tonnesPerCapita: 3.61,
-  },
-  RUS: {
-    name: "Russia",
-    tonnesPerCapita: 12.29,
-  },
-  RWA: {
-    name: "Rwanda",
-    tonnesPerCapita: 0.14,
-  },
-  SAU: {
-    name: "Saudi Arabia",
-    tonnesPerCapita: 20.38,
-  },
-  SDN: {
-    name: "Sudan",
-    tonnesPerCapita: 0.35,
-  },
-  SEN: {
-    name: "Senegal",
-    tonnesPerCapita: 0.76,
-  },
-  SGP: {
-    name: "Singapore",
-    tonnesPerCapita: 9.24,
-  },
-  SHN: {
-    name: "Saint Helena",
-    tonnesPerCapita: 2.16,
-  },
-  SLB: {
-    name: "Solomon Islands",
-    tonnesPerCapita: 0.36,
-  },
-  SLE: {
-    name: "Sierra Leone",
-    tonnesPerCapita: 0.17,
-  },
-  SLV: {
-    name: "El Salvador",
-    tonnesPerCapita: 1.42,
-  },
-  SOM: {
-    name: "Somalia",
-    tonnesPerCapita: 0.07,
-  },
-  SPM: {
-    name: "Saint Pierre and Miquelon",
-    tonnesPerCapita: 9.79,
-  },
-  SRB: {
-    name: "Serbia",
-    tonnesPerCapita: 6.24,
-  },
-  SSD: {
-    name: "South Sudan",
-    tonnesPerCapita: 0.14,
-  },
-  STP: {
-    name: "Sao Tome and Principe",
-    tonnesPerCapita: 0.6,
-  },
-  SUR: {
-    name: "Suriname",
-    tonnesPerCapita: 4.71,
-  },
-  SVK: {
-    name: "Slovakia",
-    tonnesPerCapita: 5.28,
-  },
-  SVN: {
-    name: "Slovenia",
-    tonnesPerCapita: 6.02,
-  },
-  SWE: {
-    name: "Sweden",
-    tonnesPerCapita: 3.59,
-  },
-  SWZ: {
-    name: "Eswatini",
-    tonnesPerCapita: 0.84,
-  },
-  SXM: {
-    name: "Sint Maarten (Dutch part)",
-    tonnesPerCapita: 16.55,
-  },
-  SYC: {
-    name: "Seychelles",
-    tonnesPerCapita: 5.0,
-  },
-  SYR: {
-    name: "Syria",
-    tonnesPerCapita: 1.29,
-  },
-  TCA: {
-    name: "Turks and Caicos Islands",
-    tonnesPerCapita: 8.14,
-  },
-  TCD: {
-    name: "Chad",
-    tonnesPerCapita: 0.14,
-  },
-  TGO: {
-    name: "Togo",
-    tonnesPerCapita: 0.33,
-  },
-  THA: {
-    name: "Thailand",
-    tonnesPerCapita: 3.74,
-  },
-  TJK: {
-    name: "Tajikistan",
-    tonnesPerCapita: 1.01,
-  },
-  TKM: {
-    name: "Turkmenistan",
-    tonnesPerCapita: 10.81,
-  },
-  TLS: {
-    name: "East Timor",
-    tonnesPerCapita: 0.48,
-  },
-  TON: {
-    name: "Tonga",
-    tonnesPerCapita: 1.46,
-  },
-  TTO: {
-    name: "Trinidad and Tobago",
-    tonnesPerCapita: 22.93,
-  },
-  TUN: {
-    name: "Tunisia",
-    tonnesPerCapita: 2.66,
-  },
-  TUR: {
-    name: "Turkey",
-    tonnesPerCapita: 5.87,
-  },
-  TUV: {
-    name: "Tuvalu",
-    tonnesPerCapita: 1.18,
-  },
-  TWN: {
-    name: "Taiwan",
-    tonnesPerCapita: 11.3,
-  },
-  TZA: {
-    name: "Tanzania",
-    tonnesPerCapita: 0.29,
-  },
-  UGA: {
-    name: "Uganda",
-    tonnesPerCapita: 0.13,
-  },
-  UKR: {
-    name: "Ukraine",
-    tonnesPerCapita: 3.76,
-  },
-  URY: {
-    name: "Uruguay",
-    tonnesPerCapita: 2.35,
-  },
-  USA: {
-    name: "United States",
-    tonnesPerCapita: 14.2,
-  },
-  UZB: {
-    name: "Uzbekistan",
-    tonnesPerCapita: 3.83,
-  },
-  VCT: {
-    name: "Saint Vincent and the Grenadines",
-    tonnesPerCapita: 2.54,
-  },
-  VEN: {
-    name: "Venezuela",
-    tonnesPerCapita: 4.09,
-  },
-  VGB: {
-    name: "British Virgin Islands",
-    tonnesPerCapita: 4.87,
-  },
-  VNM: {
-    name: "Vietnam",
-    tonnesPerCapita: 3.67,
-  },
-  VUT: {
-    name: "Vanuatu",
-    tonnesPerCapita: 0.6,
-  },
-  WLF: {
-    name: "Wallis and Futuna",
-    tonnesPerCapita: 2.7,
-  },
-  WSM: {
-    name: "Samoa",
-    tonnesPerCapita: 1.13,
-  },
-  YEM: {
-    name: "Yemen",
-    tonnesPerCapita: 0.25,
-  },
-  ZAF: {
-    name: "South Africa",
-    tonnesPerCapita: 6.87,
-  },
-  ZMB: {
-    name: "Zambia",
-    tonnesPerCapita: 0.57,
-  },
-  ZWE: {
-    name: "Zimbabwe",
-    tonnesPerCapita: 0.82,
-  },
+export const countryEnergyData: Record<string, CountryEnergyData> = {
+  "ABW": {
+    "co2PerCapitaTonnes": 8.52,
+    "electricityDemandKwhPerCapita": 9252.7,
+    "gridIntensityGCo2PerKwh": 550.0,
+    "name": "Aruba"
+  },
+  "AFG": {
+    "co2PerCapitaTonnes": 0.25,
+    "electricityDemandKwhPerCapita": 159.9,
+    "gridIntensityGCo2PerKwh": 131.31,
+    "name": "Afghanistan"
+  },
+  "AGO": {
+    "co2PerCapitaTonnes": 0.59,
+    "electricityDemandKwhPerCapita": 411.5,
+    "gridIntensityGCo2PerKwh": 185.38,
+    "name": "Angola"
+  },
+  "AIA": {
+    "co2PerCapitaTonnes": 10.13,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Anguilla"
+  },
+  "ALB": {
+    "co2PerCapitaTonnes": 1.59,
+    "electricityDemandKwhPerCapita": 3105.6,
+    "gridIntensityGCo2PerKwh": 25.18,
+    "name": "Albania"
+  },
+  "AND": {
+    "co2PerCapitaTonnes": 5.18,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Andorra"
+  },
+  "ARE": {
+    "co2PerCapitaTonnes": 20.13,
+    "electricityDemandKwhPerCapita": 16053.1,
+    "gridIntensityGCo2PerKwh": 467.51,
+    "name": "United Arab Emirates"
+  },
+  "ARG": {
+    "co2PerCapitaTonnes": 3.74,
+    "electricityDemandKwhPerCapita": 3538.2,
+    "gridIntensityGCo2PerKwh": 344.83,
+    "name": "Argentina"
+  },
+  "ARM": {
+    "co2PerCapitaTonnes": 2.5,
+    "electricityDemandKwhPerCapita": 2569.1,
+    "gridIntensityGCo2PerKwh": 240.31,
+    "name": "Armenia"
+  },
+  "ATG": {
+    "co2PerCapitaTonnes": 7.09,
+    "electricityDemandKwhPerCapita": 3945.3,
+    "gridIntensityGCo2PerKwh": 594.6,
+    "name": "Antigua and Barbuda"
+  },
+  "AUS": {
+    "co2PerCapitaTonnes": 14.48,
+    "electricityDemandKwhPerCapita": 10543.1,
+    "gridIntensityGCo2PerKwh": 553.83,
+    "name": "Australia"
+  },
+  "AUT": {
+    "co2PerCapitaTonnes": 6.18,
+    "electricityDemandKwhPerCapita": 7860.0,
+    "gridIntensityGCo2PerKwh": 103.48,
+    "name": "Austria"
+  },
+  "AZE": {
+    "co2PerCapitaTonnes": 3.85,
+    "electricityDemandKwhPerCapita": 2574.4,
+    "gridIntensityGCo2PerKwh": 634.34,
+    "name": "Azerbaijan"
+  },
+  "BDI": {
+    "co2PerCapitaTonnes": 0.07,
+    "electricityDemandKwhPerCapita": 40.6,
+    "gridIntensityGCo2PerKwh": 183.67,
+    "name": "Burundi"
+  },
+  "BEL": {
+    "co2PerCapitaTonnes": 7.28,
+    "electricityDemandKwhPerCapita": 7356.0,
+    "gridIntensityGCo2PerKwh": 126.96,
+    "name": "Belgium"
+  },
+  "BEN": {
+    "co2PerCapitaTonnes": 0.42,
+    "electricityDemandKwhPerCapita": 159.7,
+    "gridIntensityGCo2PerKwh": 584.16,
+    "name": "Benin"
+  },
+  "BES": {
+    "co2PerCapitaTonnes": 4.95,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Bonaire Sint Eustatius and Saba"
+  },
+  "BFA": {
+    "co2PerCapitaTonnes": 0.28,
+    "electricityDemandKwhPerCapita": 135.5,
+    "gridIntensityGCo2PerKwh": 562.13,
+    "name": "Burkina Faso"
+  },
+  "BGD": {
+    "co2PerCapitaTonnes": 0.62,
+    "electricityDemandKwhPerCapita": 643.8,
+    "gridIntensityGCo2PerKwh": 695.7,
+    "name": "Bangladesh"
+  },
+  "BGR": {
+    "co2PerCapitaTonnes": 4.68,
+    "electricityDemandKwhPerCapita": 5521.1,
+    "gridIntensityGCo2PerKwh": 278.85,
+    "name": "Bulgaria"
+  },
+  "BHR": {
+    "co2PerCapitaTonnes": 24.27,
+    "electricityDemandKwhPerCapita": 23919.5,
+    "gridIntensityGCo2PerKwh": 902.24,
+    "name": "Bahrain"
+  },
+  "BHS": {
+    "co2PerCapitaTonnes": 7.65,
+    "electricityDemandKwhPerCapita": 5607.0,
+    "gridIntensityGCo2PerKwh": 653.33,
+    "name": "Bahamas"
+  },
+  "BIH": {
+    "co2PerCapitaTonnes": 6.14,
+    "electricityDemandKwhPerCapita": 4895.3,
+    "gridIntensityGCo2PerKwh": 601.03,
+    "name": "Bosnia and Herzegovina"
+  },
+  "BLR": {
+    "co2PerCapitaTonnes": 6.16,
+    "electricityDemandKwhPerCapita": 4993.0,
+    "gridIntensityGCo2PerKwh": 329.55,
+    "name": "Belarus"
+  },
+  "BLZ": {
+    "co2PerCapitaTonnes": 1.91,
+    "electricityDemandKwhPerCapita": 2038.0,
+    "gridIntensityGCo2PerKwh": 170.21,
+    "name": "Belize"
+  },
+  "BMU": {
+    "co2PerCapitaTonnes": 8.51,
+    "electricityDemandKwhPerCapita": 9434.0,
+    "gridIntensityGCo2PerKwh": 639.34,
+    "name": "Bermuda"
+  },
+  "BOL": {
+    "co2PerCapitaTonnes": 2.31,
+    "electricityDemandKwhPerCapita": 1090.0,
+    "gridIntensityGCo2PerKwh": 495.2,
+    "name": "Bolivia"
+  },
+  "BRA": {
+    "co2PerCapitaTonnes": 2.28,
+    "electricityDemandKwhPerCapita": 3572.2,
+    "gridIntensityGCo2PerKwh": 106.06,
+    "name": "Brazil"
+  },
+  "BRB": {
+    "co2PerCapitaTonnes": 4.83,
+    "electricityDemandKwhPerCapita": 3929.5,
+    "gridIntensityGCo2PerKwh": 594.6,
+    "name": "Barbados"
+  },
+  "BRN": {
+    "co2PerCapitaTonnes": 26.05,
+    "electricityDemandKwhPerCapita": 12015.5,
+    "gridIntensityGCo2PerKwh": 892.09,
+    "name": "Brunei"
+  },
+  "BTN": {
+    "co2PerCapitaTonnes": 2.09,
+    "electricityDemandKwhPerCapita": 15741.7,
+    "gridIntensityGCo2PerKwh": 23.64,
+    "name": "Bhutan"
+  },
+  "BWA": {
+    "co2PerCapitaTonnes": 2.96,
+    "electricityDemandKwhPerCapita": 1852.3,
+    "gridIntensityGCo2PerKwh": 851.31,
+    "name": "Botswana"
+  },
+  "CAF": {
+    "co2PerCapitaTonnes": 0.07,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Central African Republic"
+  },
+  "CAN": {
+    "co2PerCapitaTonnes": 13.42,
+    "electricityDemandKwhPerCapita": 15710.2,
+    "gridIntensityGCo2PerKwh": 185.35,
+    "name": "Canada"
+  },
+  "CHE": {
+    "co2PerCapitaTonnes": 3.59,
+    "electricityDemandKwhPerCapita": 7169.9,
+    "gridIntensityGCo2PerKwh": 34.58,
+    "name": "Switzerland"
+  },
+  "CHL": {
+    "co2PerCapitaTonnes": 3.98,
+    "electricityDemandKwhPerCapita": 4483.7,
+    "gridIntensityGCo2PerKwh": 259.87,
+    "name": "Chile"
+  },
+  "CHN": {
+    "co2PerCapitaTonnes": 8.66,
+    "electricityDemandKwhPerCapita": 7094.9,
+    "gridIntensityGCo2PerKwh": 555.4,
+    "name": "China"
+  },
+  "CIV": {
+    "co2PerCapitaTonnes": 0.46,
+    "electricityDemandKwhPerCapita": 315.0,
+    "gridIntensityGCo2PerKwh": 405.01,
+    "name": "Cote d'Ivoire"
+  },
+  "CMR": {
+    "co2PerCapitaTonnes": 0.33,
+    "electricityDemandKwhPerCapita": 251.3,
+    "gridIntensityGCo2PerKwh": 225.9,
+    "name": "Cameroon"
+  },
+  "COD": {
+    "co2PerCapitaTonnes": 0.05,
+    "electricityDemandKwhPerCapita": 158.9,
+    "gridIntensityGCo2PerKwh": 27.64,
+    "name": "Democratic Republic of Congo"
+  },
+  "COG": {
+    "co2PerCapitaTonnes": 1.4,
+    "electricityDemandKwhPerCapita": 849.5,
+    "gridIntensityGCo2PerKwh": 716.12,
+    "name": "Congo"
+  },
+  "COK": {
+    "co2PerCapitaTonnes": 5.82,
+    "electricityDemandKwhPerCapita": 2909.1,
+    "gridIntensityGCo2PerKwh": 250.0,
+    "name": "Cook Islands"
+  },
+  "COL": {
+    "co2PerCapitaTonnes": 1.75,
+    "electricityDemandKwhPerCapita": 1685.5,
+    "gridIntensityGCo2PerKwh": 298.3,
+    "name": "Colombia"
+  },
+  "COM": {
+    "co2PerCapitaTonnes": 0.64,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Comoros"
+  },
+  "CPV": {
+    "co2PerCapitaTonnes": 1.13,
+    "electricityDemandKwhPerCapita": 990.7,
+    "gridIntensityGCo2PerKwh": 461.54,
+    "name": "Cape Verde"
+  },
+  "CRI": {
+    "co2PerCapitaTonnes": 1.71,
+    "electricityDemandKwhPerCapita": 2187.2,
+    "gridIntensityGCo2PerKwh": 25.46,
+    "name": "Costa Rica"
+  },
+  "CUB": {
+    "co2PerCapitaTonnes": 2.23,
+    "electricityDemandKwhPerCapita": 1769.6,
+    "gridIntensityGCo2PerKwh": 642.82,
+    "name": "Cuba"
+  },
+  "CUW": {
+    "co2PerCapitaTonnes": 12.34,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Curacao"
+  },
+  "CYP": {
+    "co2PerCapitaTonnes": 5.37,
+    "electricityDemandKwhPerCapita": 4262.7,
+    "gridIntensityGCo2PerKwh": 511.23,
+    "name": "Cyprus"
+  },
+  "CZE": {
+    "co2PerCapitaTonnes": 7.04,
+    "electricityDemandKwhPerCapita": 6161.6,
+    "gridIntensityGCo2PerKwh": 414.23,
+    "name": "Czechia"
+  },
+  "DEU": {
+    "co2PerCapitaTonnes": 6.77,
+    "electricityDemandKwhPerCapita": 6176.8,
+    "gridIntensityGCo2PerKwh": 336.38,
+    "name": "Germany"
+  },
+  "DJI": {
+    "co2PerCapitaTonnes": 0.48,
+    "electricityDemandKwhPerCapita": 684.5,
+    "gridIntensityGCo2PerKwh": 450.0,
+    "name": "Djibouti"
+  },
+  "DMA": {
+    "co2PerCapitaTonnes": 2.58,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Dominica"
+  },
+  "DNK": {
+    "co2PerCapitaTonnes": 4.75,
+    "electricityDemandKwhPerCapita": 6486.1,
+    "gridIntensityGCo2PerKwh": 131.77,
+    "name": "Denmark"
+  },
+  "DOM": {
+    "co2PerCapitaTonnes": 2.9,
+    "electricityDemandKwhPerCapita": 2102.8,
+    "gridIntensityGCo2PerKwh": 567.62,
+    "name": "Dominican Republic"
+  },
+  "DZA": {
+    "co2PerCapitaTonnes": 4.23,
+    "electricityDemandKwhPerCapita": 2004.5,
+    "gridIntensityGCo2PerKwh": 632.94,
+    "name": "Algeria"
+  },
+  "ECU": {
+    "co2PerCapitaTonnes": 2.54,
+    "electricityDemandKwhPerCapita": 1839.5,
+    "gridIntensityGCo2PerKwh": 203.61,
+    "name": "Ecuador"
+  },
+  "EGY": {
+    "co2PerCapitaTonnes": 2.22,
+    "electricityDemandKwhPerCapita": 2025.0,
+    "gridIntensityGCo2PerKwh": 574.5,
+    "name": "Egypt"
+  },
+  "ERI": {
+    "co2PerCapitaTonnes": 0.21,
+    "electricityDemandKwhPerCapita": 127.3,
+    "gridIntensityGCo2PerKwh": 577.78,
+    "name": "Eritrea"
+  },
+  "ESP": {
+    "co2PerCapitaTonnes": 4.6,
+    "electricityDemandKwhPerCapita": 5650.3,
+    "gridIntensityGCo2PerKwh": 146.22,
+    "name": "Spain"
+  },
+  "EST": {
+    "co2PerCapitaTonnes": 6.11,
+    "electricityDemandKwhPerCapita": 6747.3,
+    "gridIntensityGCo2PerKwh": 343.45,
+    "name": "Estonia"
+  },
+  "ETH": {
+    "co2PerCapitaTonnes": 0.14,
+    "electricityDemandKwhPerCapita": 177.5,
+    "gridIntensityGCo2PerKwh": 23.41,
+    "name": "Ethiopia"
+  },
+  "FIN": {
+    "co2PerCapitaTonnes": 5.3,
+    "electricityDemandKwhPerCapita": 15261.8,
+    "gridIntensityGCo2PerKwh": 66.63,
+    "name": "Finland"
+  },
+  "FJI": {
+    "co2PerCapitaTonnes": 1.56,
+    "electricityDemandKwhPerCapita": 1238.2,
+    "gridIntensityGCo2PerKwh": 278.26,
+    "name": "Fiji"
+  },
+  "FRA": {
+    "co2PerCapitaTonnes": 3.97,
+    "electricityDemandKwhPerCapita": 7089.6,
+    "gridIntensityGCo2PerKwh": 40.48,
+    "name": "France"
+  },
+  "FRO": {
+    "co2PerCapitaTonnes": 13.09,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Faroe Islands"
+  },
+  "FSM": {
+    "co2PerCapitaTonnes": 1.33,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Micronesia (country)"
+  },
+  "GAB": {
+    "co2PerCapitaTonnes": 2.13,
+    "electricityDemandKwhPerCapita": 1252.5,
+    "gridIntensityGCo2PerKwh": 523.08,
+    "name": "Gabon"
+  },
+  "GBR": {
+    "co2PerCapitaTonnes": 4.53,
+    "electricityDemandKwhPerCapita": 4590.1,
+    "gridIntensityGCo2PerKwh": 216.5,
+    "name": "United Kingdom"
+  },
+  "GEO": {
+    "co2PerCapitaTonnes": 3.09,
+    "electricityDemandKwhPerCapita": 3705.7,
+    "gridIntensityGCo2PerKwh": 145.01,
+    "name": "Georgia"
+  },
+  "GHA": {
+    "co2PerCapitaTonnes": 0.61,
+    "electricityDemandKwhPerCapita": 634.1,
+    "gridIntensityGCo2PerKwh": 468.89,
+    "name": "Ghana"
+  },
+  "GIN": {
+    "co2PerCapitaTonnes": 0.27,
+    "electricityDemandKwhPerCapita": 273.1,
+    "gridIntensityGCo2PerKwh": 181.14,
+    "name": "Guinea"
+  },
+  "GMB": {
+    "co2PerCapitaTonnes": 0.29,
+    "electricityDemandKwhPerCapita": 184.8,
+    "gridIntensityGCo2PerKwh": 666.67,
+    "name": "Gambia"
+  },
+  "GNB": {
+    "co2PerCapitaTonnes": 0.16,
+    "electricityDemandKwhPerCapita": 36.3,
+    "gridIntensityGCo2PerKwh": 625.0,
+    "name": "Guinea-Bissau"
+  },
+  "GNQ": {
+    "co2PerCapitaTonnes": 3.7,
+    "electricityDemandKwhPerCapita": 787.3,
+    "gridIntensityGCo2PerKwh": 644.3,
+    "name": "Equatorial Guinea"
+  },
+  "GRC": {
+    "co2PerCapitaTonnes": 5.31,
+    "electricityDemandKwhPerCapita": 5650.0,
+    "gridIntensityGCo2PerKwh": 321.65,
+    "name": "Greece"
+  },
+  "GRD": {
+    "co2PerCapitaTonnes": 3.22,
+    "electricityDemandKwhPerCapita": 2047.5,
+    "gridIntensityGCo2PerKwh": 666.67,
+    "name": "Grenada"
+  },
+  "GRL": {
+    "co2PerCapitaTonnes": 11.08,
+    "electricityDemandKwhPerCapita": 10740.4,
+    "gridIntensityGCo2PerKwh": 150.0,
+    "name": "Greenland"
+  },
+  "GTM": {
+    "co2PerCapitaTonnes": 1.08,
+    "electricityDemandKwhPerCapita": 888.3,
+    "gridIntensityGCo2PerKwh": 301.46,
+    "name": "Guatemala"
+  },
+  "GUY": {
+    "co2PerCapitaTonnes": 5.43,
+    "electricityDemandKwhPerCapita": 1660.5,
+    "gridIntensityGCo2PerKwh": 644.93,
+    "name": "Guyana"
+  },
+  "HKG": {
+    "co2PerCapitaTonnes": 4.49,
+    "electricityDemandKwhPerCapita": 6582.7,
+    "gridIntensityGCo2PerKwh": 675.48,
+    "name": "Hong Kong"
+  },
+  "HND": {
+    "co2PerCapitaTonnes": 1.19,
+    "electricityDemandKwhPerCapita": 1166.7,
+    "gridIntensityGCo2PerKwh": 322.12,
+    "name": "Honduras"
+  },
+  "HRV": {
+    "co2PerCapitaTonnes": 4.76,
+    "electricityDemandKwhPerCapita": 5070.5,
+    "gridIntensityGCo2PerKwh": 170.7,
+    "name": "Croatia"
+  },
+  "HTI": {
+    "co2PerCapitaTonnes": 0.25,
+    "electricityDemandKwhPerCapita": 73.1,
+    "gridIntensityGCo2PerKwh": 534.88,
+    "name": "Haiti"
+  },
+  "HUN": {
+    "co2PerCapitaTonnes": 4.14,
+    "electricityDemandKwhPerCapita": 5036.1,
+    "gridIntensityGCo2PerKwh": 184.47,
+    "name": "Hungary"
+  },
+  "IDN": {
+    "co2PerCapitaTonnes": 2.87,
+    "electricityDemandKwhPerCapita": 1314.0,
+    "gridIntensityGCo2PerKwh": 680.25,
+    "name": "Indonesia"
+  },
+  "IND": {
+    "co2PerCapitaTonnes": 2.2,
+    "electricityDemandKwhPerCapita": 1402.0,
+    "gridIntensityGCo2PerKwh": 705.4,
+    "name": "India"
+  },
+  "IRL": {
+    "co2PerCapitaTonnes": 6.34,
+    "electricityDemandKwhPerCapita": 6877.2,
+    "gridIntensityGCo2PerKwh": 270.91,
+    "name": "Ireland"
+  },
+  "IRN": {
+    "co2PerCapitaTonnes": 8.66,
+    "electricityDemandKwhPerCapita": 4296.2,
+    "gridIntensityGCo2PerKwh": 648.68,
+    "name": "Iran"
+  },
+  "IRQ": {
+    "co2PerCapitaTonnes": 5.07,
+    "electricityDemandKwhPerCapita": 3406.2,
+    "gridIntensityGCo2PerKwh": 683.1,
+    "name": "Iraq"
+  },
+  "ISL": {
+    "co2PerCapitaTonnes": 9.67,
+    "electricityDemandKwhPerCapita": 48423.5,
+    "gridIntensityGCo2PerKwh": 27.82,
+    "name": "Iceland"
+  },
+  "ISR": {
+    "co2PerCapitaTonnes": 5.61,
+    "electricityDemandKwhPerCapita": 7883.2,
+    "gridIntensityGCo2PerKwh": 540.55,
+    "name": "Israel"
+  },
+  "ITA": {
+    "co2PerCapitaTonnes": 5.09,
+    "electricityDemandKwhPerCapita": 5368.1,
+    "gridIntensityGCo2PerKwh": 281.4,
+    "name": "Italy"
+  },
+  "JAM": {
+    "co2PerCapitaTonnes": 2.96,
+    "electricityDemandKwhPerCapita": 1732.9,
+    "gridIntensityGCo2PerKwh": 563.01,
+    "name": "Jamaica"
+  },
+  "JOR": {
+    "co2PerCapitaTonnes": 2.01,
+    "electricityDemandKwhPerCapita": 2054.0,
+    "gridIntensityGCo2PerKwh": 529.79,
+    "name": "Jordan"
+  },
+  "JPN": {
+    "co2PerCapitaTonnes": 7.77,
+    "electricityDemandKwhPerCapita": 8213.1,
+    "gridIntensityGCo2PerKwh": 483.43,
+    "name": "Japan"
+  },
+  "KAZ": {
+    "co2PerCapitaTonnes": 13.94,
+    "electricityDemandKwhPerCapita": 5872.0,
+    "gridIntensityGCo2PerKwh": 802.04,
+    "name": "Kazakhstan"
+  },
+  "KEN": {
+    "co2PerCapitaTonnes": 0.38,
+    "electricityDemandKwhPerCapita": 261.4,
+    "gridIntensityGCo2PerKwh": 85.22,
+    "name": "Kenya"
+  },
+  "KGZ": {
+    "co2PerCapitaTonnes": 1.64,
+    "electricityDemandKwhPerCapita": 2678.8,
+    "gridIntensityGCo2PerKwh": 119.21,
+    "name": "Kyrgyzstan"
+  },
+  "KHM": {
+    "co2PerCapitaTonnes": 1.24,
+    "electricityDemandKwhPerCapita": 1133.9,
+    "gridIntensityGCo2PerKwh": 538.76,
+    "name": "Cambodia"
+  },
+  "KIR": {
+    "co2PerCapitaTonnes": 0.54,
+    "electricityDemandKwhPerCapita": 297.4,
+    "gridIntensityGCo2PerKwh": 500.0,
+    "name": "Kiribati"
+  },
+  "KNA": {
+    "co2PerCapitaTonnes": 5.54,
+    "electricityDemandKwhPerCapita": 4907.5,
+    "gridIntensityGCo2PerKwh": 608.7,
+    "name": "Saint Kitts and Nevis"
+  },
+  "KOR": {
+    "co2PerCapitaTonnes": 11.29,
+    "electricityDemandKwhPerCapita": 12092.2,
+    "gridIntensityGCo2PerKwh": 415.51,
+    "name": "South Korea"
+  },
+  "KWT": {
+    "co2PerCapitaTonnes": 26.25,
+    "electricityDemandKwhPerCapita": 18743.5,
+    "gridIntensityGCo2PerKwh": 635.2,
+    "name": "Kuwait"
+  },
+  "LAO": {
+    "co2PerCapitaTonnes": 3.14,
+    "electricityDemandKwhPerCapita": 2009.1,
+    "gridIntensityGCo2PerKwh": 232.08,
+    "name": "Laos"
+  },
+  "LBN": {
+    "co2PerCapitaTonnes": 2.7,
+    "electricityDemandKwhPerCapita": 919.7,
+    "gridIntensityGCo2PerKwh": 389.51,
+    "name": "Lebanon"
+  },
+  "LBR": {
+    "co2PerCapitaTonnes": 0.15,
+    "electricityDemandKwhPerCapita": 101.6,
+    "gridIntensityGCo2PerKwh": 315.79,
+    "name": "Liberia"
+  },
+  "LBY": {
+    "co2PerCapitaTonnes": 8.84,
+    "electricityDemandKwhPerCapita": 4686.3,
+    "gridIntensityGCo2PerKwh": 826.83,
+    "name": "Libya"
+  },
+  "LCA": {
+    "co2PerCapitaTonnes": 2.99,
+    "electricityDemandKwhPerCapita": 2225.3,
+    "gridIntensityGCo2PerKwh": 650.0,
+    "name": "Saint Lucia"
+  },
+  "LIE": {
+    "co2PerCapitaTonnes": 3.3,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Liechtenstein"
+  },
+  "LKA": {
+    "co2PerCapitaTonnes": 0.9,
+    "electricityDemandKwhPerCapita": 738.8,
+    "gridIntensityGCo2PerKwh": 378.44,
+    "name": "Sri Lanka"
+  },
+  "LSO": {
+    "co2PerCapitaTonnes": 1.1,
+    "electricityDemandKwhPerCapita": 248.1,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Lesotho"
+  },
+  "LTU": {
+    "co2PerCapitaTonnes": 4.39,
+    "electricityDemandKwhPerCapita": 4473.4,
+    "gridIntensityGCo2PerKwh": 116.37,
+    "name": "Lithuania"
+  },
+  "LUX": {
+    "co2PerCapitaTonnes": 10.46,
+    "electricityDemandKwhPerCapita": 10044.0,
+    "gridIntensityGCo2PerKwh": 132.45,
+    "name": "Luxembourg"
+  },
+  "LVA": {
+    "co2PerCapitaTonnes": 3.45,
+    "electricityDemandKwhPerCapita": 3953.3,
+    "gridIntensityGCo2PerKwh": 134.28,
+    "name": "Latvia"
+  },
+  "MAC": {
+    "co2PerCapitaTonnes": 1.47,
+    "electricityDemandKwhPerCapita": 8719.0,
+    "gridIntensityGCo2PerKwh": 474.36,
+    "name": "Macao"
+  },
+  "MAR": {
+    "co2PerCapitaTonnes": 1.81,
+    "electricityDemandKwhPerCapita": 1180.1,
+    "gridIntensityGCo2PerKwh": 594.81,
+    "name": "Morocco"
+  },
+  "MDA": {
+    "co2PerCapitaTonnes": 1.76,
+    "electricityDemandKwhPerCapita": 1996.7,
+    "gridIntensityGCo2PerKwh": 634.27,
+    "name": "Moldova"
+  },
+  "MDG": {
+    "co2PerCapitaTonnes": 0.14,
+    "electricityDemandKwhPerCapita": 76.0,
+    "gridIntensityGCo2PerKwh": 432.1,
+    "name": "Madagascar"
+  },
+  "MDV": {
+    "co2PerCapitaTonnes": 4.37,
+    "electricityDemandKwhPerCapita": 1610.5,
+    "gridIntensityGCo2PerKwh": 611.77,
+    "name": "Maldives"
+  },
+  "MEX": {
+    "co2PerCapitaTonnes": 3.52,
+    "electricityDemandKwhPerCapita": 2711.8,
+    "gridIntensityGCo2PerKwh": 483.14,
+    "name": "Mexico"
+  },
+  "MHL": {
+    "co2PerCapitaTonnes": 4.11,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Marshall Islands"
+  },
+  "MKD": {
+    "co2PerCapitaTonnes": 3.63,
+    "electricityDemandKwhPerCapita": 3850.8,
+    "gridIntensityGCo2PerKwh": 510.3,
+    "name": "North Macedonia"
+  },
+  "MLI": {
+    "co2PerCapitaTonnes": 0.29,
+    "electricityDemandKwhPerCapita": 223.1,
+    "gridIntensityGCo2PerKwh": 538.59,
+    "name": "Mali"
+  },
+  "MLT": {
+    "co2PerCapitaTonnes": 3.2,
+    "electricityDemandKwhPerCapita": 5856.1,
+    "gridIntensityGCo2PerKwh": 488.58,
+    "name": "Malta"
+  },
+  "MMR": {
+    "co2PerCapitaTonnes": 0.58,
+    "electricityDemandKwhPerCapita": 402.2,
+    "gridIntensityGCo2PerKwh": 502.99,
+    "name": "Myanmar"
+  },
+  "MNE": {
+    "co2PerCapitaTonnes": 3.72,
+    "electricityDemandKwhPerCapita": 5278.2,
+    "gridIntensityGCo2PerKwh": 422.1,
+    "name": "Montenegro"
+  },
+  "MNG": {
+    "co2PerCapitaTonnes": 12.86,
+    "electricityDemandKwhPerCapita": 3320.3,
+    "gridIntensityGCo2PerKwh": 810.66,
+    "name": "Mongolia"
+  },
+  "MOZ": {
+    "co2PerCapitaTonnes": 0.25,
+    "electricityDemandKwhPerCapita": 476.2,
+    "gridIntensityGCo2PerKwh": 129.36,
+    "name": "Mozambique"
+  },
+  "MRT": {
+    "co2PerCapitaTonnes": 1.01,
+    "electricityDemandKwhPerCapita": 458.5,
+    "gridIntensityGCo2PerKwh": 512.08,
+    "name": "Mauritania"
+  },
+  "MSR": {
+    "co2PerCapitaTonnes": 6.02,
+    "electricityDemandKwhPerCapita": 2265.5,
+    "gridIntensityGCo2PerKwh": 1000.0,
+    "name": "Montserrat"
+  },
+  "MUS": {
+    "co2PerCapitaTonnes": 3.68,
+    "electricityDemandKwhPerCapita": 2682.6,
+    "gridIntensityGCo2PerKwh": 642.23,
+    "name": "Mauritius"
+  },
+  "MWI": {
+    "co2PerCapitaTonnes": 0.09,
+    "electricityDemandKwhPerCapita": 83.6,
+    "gridIntensityGCo2PerKwh": 54.65,
+    "name": "Malawi"
+  },
+  "MYS": {
+    "co2PerCapitaTonnes": 8.16,
+    "electricityDemandKwhPerCapita": 5541.4,
+    "gridIntensityGCo2PerKwh": 600.44,
+    "name": "Malaysia"
+  },
+  "NAM": {
+    "co2PerCapitaTonnes": 1.14,
+    "electricityDemandKwhPerCapita": 1333.3,
+    "gridIntensityGCo2PerKwh": 48.78,
+    "name": "Namibia"
+  },
+  "NCL": {
+    "co2PerCapitaTonnes": 18.06,
+    "electricityDemandKwhPerCapita": 10661.0,
+    "gridIntensityGCo2PerKwh": 560.9,
+    "name": "New Caledonia"
+  },
+  "NER": {
+    "co2PerCapitaTonnes": 0.12,
+    "electricityDemandKwhPerCapita": 79.5,
+    "gridIntensityGCo2PerKwh": 673.68,
+    "name": "Niger"
+  },
+  "NGA": {
+    "co2PerCapitaTonnes": 0.58,
+    "electricityDemandKwhPerCapita": 151.5,
+    "gridIntensityGCo2PerKwh": 495.74,
+    "name": "Nigeria"
+  },
+  "NIC": {
+    "co2PerCapitaTonnes": 0.81,
+    "electricityDemandKwhPerCapita": 783.7,
+    "gridIntensityGCo2PerKwh": 300.89,
+    "name": "Nicaragua"
+  },
+  "NIU": {
+    "co2PerCapitaTonnes": 4.14,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Niue"
+  },
+  "NLD": {
+    "co2PerCapitaTonnes": 6.3,
+    "electricityDemandKwhPerCapita": 6479.3,
+    "gridIntensityGCo2PerKwh": 250.72,
+    "name": "Netherlands"
+  },
+  "NOR": {
+    "co2PerCapitaTonnes": 6.67,
+    "electricityDemandKwhPerCapita": 24866.2,
+    "gridIntensityGCo2PerKwh": 29.66,
+    "name": "Norway"
+  },
+  "NPL": {
+    "co2PerCapitaTonnes": 0.63,
+    "electricityDemandKwhPerCapita": 372.0,
+    "gridIntensityGCo2PerKwh": 24.26,
+    "name": "Nepal"
+  },
+  "NRU": {
+    "co2PerCapitaTonnes": 5.13,
+    "electricityDemandKwhPerCapita": 4177.8,
+    "gridIntensityGCo2PerKwh": 600.0,
+    "name": "Nauru"
+  },
+  "NZL": {
+    "co2PerCapitaTonnes": 6.23,
+    "electricityDemandKwhPerCapita": 8440.8,
+    "gridIntensityGCo2PerKwh": 112.02,
+    "name": "New Zealand"
+  },
+  "OMN": {
+    "co2PerCapitaTonnes": 15.65,
+    "electricityDemandKwhPerCapita": 9296.5,
+    "gridIntensityGCo2PerKwh": 542.77,
+    "name": "Oman"
+  },
+  "OWID_KOS": {
+    "co2PerCapitaTonnes": 4.78,
+    "electricityDemandKwhPerCapita": 4338.8,
+    "gridIntensityGCo2PerKwh": 924.67,
+    "name": "Kosovo"
+  },
+  "PAK": {
+    "co2PerCapitaTonnes": 0.72,
+    "electricityDemandKwhPerCapita": 698.2,
+    "gridIntensityGCo2PerKwh": 373.69,
+    "name": "Pakistan"
+  },
+  "PAN": {
+    "co2PerCapitaTonnes": 2.8,
+    "electricityDemandKwhPerCapita": 2943.1,
+    "gridIntensityGCo2PerKwh": 221.15,
+    "name": "Panama"
+  },
+  "PER": {
+    "co2PerCapitaTonnes": 2.05,
+    "electricityDemandKwhPerCapita": 1733.6,
+    "gridIntensityGCo2PerKwh": 258.73,
+    "name": "Peru"
+  },
+  "PHL": {
+    "co2PerCapitaTonnes": 1.51,
+    "electricityDemandKwhPerCapita": 1071.9,
+    "gridIntensityGCo2PerKwh": 621.73,
+    "name": "Philippines"
+  },
+  "PLW": {
+    "co2PerCapitaTonnes": 12.76,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Palau"
+  },
+  "PNG": {
+    "co2PerCapitaTonnes": 0.79,
+    "electricityDemandKwhPerCapita": 447.2,
+    "gridIntensityGCo2PerKwh": 513.74,
+    "name": "Papua New Guinea"
+  },
+  "POL": {
+    "co2PerCapitaTonnes": 7.08,
+    "electricityDemandKwhPerCapita": 4517.2,
+    "gridIntensityGCo2PerKwh": 608.18,
+    "name": "Poland"
+  },
+  "PRK": {
+    "co2PerCapitaTonnes": 2.36,
+    "electricityDemandKwhPerCapita": 1022.7,
+    "gridIntensityGCo2PerKwh": 340.59,
+    "name": "North Korea"
+  },
+  "PRT": {
+    "co2PerCapitaTonnes": 3.41,
+    "electricityDemandKwhPerCapita": 5538.5,
+    "gridIntensityGCo2PerKwh": 110.64,
+    "name": "Portugal"
+  },
+  "PRY": {
+    "co2PerCapitaTonnes": 1.15,
+    "electricityDemandKwhPerCapita": 3811.4,
+    "gridIntensityGCo2PerKwh": 24.76,
+    "name": "Paraguay"
+  },
+  "PSE": {
+    "co2PerCapitaTonnes": 0.87,
+    "electricityDemandKwhPerCapita": 1453.9,
+    "gridIntensityGCo2PerKwh": 414.14,
+    "name": "Palestine"
+  },
+  "PYF": {
+    "co2PerCapitaTonnes": 3.27,
+    "electricityDemandKwhPerCapita": 2554.9,
+    "gridIntensityGCo2PerKwh": 430.56,
+    "name": "French Polynesia"
+  },
+  "QAT": {
+    "co2PerCapitaTonnes": 41.27,
+    "electricityDemandKwhPerCapita": 18593.2,
+    "gridIntensityGCo2PerKwh": 581.69,
+    "name": "Qatar"
+  },
+  "ROU": {
+    "co2PerCapitaTonnes": 3.61,
+    "electricityDemandKwhPerCapita": 2928.2,
+    "gridIntensityGCo2PerKwh": 251.33,
+    "name": "Romania"
+  },
+  "RUS": {
+    "co2PerCapitaTonnes": 12.29,
+    "electricityDemandKwhPerCapita": 8237.2,
+    "gridIntensityGCo2PerKwh": 445.98,
+    "name": "Russia"
+  },
+  "RWA": {
+    "co2PerCapitaTonnes": 0.14,
+    "electricityDemandKwhPerCapita": 85.6,
+    "gridIntensityGCo2PerKwh": 353.98,
+    "name": "Rwanda"
+  },
+  "SAU": {
+    "co2PerCapitaTonnes": 20.38,
+    "electricityDemandKwhPerCapita": 13385.0,
+    "gridIntensityGCo2PerKwh": 691.95,
+    "name": "Saudi Arabia"
+  },
+  "SDN": {
+    "co2PerCapitaTonnes": 0.35,
+    "electricityDemandKwhPerCapita": 308.6,
+    "gridIntensityGCo2PerKwh": 153.69,
+    "name": "Sudan"
+  },
+  "SEN": {
+    "co2PerCapitaTonnes": 0.76,
+    "electricityDemandKwhPerCapita": 439.4,
+    "gridIntensityGCo2PerKwh": 539.97,
+    "name": "Senegal"
+  },
+  "SGP": {
+    "co2PerCapitaTonnes": 9.24,
+    "electricityDemandKwhPerCapita": 10223.9,
+    "gridIntensityGCo2PerKwh": 498.74,
+    "name": "Singapore"
+  },
+  "SHN": {
+    "co2PerCapitaTonnes": 2.16,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Saint Helena"
+  },
+  "SLB": {
+    "co2PerCapitaTonnes": 0.36,
+    "electricityDemandKwhPerCapita": 134.3,
+    "gridIntensityGCo2PerKwh": 636.36,
+    "name": "Solomon Islands"
+  },
+  "SLE": {
+    "co2PerCapitaTonnes": 0.17,
+    "electricityDemandKwhPerCapita": 24.3,
+    "gridIntensityGCo2PerKwh": 47.62,
+    "name": "Sierra Leone"
+  },
+  "SLV": {
+    "co2PerCapitaTonnes": 1.42,
+    "electricityDemandKwhPerCapita": 978.2,
+    "gridIntensityGCo2PerKwh": 113.32,
+    "name": "El Salvador"
+  },
+  "SOM": {
+    "co2PerCapitaTonnes": 0.07,
+    "electricityDemandKwhPerCapita": 22.6,
+    "gridIntensityGCo2PerKwh": 511.63,
+    "name": "Somalia"
+  },
+  "SPM": {
+    "co2PerCapitaTonnes": 9.79,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Saint Pierre and Miquelon"
+  },
+  "SRB": {
+    "co2PerCapitaTonnes": 6.24,
+    "electricityDemandKwhPerCapita": 5564.0,
+    "gridIntensityGCo2PerKwh": 666.4,
+    "name": "Serbia"
+  },
+  "SSD": {
+    "co2PerCapitaTonnes": 0.14,
+    "electricityDemandKwhPerCapita": 46.9,
+    "gridIntensityGCo2PerKwh": 642.86,
+    "name": "South Sudan"
+  },
+  "STP": {
+    "co2PerCapitaTonnes": 0.6,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Sao Tome and Principe"
+  },
+  "SUR": {
+    "co2PerCapitaTonnes": 4.71,
+    "electricityDemandKwhPerCapita": 2742.6,
+    "gridIntensityGCo2PerKwh": 321.84,
+    "name": "Suriname"
+  },
+  "SVK": {
+    "co2PerCapitaTonnes": 5.28,
+    "electricityDemandKwhPerCapita": 4825.0,
+    "gridIntensityGCo2PerKwh": 96.55,
+    "name": "Slovakia"
+  },
+  "SVN": {
+    "co2PerCapitaTonnes": 6.02,
+    "electricityDemandKwhPerCapita": 6749.4,
+    "gridIntensityGCo2PerKwh": 230.4,
+    "name": "Slovenia"
+  },
+  "SWE": {
+    "co2PerCapitaTonnes": 3.59,
+    "electricityDemandKwhPerCapita": 13077.2,
+    "gridIntensityGCo2PerKwh": 34.91,
+    "name": "Sweden"
+  },
+  "SWZ": {
+    "co2PerCapitaTonnes": 0.84,
+    "electricityDemandKwhPerCapita": 1327.6,
+    "gridIntensityGCo2PerKwh": 131.15,
+    "name": "Eswatini"
+  },
+  "SXM": {
+    "co2PerCapitaTonnes": 16.55,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Sint Maarten (Dutch part)"
+  },
+  "SYC": {
+    "co2PerCapitaTonnes": 5.0,
+    "electricityDemandKwhPerCapita": 4830.0,
+    "gridIntensityGCo2PerKwh": 555.56,
+    "name": "Seychelles"
+  },
+  "SYR": {
+    "co2PerCapitaTonnes": 1.29,
+    "electricityDemandKwhPerCapita": 984.1,
+    "gridIntensityGCo2PerKwh": 706.19,
+    "name": "Syria"
+  },
+  "TCA": {
+    "co2PerCapitaTonnes": 8.14,
+    "electricityDemandKwhPerCapita": 5798.6,
+    "gridIntensityGCo2PerKwh": 629.63,
+    "name": "Turks and Caicos Islands"
+  },
+  "TCD": {
+    "co2PerCapitaTonnes": 0.14,
+    "electricityDemandKwhPerCapita": 18.2,
+    "gridIntensityGCo2PerKwh": 621.62,
+    "name": "Chad"
+  },
+  "TGO": {
+    "co2PerCapitaTonnes": 0.33,
+    "electricityDemandKwhPerCapita": 262.9,
+    "gridIntensityGCo2PerKwh": 422.54,
+    "name": "Togo"
+  },
+  "THA": {
+    "co2PerCapitaTonnes": 3.74,
+    "electricityDemandKwhPerCapita": 3236.2,
+    "gridIntensityGCo2PerKwh": 554.73,
+    "name": "Thailand"
+  },
+  "TJK": {
+    "co2PerCapitaTonnes": 1.01,
+    "electricityDemandKwhPerCapita": 1850.6,
+    "gridIntensityGCo2PerKwh": 71.17,
+    "name": "Tajikistan"
+  },
+  "TKM": {
+    "co2PerCapitaTonnes": 10.81,
+    "electricityDemandKwhPerCapita": 3203.7,
+    "gridIntensityGCo2PerKwh": 1306.27,
+    "name": "Turkmenistan"
+  },
+  "TLS": {
+    "co2PerCapitaTonnes": 0.48,
+    "electricityDemandKwhPerCapita": 364.1,
+    "gridIntensityGCo2PerKwh": 666.67,
+    "name": "East Timor"
+  },
+  "TON": {
+    "co2PerCapitaTonnes": 1.46,
+    "electricityDemandKwhPerCapita": 671.8,
+    "gridIntensityGCo2PerKwh": 571.43,
+    "name": "Tonga"
+  },
+  "TTO": {
+    "co2PerCapitaTonnes": 22.93,
+    "electricityDemandKwhPerCapita": 6333.8,
+    "gridIntensityGCo2PerKwh": 681.68,
+    "name": "Trinidad and Tobago"
+  },
+  "TUN": {
+    "co2PerCapitaTonnes": 2.66,
+    "electricityDemandKwhPerCapita": 1951.6,
+    "gridIntensityGCo2PerKwh": 558.26,
+    "name": "Tunisia"
+  },
+  "TUR": {
+    "co2PerCapitaTonnes": 5.87,
+    "electricityDemandKwhPerCapita": 3889.6,
+    "gridIntensityGCo2PerKwh": 469.74,
+    "name": "Turkey"
+  },
+  "TUV": {
+    "co2PerCapitaTonnes": 1.18,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Tuvalu"
+  },
+  "TWN": {
+    "co2PerCapitaTonnes": 11.3,
+    "electricityDemandKwhPerCapita": 12430.4,
+    "gridIntensityGCo2PerKwh": 635.19,
+    "name": "Taiwan"
+  },
+  "TZA": {
+    "co2PerCapitaTonnes": 0.29,
+    "electricityDemandKwhPerCapita": 131.7,
+    "gridIntensityGCo2PerKwh": 345.02,
+    "name": "Tanzania"
+  },
+  "UGA": {
+    "co2PerCapitaTonnes": 0.13,
+    "electricityDemandKwhPerCapita": 107.4,
+    "gridIntensityGCo2PerKwh": 58.52,
+    "name": "Uganda"
+  },
+  "UKR": {
+    "co2PerCapitaTonnes": 3.76,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Ukraine"
+  },
+  "URY": {
+    "co2PerCapitaTonnes": 2.35,
+    "electricityDemandKwhPerCapita": 4287.5,
+    "gridIntensityGCo2PerKwh": 69.56,
+    "name": "Uruguay"
+  },
+  "USA": {
+    "co2PerCapitaTonnes": 14.2,
+    "electricityDemandKwhPerCapita": 12751.9,
+    "gridIntensityGCo2PerKwh": 383.78,
+    "name": "United States"
+  },
+  "UZB": {
+    "co2PerCapitaTonnes": 3.83,
+    "electricityDemandKwhPerCapita": 2321.9,
+    "gridIntensityGCo2PerKwh": 1040.12,
+    "name": "Uzbekistan"
+  },
+  "VCT": {
+    "co2PerCapitaTonnes": 2.54,
+    "electricityDemandKwhPerCapita": 1490.6,
+    "gridIntensityGCo2PerKwh": 600.0,
+    "name": "Saint Vincent and the Grenadines"
+  },
+  "VEN": {
+    "co2PerCapitaTonnes": 4.09,
+    "electricityDemandKwhPerCapita": 2820.9,
+    "gridIntensityGCo2PerKwh": 85.86,
+    "name": "Venezuela"
+  },
+  "VGB": {
+    "co2PerCapitaTonnes": 4.87,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "British Virgin Islands"
+  },
+  "VNM": {
+    "co2PerCapitaTonnes": 3.67,
+    "electricityDemandKwhPerCapita": 3041.8,
+    "gridIntensityGCo2PerKwh": 484.32,
+    "name": "Vietnam"
+  },
+  "VUT": {
+    "co2PerCapitaTonnes": 0.6,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Vanuatu"
+  },
+  "WLF": {
+    "co2PerCapitaTonnes": 2.7,
+    "electricityDemandKwhPerCapita": null,
+    "gridIntensityGCo2PerKwh": null,
+    "name": "Wallis and Futuna"
+  },
+  "WSM": {
+    "co2PerCapitaTonnes": 1.13,
+    "electricityDemandKwhPerCapita": 733.8,
+    "gridIntensityGCo2PerKwh": 375.0,
+    "name": "Samoa"
+  },
+  "YEM": {
+    "co2PerCapitaTonnes": 0.25,
+    "electricityDemandKwhPerCapita": 129.4,
+    "gridIntensityGCo2PerKwh": 592.38,
+    "name": "Yemen"
+  },
+  "ZAF": {
+    "co2PerCapitaTonnes": 6.87,
+    "electricityDemandKwhPerCapita": 3846.8,
+    "gridIntensityGCo2PerKwh": 717.36,
+    "name": "South Africa"
+  },
+  "ZMB": {
+    "co2PerCapitaTonnes": 0.57,
+    "electricityDemandKwhPerCapita": 778.8,
+    "gridIntensityGCo2PerKwh": 119.68,
+    "name": "Zambia"
+  },
+  "ZWE": {
+    "co2PerCapitaTonnes": 0.82,
+    "electricityDemandKwhPerCapita": 727.4,
+    "gridIntensityGCo2PerKwh": 384.02,
+    "name": "Zimbabwe"
+  }
 };
 
 // CO2 emissions per capita, 2024, tonnes CO2 per person (territorial)
@@ -1009,5 +1451,58 @@ export const ASSUMED_ANNUAL_FLIGHT_HOURS_BY_BUCKET = {
   travel_lot: 75, // survey states >50hrs — anchor above the threshold
   always_travelling: 250, // survey states >200hrs — anchor above the threshold
 } as const;
- 
-export type HolidayTravelBucket = keyof typeof ASSUMED_ANNUAL_FLIGHT_HOURS_BY_BUCKET;
+
+export type HolidayTravelBucket =
+  keyof typeof ASSUMED_ANNUAL_FLIGHT_HOURS_BY_BUCKET;
+
+/**
+ * Food greenhouse gas emissions per kilogram of product.
+ * Source: Poore & Nemecek (2018), via Our World in Data.
+ * ourworldindata.org/environmental-impacts-of-food | CC BY 4.0
+ *
+ * Covers full lifecycle: land use change, farm-stage, processing,
+ * transport, retail. Unit: kg CO2e per kg of food product.
+ */
+
+export const FOOD_EMISSION_FACTORS_KG_CO2E_PER_KG = {
+  apples: 0.43,
+  bananas: 0.86,
+  barley: 1.18,
+  beef_beef_herd: 99.48,
+  beef_dairy_herd: 33.3,
+  beet_sugar: 1.81,
+  berries_grapes: 1.53,
+  brassicas: 0.51,
+  cane_sugar: 3.2,
+  cassava: 1.32,
+  cheese: 23.88,
+  citrus_fruit: 0.39,
+  coffee: 28.53,
+  dark_chocolate: 46.65,
+  eggs: 4.67,
+  fish_farmed: 13.63,
+  groundnuts: 3.23,
+  lamb_mutton: 39.72,
+  maize: 1.7,
+  milk: 3.15,
+  nuts: 0.43,
+  oatmeal: 2.48,
+  onions_leeks: 0.5,
+  other_fruit: 1.05,
+  other_pulses: 1.79,
+  other_vegetables: 0.53,
+  peas: 0.98,
+  pig_meat: 12.31,
+  potatoes: 0.46,
+  poultry_meat: 9.87,
+  prawns_farmed: 26.87,
+  rice: 4.45,
+  root_vegetables: 0.43,
+  soy_milk: 0.98,
+  tofu: 3.16,
+  tomatoes: 2.09,
+  wheat_rye: 1.57,
+  wine: 1.79,
+} as const;
+
+export type FoodItem = keyof typeof FOOD_EMISSION_FACTORS_KG_CO2E_PER_KG;
