@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { BaseSurvey } from "@/types/interface";
 import { calculateTotalFootprint } from "./CalculateFootprint";
 import { countryEnergyData } from "@/lib/calculator/constants";
+import MethodologyModal from "./MethodologyModal";
 
 interface Props {
   data: BaseSurvey;
@@ -16,6 +18,8 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 export default function ResultsPage({ data, onPrevious }: Props) {
+  const [methodologyOpen, setMethodologyOpen] = useState(false);
+
   const result = calculateTotalFootprint(data);
   const countryData = countryEnergyData[data.country] ?? null;
 
@@ -97,6 +101,14 @@ export default function ResultsPage({ data, onPrevious }: Props) {
             );
           })}
         </div>
+
+        {/* Methodology link */}
+        <button
+          onClick={() => setMethodologyOpen(true)}
+          className="text-xs text-gray-400 underline hover:text-gray-600 transition-colors cursor-pointer mt-2"
+        >
+          Calculation sources & methodology
+        </button>
       </div>
 
       <div className="h-[60px] sm:h-[80px]"></div>
@@ -115,6 +127,11 @@ export default function ResultsPage({ data, onPrevious }: Props) {
           Try Survey Again
         </button>
       </div>
+
+      <MethodologyModal
+        opened={methodologyOpen}
+        onClose={() => setMethodologyOpen(false)}
+      />
     </section>
   );
 }
