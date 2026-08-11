@@ -18,7 +18,7 @@ import {
   TransportBucket,
   TRANSPORT_EMISSION_FACTORS_KG_PER_KM,
 } from "@/lib/calculator/constants";
-import { BaseSurvey } from "@/types/interface";
+import { BaseSurvey } from "@/types/interface/calculator-interface";
 
 export interface FootprintBreakdown {
   transport: number;

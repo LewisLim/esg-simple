@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BaseSurvey } from "@/types/interface";
+import { BaseSurvey } from "@/types/interface/calculator-interface";
 import { calculateTotalFootprint } from "./CalculateFootprint";
 import { countryEnergyData } from "@/lib/calculator/constants";
 import MethodologyModal from "./MethodologyModal";

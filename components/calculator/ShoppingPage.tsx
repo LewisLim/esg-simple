@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import survey from "@/lib/calculator/questions.json";
-import { BaseSurvey } from "@/types/interface";
+import { BaseSurvey } from "@/types/interface/calculator-interface";
 import ProgressBar from "@/components/custom/ProgressBar";
 import {
   convertUsdToLocal,

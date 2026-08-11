@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { BaseSurvey } from "@/types/interface";
+import { BaseSurvey } from "@/types/interface/calculator-interface";
 import ButtonsPage from "@/components/calculator/Templates/ButtonsPage";
 import WelcomePage from "@/components/calculator/WelcomePage";
 import SlidersPage from "@/components/calculator/Templates/SlidersPage";
