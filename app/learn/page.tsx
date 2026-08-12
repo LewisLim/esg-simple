@@ -3,8 +3,9 @@
 import { useState } from "react";
 import MapZoom from "@/components/article/map/MapZoomTemplate";
 import { zoom0Elements } from "@/components/article/map/MapZoom0";
-// import { zoom1Elements } from "@/components/article/map/zoom1Elements"; // once built
-// import { zoom1aElements } from "@/components/article/map/zoom1aElements"; // once built
+import { zoom1Elements } from "@/components/article/map/MapZoom1";
+import { zoomn1Elements } from "@/components/article/map/MapZoom-1";
+import { zoomn2Elements } from "@/components/article/map/MapZoom-2";
 
 // Placeholder zoom-level state. Swap "level1" / "level1a" etc. for whatever
 // identifiers your zoom system actually uses once it's built — this just
