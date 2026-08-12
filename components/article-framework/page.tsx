@@ -1,11 +1,8 @@
 "use client";
 
-import ArticleWrapper from "@/components/layout/ArticleWrapper";
-
 export default function LearnEnvironment() {
   return (
     <div className="paper-light calc-page w-full h-full relative hidden">
-      <ArticleWrapper title="Article Framework">
         SITE STRUCTURE:
 
         Level 0: Highest View (Zoom 1)
@@ -58,8 +55,6 @@ export default function LearnEnvironment() {
         ├─ Circular Economy
         ├─ Recycling Systems  
         └─ Water Systems 
-
-      </ArticleWrapper>
     </div>
   );
 }

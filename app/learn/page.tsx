@@ -1,131 +1,99 @@
 "use client";
 
-import { LearnCard } from "@/components/homepage/LearnCard";
-import ArticleWrapper from "@/components/layout/ArticleWrapper";
-import { learnCards } from "@/lib/learnModules";
-import { NavLink } from "@mantine/core";
+import { useState } from "react";
+import Image from "next/image";
 
-const tempAvailableLinks = [
-  { label: "Sun", link: "/learn/sun" },
-  { label: "GHG", link: "/learn/ghg" },
-  { label: "GHG - Carbon", link: "/learn/ghg/carbon" },
-  { label: "Climate", link: "/learn/climate" },
-  { label: "Future", link: "/learn/future" },
-  { label: "Do", link: "/learn/do" },
-];
+// Each element's position is a percentage of the container, not pixels —
+// this is what keeps them aligned at any screen size (see conversation notes).
+// left/top = position of the element's center. width = element size as a
+// percentage of container width, so it scales proportionally with everything else.
+const ELEMENTS = [
+  {
+    id: "earth",
+    src: "/map/earth.svg",
+    alt: "Earth",
+    left: "22%",
+    top: "55%",
+    width: "22%",
+  },
+  {
+    id: "sun",
+    src: "/map/sun.svg",
+    alt: "The Sun",
+    left: "78%",
+    top: "18%",
+    width: "16%",
+  },
+  {
+    id: "atmosphere",
+    src: "/map/atmosphere.svg",
+    alt: "Atmosphere",
+    left: "34%",
+    top: "48%",
+    width: "26%",
+  },
+] as const;
 
-export default function LearnEnvironment() {
+type ElementId = (typeof ELEMENTS)[number]["id"];
+
+export default function ClimateMapZoom0() {
+  const [selected, setSelected] = useState<ElementId | null>(null);
+
   return (
-    <div className="paper-light calc-page w-full h-full relative">
-      <ArticleWrapper title="Earth">
-        <div className="flex flex-col">
-          <h2>Available Article Links Now</h2>
-          {tempAvailableLinks.map((page) => (
-            <NavLink
-              href={page?.link}
-              key={page?.link}
-              label={page.label}
-              className="bg-nav"
-            />
-          ))}
+    // Outer wrapper: lets mobile scroll horizontally later without
+    // affecting desktop/tablet, which just render at full width.
+    <div className="w-full overflow-x-auto">
+      {/*
+        Fixed-ratio container (16:9 home base — see earlier discussion on
+        aspect ratio). This is what guarantees every hotspot stays visible
+        and clickable at any screen size: the whole composition scales as
+        one block rather than being cropped (object-fit: cover) or
+        stretched. On mismatched screen ratios this leaves empty space
+        above/below or left/right rather than cutting anything off.
+      */}
+      <div className="relative w-full min-w-[640px] aspect-video bg-gradient-to-b from-slate-950 to-slate-900 rounded-lg overflow-hidden">
+        {ELEMENTS.map((el) => {
+          const isSelected = selected === el.id;
+          return (
+            <button
+              key={el.id}
+              type="button"
+              onClick={() => setSelected(el.id)}
+              aria-label={el.alt}
+              className="absolute -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 hover:scale-105 focus:outline-none"
+              style={{
+                left: el.left,
+                top: el.top,
+                width: el.width,
+              }}
+            >
+              <Image
+                src={el.src}
+                alt={el.alt}
+                width={200}
+                height={200}
+                className={`w-full h-auto transition-all duration-300 ${
+                  isSelected
+                    ? "drop-shadow-[0_0_25px_rgba(255,220,120,0.85)]"
+                    : "drop-shadow-none"
+                }`}
+                priority
+              />
+            </button>
+          );
+        })}
+      </div>
+
+      {/*
+        Placeholder for the modal — swap this for <TopicModalShell /> once
+        content per element exists. Left minimal on purpose since this
+        request was just "the div with these," not the modal wiring.
+      */}
+      {selected && (
+        <div className="mt-3 text-sm text-muted-foreground">
+          Selected: {selected}
         </div>
-        <p>The Complete Picture: How Everything Connects on Earth</p>
-        <p>How our activities affect the world?</p>
-        <p>Insert general diagram</p>
-        Level 0:
-        <h2>The Sun (The energy that drives the cycle)</h2>
-        <p>Everything loops from Level 1 to 4</p>
-        <p>
-          Level A is the health of our planet from how we operate Levels 1-4
-        </p>
-        Level 1: Natural Resources
-        <h2>Energy Resources</h2>
-        <h3>Renewable: Solar, wind, hydro, geothermal</h3>
-        <h3>Non-renewable: Fossil fuels (coal, oil, gas)</h3>
-        <h2>Material Resources</h2>
-        <h3>
-          Renewable: Forests (timber), agriculture (crops), fish, animals (meat)
-        </h3>
-        <h3>Non-renewable: Minerals, metals</h3>
-        <h2>Essential Systems</h2>
-        <h3>Water (for drinking, agriculture, industry)</h3>
-        <h3>Soil (for growing food)</h3>
-        <h3>Biodiversity (pollinators, seed dispersal, pest control)</h3>
-        <section>
-          Resource Depletion - when we use faster than nature can replenish - as
-          a topic to talk for each component
-        </section>
-        Level 2: Processing(Businesses - Carbon emitted)
-        <h2>Collection</h2>
-        <h2>Manufacturing/Processing</h2>
-        <h2>Services (offices, digital, finance)</h2>
-        <h2>Transportation (cargo ships/trucks)</h2>
-        Level 3: Consumption (Consumers - Carbon emitted)
-        <h2>Food/Drinks</h2>
-        <h2>Home</h2>
-        <h2>Leisure</h2>
-        <h2>Travel (cars/flights)</h2>
-        Level 4: Waste (Return to Earth)
-        <h2>Reuse/Recycle (Goes to Level 2)</h2>
-        <h2>To Air → Burned/decomposed (CO2, methane emissions)</h2>
-        <h2>To Land → Buried (landfills, soil)</h2>
-        <h2>To Water → (discharge, pollution to oceans and rivers)</h2>
-        <h3>
-          Pollution Buildup crisis as a topic to talk in each component
-          (plastic, chemicals, toxic waste)
-        </h3>
-        <p>
-          Air and Water are mostly problematic. Land it depends on what we put
-          underneath, plastic? biodegradables?
-        </p>
-        <p>
-          Energy does not cycle - it flows one-way from the Sun, through
-          Earth&apos;s systems, and radiates back to space as heat. This is why
-          we need the Sun&apos;s continuous input to sustain life.
-        </p>
-        Level A: Planetary Health
-        <h2>Climate Systems</h2>
-        <h3>
-          Temperature rise, sea level rise, extreme weather, natural disasters
-        </h3>
-        <h2>Living Systems (Biodiversity)</h2>
-        <h3>Species extinction, habitat loss, ecosystem collapse</h3>
-        <h2>Land Systems</h2>
-        <h3>Soil degradation, deforestation, desertification</h3>
-        <h2>Water Systems</h2>
-        <h3>Ocean acidification, freshwater depletion, coral reef die-off</h3>
-        ☀️ THE SUN: Level 0 (shining down on Everything) ↓
-        ┌─────────────────────────────────┬──────────────┐ │ THE CYCLE (circular
-        flow) │ LEVEL A │ │ │ │ │ Level 1 (Resources) │ Climate │ │ ↓ │ Systems
-        │ │ Level 2 (Processing) │ │ │ ↓ │ Living │ │ Level 3 (Consumption) │
-        Systems │ │ ↓ │ │ │ Level 4 (Waste) │ Land │ │ ↑ │ Systems │ │ └──(loops
-        back) │ │ │ │ Water │ │ │ Systems │
-        └──────────────────────────────────┴──────────────┘
-        <p>
-          Wide Screen version: Simplified Circular system, hover on 1 for
-          animated effects like animated dotted lines, and click for popup
-          details{" "}
-        </p>
-        <p>
-          Mobile version: Simplified Circular system, tap on 1 for popup details{" "}
-        </p>
-        <p>
-          4 levels color-coded: Green (nature) → Grey (industry) → Blue
-          (consumers) → Brown (waste) → back to Green
-        </p>
-        <p>Level A: warning indicators - like gauges or thermometers</p>
-        <p>
-          Interactive version: Speed up the cycle on 1 level(overconsumption):
-          see Level A indicators change, Remove sun → everything stops (shows
-          dependency), Add recycling → watch cycle become more efficient, Level
-          A improves{" "}
-        </p>
-        <div className="grid grid-cols-4 gap-3">
-          {learnCards.map((card) => (
-            <LearnCard key={card.id} {...card} />
-          ))}
-        </div>
-      </ArticleWrapper>
+      )}
     </div>
   );
 }
