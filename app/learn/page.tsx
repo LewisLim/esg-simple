@@ -7,10 +7,7 @@ import { zoom1Elements } from "@/components/article/map/MapZoom1";
 import { zoomn1Elements } from "@/components/article/map/MapZoom-1";
 import { zoomn2Elements } from "@/components/article/map/MapZoom-2";
 
-// Placeholder zoom-level state. Swap "level1" / "level1a" etc. for whatever
-// identifiers your zoom system actually uses once it's built — this just
-// demonstrates how MapZoom plugs into navigation without owning it itself.
-type ZoomLevel = "level0" | "level1" | "level1a";
+type ZoomLevel = "level1" | "level0" | "level-1" | "level-2";
 
 export default function ClimateMapPage() {
   const [zoomLevel, setZoomLevel] = useState<ZoomLevel>("level0");
@@ -19,11 +16,16 @@ export default function ClimateMapPage() {
     setZoomLevel(target as ZoomLevel);
   };
 
-  // Swap in the right element set per zoom level. Once zoom1Elements /
-  // zoom1aElements exist, this becomes a real switch instead of always
-  // rendering zoom0Elements.
   const currentElements =
-    zoomLevel === "level0" ? zoom0Elements : zoom0Elements; // TODO: branch to real data per level
+    zoomLevel === "level1"
+      ? zoom1Elements
+      : zoomLevel === "level0"
+        ? zoom0Elements
+        : zoomLevel === "level-1"
+          ? zoomn1Elements
+          : zoomLevel === "level-2"
+            ? zoomn2Elements
+            : zoom0Elements;
 
   return (
     <MapZoom
