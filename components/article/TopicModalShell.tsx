@@ -78,14 +78,14 @@ function FlowSection({
   return (
     <div>
       <div className="flex items-center gap-2 mb-2">
-        <Icon className="w-4 h-4 text-primary flex-shrink-0" />
+        <Icon className="w-7 h-7 text-primary flex-shrink-0" />
         <h3 className="text-sm font-semibold text-foreground">{label}</h3>
       </div>
-      <div className="text-sm text-foreground leading-relaxed pl-6">
+      <div className="text-sm text-foreground leading-relaxed pl-9">
         {section.body}
       </div>
       {section.condensed && section.condensedReason && (
-        <p className="text-xs text-muted-foreground italic mt-1 pl-6">
+        <p className="text-xs text-muted-foreground italic mt-1 pl-9">
           {section.condensedReason}
         </p>
       )}
@@ -99,13 +99,13 @@ function ClimateEffectSection({ section }: { section: TopicSection }) {
   return (
     <div>
       <div className="flex items-center gap-2 mb-2">
-        <Thermometer className="w-4 h-4 text-primary flex-shrink-0" />
+        <Thermometer className="w-7 h-7 text-primary flex-shrink-0" />
         <h3 className="text-sm font-semibold text-foreground">
           How it affects climate change
         </h3>
       </div>
       <div
-        className={`rounded-md pl-3 pr-3 py-2.5 ml-6 border ${
+        className={`rounded-md pl-3 pr-3 py-2.5 ml-9 border ${
           noEffect
             ? "bg-muted/40 border-border"
             : "bg-primary/5 border-primary/20"
@@ -116,7 +116,7 @@ function ClimateEffectSection({ section }: { section: TopicSection }) {
         </div>
       </div>
       {section.condensed && section.condensedReason && (
-        <p className="text-xs text-muted-foreground italic mt-1.5 pl-6">
+        <p className="text-xs text-muted-foreground italic mt-1.5 pl-12">
           {section.condensedReason}
         </p>
       )}
@@ -128,16 +128,16 @@ function AlsoDoesSection({ section }: { section: TopicSection }) {
   return (
     <div>
       <div className="flex items-center gap-2 mb-2">
-        <Sparkle className="w-4 h-4 text-primary flex-shrink-0" />
+        <Sparkle className="w-7 h-7 text-primary flex-shrink-0" />
         <h3 className="text-sm font-semibold text-foreground">
           What else it does
         </h3>
       </div>
-      <div className="text-sm text-foreground leading-relaxed pl-6">
+      <div className="text-sm text-foreground leading-relaxed pl-9">
         {section.body}
       </div>
       {section.condensed && section.condensedReason && (
-        <p className="text-xs text-muted-foreground italic mt-1.5 pl-6">
+        <p className="text-xs text-muted-foreground italic mt-1.5 pl-9">
           {section.condensedReason}
         </p>
       )}
