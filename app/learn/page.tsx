@@ -7,7 +7,12 @@ import TopicModalShell from "@/components/article/TopicModalShell";
 import { sunContent } from "@/components/article/content/sun";
 import { atmosphereContent } from "@/components/article/content/atmosphere";
 import { moonContent } from "@/components/article/content/moon";
-import type { TopicModalContent } from "@/types/interface/topic-interface";
+import type {
+  GatewayModalContent,
+  TopicModalContent,
+} from "@/types/interface/topic-interface";
+import { earthContent } from "@/components/article/content/earth";
+import GatewayModalShell from "@/components/article/GatewayModalShell";
 
 const ELEMENTS = [
   {
@@ -19,7 +24,7 @@ const ELEMENTS = [
     width: "22%",
     imgWidth: 240,
     imgHeight: 240,
-    content: null, // no Earth content yet — clicking does nothing until you write it
+    content: earthContent,
   },
   {
     id: "sun",
@@ -62,10 +67,13 @@ export default function ClimateMapZoom0() {
   const [selected, setSelected] = useState<ElementId | null>(null);
   const [modalOpened, { open, close }] = useDisclosure(false);
 
-  const activeContent: TopicModalContent | null =
+  const activeContent: TopicModalContent | GatewayModalContent | null =
     ELEMENTS.find((el) => el.id === selected)?.content ?? null;
 
-  const handleSelect = (id: ElementId, content: TopicModalContent | null) => {
+  const handleSelect = (
+    id: ElementId,
+    content: TopicModalContent | GatewayModalContent | null,
+  ) => {
     setSelected(id);
     if (content) {
       open();
@@ -73,6 +81,10 @@ export default function ClimateMapZoom0() {
     // If content is null (e.g. Earth not written yet), the click just
     // highlights the element without opening a modal — avoids opening
     // an empty modal for topics you haven't authored content for.
+  };
+
+  const handleGatewayNavigate = (target: string) => {
+    console.log("Navigate to:", target);
   };
 
   return (
@@ -110,11 +122,20 @@ export default function ClimateMapZoom0() {
         })}
       </div>
 
-      <TopicModalShell
-        content={activeContent}
-        opened={modalOpened}
-        onClose={close}
-      />
+      {activeContent && "links" in activeContent ? (
+        <GatewayModalShell
+          content={activeContent}
+          opened={modalOpened}
+          onClose={close}
+          onNavigate={handleGatewayNavigate}
+        />
+      ) : (
+        <TopicModalShell
+          content={activeContent}
+          opened={modalOpened}
+          onClose={close}
+        />
+      )}
     </div>
   );
 }

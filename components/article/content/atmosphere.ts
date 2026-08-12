@@ -1,4 +1,4 @@
-import type { TopicModalContent } from "./types";
+import { TopicModalContent } from "@/types/interface/topic-interface";
 
 export const atmosphereContent: TopicModalContent = {
   topicName: "Atmosphere",
