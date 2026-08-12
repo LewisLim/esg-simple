@@ -70,21 +70,26 @@ export default function MapZoomTemplate({
                 top: el.top,
                 width: el.width,
                 zIndex: el.zIndex,
-                clipPath: el.clipPath,
               }}
             >
-              <Image
-                src={el.src}
-                alt={el.alt}
-                width={el.imgWidth}
-                height={el.imgHeight}
-                className={`w-full h-auto transition-all duration-300 ${
+              <div
+                className={`transition-all duration-300 ${
                   isSelected
-                    ? "drop-shadow-[0_0_25px_rgba(255,220,120,0.85)]"
+                    ? "drop-shadow-[0_0_45px_rgba(255,220,120,0.85)]"
                     : "drop-shadow-none"
                 }`}
-                priority
-              />
+              >
+                <div style={{ clipPath: el.clipPath }}>
+                  <Image
+                    src={el.src}
+                    alt={el.alt}
+                    width={el.imgWidth}
+                    height={el.imgHeight}
+                    className="w-full h-auto"
+                    priority
+                  />
+                </div>
+              </div>
             </button>
           );
         })}
