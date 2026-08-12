@@ -23,10 +23,7 @@ interface MapZoomProps {
   onGatewayNavigate: (target: string) => void;
 }
 
-export default function MapZoomTemplate({
-  elements,
-  onGatewayNavigate,
-}: MapZoomProps) {
+export default function MapZoom({ elements, onGatewayNavigate }: MapZoomProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [modalOpened, { open, close }] = useDisclosure(false);
 
@@ -58,6 +55,8 @@ export default function MapZoomTemplate({
                 left: el.left,
                 top: el.top,
                 width: el.width,
+                zIndex: el.zIndex,
+                clipPath: el.clipPath,
               }}
             >
               <Image

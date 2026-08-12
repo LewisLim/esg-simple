@@ -60,7 +60,7 @@ export interface GatewayLink {
    *  safe placeholder for now (e.g. "level1", "level1a"). */
   target: string;
 }
- 
+
 export interface MapElement {
   id: string;
   src: string;
@@ -76,8 +76,14 @@ export interface MapElement {
    *  size, which is controlled by `width` above + w-full h-auto. */
   imgWidth: number;
   imgHeight: number;
+  /** Stacking order within the scene. Higher = rendered on top. Optional —
+   *  elements without it default to DOM/array order (later = on top),
+   *  same as normal CSS stacking. Set this explicitly when you need one
+   *  element behind another regardless of array position (e.g. Atmosphere
+   *  behind Earth, since it's visually larger and would otherwise cover it). */
+  zIndex?: number;
+  clipPath?: string;
   /** null if this topic hasn't been authored yet — click highlights the
    *  element but doesn't open an empty modal. */
   content: TopicModalContent | GatewayModalContent | null;
 }
- 

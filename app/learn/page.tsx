@@ -10,7 +10,7 @@ import { zoomn2Elements } from "@/components/article/map/MapZoom-2";
 type ZoomLevel = "level1" | "level0" | "level-1" | "level-2";
 
 export default function ClimateMapPage() {
-  const [zoomLevel, setZoomLevel] = useState<ZoomLevel>("level0");
+  const [zoomLevel, setZoomLevel] = useState<ZoomLevel>("level1");
 
   const handleGatewayNavigate = (target: string) => {
     setZoomLevel(target as ZoomLevel);
