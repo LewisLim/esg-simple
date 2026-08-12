@@ -1,14 +1,14 @@
 import type { MapElement } from "@/types/interface/topic-interface";
-// import { seaContent } from "@/components/article/content/sea";
-// import { riversContent } from "@/components/article/content/rivers";
-// import { forestsContent } from "@/components/article/content/forests";
-// import { soilContent } from "@/components/article/content/soil";
-// import { deepEarthContent } from "@/components/article/content/deepEarth"; // GatewayModalContent
-// import { humanConsumptionContent } from "@/components/article/content/humanConsumption"; // GatewayModalContent
-// import { factoriesContent } from "@/components/article/content/factories";
-// import { agricultureContent } from "@/components/article/content/agriculture";
-// import { energyContent } from "@/components/article/content/energy";
-// import { transportationContent } from "@/components/article/content/transportation";
+import { seaContent } from "@/components/article/content/zoom1/sea";
+import { riversContent } from "@/components/article/content/zoom1/rivers";
+import { forestsContent } from "@/components/article/content/zoom1/forests";
+import { soilContent } from "@/components/article/content/zoom1/soil";
+import { deepEarthContent } from "@/components/article/content/zoom1/deep-earth"; // GatewayModalContent
+import { humanConsumptionContent } from "@/components/article/content/zoom1/human-consumption"; // GatewayModalContent
+import { factoriesContent } from "@/components/article/content/zoom1/factories";
+import { agricultureContent } from "@/components/article/content/zoom1/agriculture";
+import { energyContent } from "@/components/article/content/zoom1/energy";
+import { transportationContent } from "@/components/article/content/zoom1/transportation";
 
 export const zoom0Elements: readonly MapElement[] = [
   {
@@ -20,7 +20,7 @@ export const zoom0Elements: readonly MapElement[] = [
     width: "26%",
     imgWidth: 240,
     imgHeight: 240,
-    content: null, // seaContent
+    content: seaContent,
   },
   {
     id: "rivers",
@@ -31,7 +31,7 @@ export const zoom0Elements: readonly MapElement[] = [
     width: "10%",
     imgWidth: 240,
     imgHeight: 240,
-    content: null, // riversContent
+    content: riversContent,
   },
   {
     id: "forests",
@@ -42,7 +42,7 @@ export const zoom0Elements: readonly MapElement[] = [
     width: "18%",
     imgWidth: 240,
     imgHeight: 240,
-    content: null, // forestsContent
+    content: forestsContent,
   },
   {
     id: "soil",
@@ -53,7 +53,7 @@ export const zoom0Elements: readonly MapElement[] = [
     width: "20%",
     imgWidth: 240,
     imgHeight: 240,
-    content: null, // soilContent
+    content: soilContent,
   },
   {
     id: "deep-earth",
@@ -64,7 +64,7 @@ export const zoom0Elements: readonly MapElement[] = [
     width: "12%",
     imgWidth: 240,
     imgHeight: 240,
-    content: null, // deepEarthContent — GatewayModalContent, routes to Level 1A
+    content: deepEarthContent,
   },
   {
     id: "human-consumption",
@@ -75,7 +75,7 @@ export const zoom0Elements: readonly MapElement[] = [
     width: "12%",
     imgWidth: 240,
     imgHeight: 240,
-    content: null, // humanConsumptionContent — GatewayModalContent, routes to Level 3
+    content: humanConsumptionContent,
   },
   {
     id: "factories",
@@ -86,7 +86,7 @@ export const zoom0Elements: readonly MapElement[] = [
     width: "14%",
     imgWidth: 240,
     imgHeight: 240,
-    content: null, // factoriesContent
+    content: factoriesContent,
   },
   {
     id: "agriculture",
@@ -97,7 +97,7 @@ export const zoom0Elements: readonly MapElement[] = [
     width: "16%",
     imgWidth: 240,
     imgHeight: 240,
-    content: null, // agricultureContent
+    content: agricultureContent,
   },
   {
     id: "energy",
@@ -108,7 +108,7 @@ export const zoom0Elements: readonly MapElement[] = [
     width: "12%",
     imgWidth: 240,
     imgHeight: 240,
-    content: null, // energyContent
+    content: energyContent,
   },
   {
     id: "transportation",
@@ -119,6 +119,6 @@ export const zoom0Elements: readonly MapElement[] = [
     width: "14%",
     imgWidth: 240,
     imgHeight: 240,
-    content: null, // transportationContent
+    content: transportationContent,
   },
 ];

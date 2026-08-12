@@ -1,7 +1,7 @@
-import { sunContent } from "@/components/article/content/sun";
-import { atmosphereContent } from "@/components/article/content/atmosphere";
-import { moonContent } from "@/components/article/content/moon";
-import { earthContent } from "@/components/article/content/earth";
+import { sunContent } from "@/components/article/content/zoom0/sun";
+import { atmosphereContent } from "@/components/article/content/zoom0/atmosphere";
+import { moonContent } from "@/components/article/content/zoom0/moon";
+import { earthContent } from "@/components/article/content/zoom0/earth";
 import type { MapElement } from "@/types/interface/topic-interface";
 
 export const zoom1Elements: readonly MapElement[] = [
