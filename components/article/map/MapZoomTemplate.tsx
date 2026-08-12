@@ -11,7 +11,7 @@ import type {
 } from "@/types/interface/topic-interface";
 import type { MapElement } from "@/types/interface/topic-interface";
 
-interface MapZoomProps {
+interface MapZoomTemplateProps {
   /** The set of clickable elements for this zoom level. Pass a different
    *  array per level (Zoom 0: Sun/Moon/Atmosphere, Zoom -1: Sea/Rivers/
    *  Forests/Soil, etc.) — everything else in this component is shared. */
@@ -21,9 +21,14 @@ interface MapZoomProps {
    *  state — this component doesn't own that state itself, so the same
    *  MapZoom instance can be used regardless of how navigation works. */
   onGatewayNavigate: (target: string) => void;
+  bgColor: string;
 }
 
-export default function MapZoom({ elements, onGatewayNavigate }: MapZoomProps) {
+export default function MapZoomTemplate({
+  elements,
+  onGatewayNavigate,
+  bgColor,
+}: MapZoomTemplateProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [modalOpened, { open, close }] = useDisclosure(false);
 
@@ -41,7 +46,9 @@ export default function MapZoom({ elements, onGatewayNavigate }: MapZoomProps) {
 
   return (
     <div className="w-full overflow-x-auto">
-      <div className="relative w-full min-w-[640px] aspect-video bg-gradient-to-b from-slate-950 to-slate-900 rounded-lg overflow-hidden">
+      <div
+        className={`${bgColor} relative w-full min-w-[640px] aspect-[4/3] rounded-lg overflow-hidden`}
+      >
         {elements.map((el) => {
           const isSelected = selectedId === el.id;
           return (

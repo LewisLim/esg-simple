@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import MapZoom from "@/components/article/map/MapZoomTemplate";
+import MapZoomTemplate from "@/components/article/map/MapZoomTemplate";
 import { zoom0Elements } from "@/components/article/map/MapZoom0";
 import { zoom1Elements } from "@/components/article/map/MapZoom1";
 import { zoomn1Elements } from "@/components/article/map/MapZoom-1";
@@ -28,9 +28,10 @@ export default function ClimateMapPage() {
             : zoom0Elements;
 
   return (
-    <MapZoom
+    <MapZoomTemplate
       elements={currentElements}
       onGatewayNavigate={handleGatewayNavigate}
+      bgColor="bg-gradient-to-b from-slate-950 to-slate-900"
     />
   );
 }
