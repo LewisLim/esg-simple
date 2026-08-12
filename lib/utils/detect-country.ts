@@ -1,5 +1,5 @@
-import { TIMEZONE_TO_ALPHA3 } from "@/types/timezone-to-alpha3";
-import { ALPHA2_TO_ALPHA3 } from "@/types/alpha2-to-alpha3";
+import { TIMEZONE_TO_ALPHA3 } from "@/types/helpers/timezone-to-alpha3";
+import { ALPHA2_TO_ALPHA3 } from "@/types/helpers/alpha2-to-alpha3";
 import { countryEnergyData } from "@/lib/calculator/constants";
 
 /**
