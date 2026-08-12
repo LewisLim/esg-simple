@@ -1,63 +1,59 @@
 "use client";
 
-import { X } from "@phosphor-icons/react";
-import type { TopicModalContent } from "@/types/interface/topic-interface";
-import FlowSection from "./FlowSection";
-import ClimateEffectSection from "./ClimateEffectSection";
-import AlsoDoesSection from "./AlsoDoesSection";
+import { Modal } from "@mantine/core";
+import {
+  TrayArrowDown,
+  TrayArrowUp,
+  Thermometer,
+  Sparkle,
+} from "@phosphor-icons/react";
+import type {
+  TopicModalContent,
+  TopicSection,
+} from "@/types/interface/topic-interface";
 
 interface TopicModalShellProps {
-  content: TopicModalContent;
-  onClose?: () => void;
+  content: TopicModalContent | null;
+  opened: boolean;
+  onClose: () => void;
 }
 
 /**
- * Neutral shell for topic modals (Sun, Sea, Soil, Cars, etc).
- * Renders the fixed 5-part structure: intro, what comes in, what goes out,
- * climate effect, what else it does.
- *
- * Visual identity is intentionally minimal — this content lives inside a
- * modal triggered from a clickable map, so the shell should stay quiet and
- * legible rather than carry its own per-topic theme. Content supplies the
- * personality; the shell supplies consistent structure.
+ * Renders topic content (Sun, Atmosphere, Moon, etc.) inside a Mantine
+ * Modal. Content stays neutral/white per earlier decision — the modal
+ * itself carries no per-topic theme, just structure.
  */
 export default function TopicModalShell({
   content,
+  opened,
   onClose,
 }: TopicModalShellProps) {
+  if (!content) return null;
+
   const { topicName, icon: Icon, intro } = content;
 
   return (
-    <div className="bg-white rounded-lg w-full max-h-[85vh] flex flex-col overflow-hidden">
-      {/* Header */}
-      <div className="flex items-start justify-between gap-4 px-5 sm:px-6 pt-5 sm:pt-6 pb-4 border-b border-border">
-        <div className="flex items-center gap-3 min-w-0">
+    <Modal
+      opened={opened}
+      onClose={onClose}
+      title={
+        <div className="flex items-center gap-3">
           {Icon && (
-            <div className="flex-shrink-0 w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center">
+            <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center">
               <Icon className="w-5 h-5 text-primary" />
             </div>
           )}
-          <div className="min-w-0">
-            <h2 className="text-lg font-medium text-foreground leading-tight">
-              {topicName}
-            </h2>
-          </div>
+          <span className="text-lg font-medium text-foreground">
+            {topicName}
+          </span>
         </div>
-
-        {onClose && (
-          <button
-            onClick={onClose}
-            aria-label="Close"
-            className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        )}
-      </div>
-
-      {/* Scrollable body */}
-      <div className="overflow-y-auto px-5 sm:px-6 py-5 sm:py-6 space-y-6">
-        {/* Intro hook — no header, no number, just orientation */}
+      }
+      centered
+      size="lg"
+      radius="md"
+      overlayProps={{ backgroundOpacity: 0.5, blur: 2 }}
+    >
+      <div className="space-y-6 pb-2">
         <p className="text-base text-foreground leading-relaxed">{intro}</p>
 
         <FlowSection direction="in" section={content.whatComesIn} />
@@ -65,6 +61,86 @@ export default function TopicModalShell({
         <ClimateEffectSection section={content.climateEffect} />
         <AlsoDoesSection section={content.alsoDoes} />
       </div>
+    </Modal>
+  );
+}
+
+function FlowSection({
+  direction,
+  section,
+}: {
+  direction: "in" | "out";
+  section: TopicSection;
+}) {
+  const Icon = direction === "in" ? TrayArrowDown : TrayArrowUp;
+  const label = direction === "in" ? "What comes in" : "What goes out";
+
+  return (
+    <div>
+      <div className="flex items-center gap-2 mb-2">
+        <Icon className="w-4 h-4 text-primary flex-shrink-0" />
+        <h3 className="text-sm font-semibold text-foreground">{label}</h3>
+      </div>
+      <div className="text-sm text-foreground leading-relaxed pl-6">
+        {section.body}
+      </div>
+      {section.condensed && section.condensedReason && (
+        <p className="text-xs text-muted-foreground italic mt-1 pl-6">
+          {section.condensedReason}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function ClimateEffectSection({ section }: { section: TopicSection }) {
+  const noEffect = section.condensed;
+
+  return (
+    <div>
+      <div className="flex items-center gap-2 mb-2">
+        <Thermometer className="w-4 h-4 text-primary flex-shrink-0" />
+        <h3 className="text-sm font-semibold text-foreground">
+          How it affects climate change
+        </h3>
+      </div>
+      <div
+        className={`rounded-md pl-3 pr-3 py-2.5 ml-6 border ${
+          noEffect
+            ? "bg-muted/40 border-border"
+            : "bg-primary/5 border-primary/20"
+        }`}
+      >
+        <div className="text-sm text-foreground leading-relaxed">
+          {section.body}
+        </div>
+      </div>
+      {section.condensed && section.condensedReason && (
+        <p className="text-xs text-muted-foreground italic mt-1.5 pl-6">
+          {section.condensedReason}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function AlsoDoesSection({ section }: { section: TopicSection }) {
+  return (
+    <div>
+      <div className="flex items-center gap-2 mb-2">
+        <Sparkle className="w-4 h-4 text-primary flex-shrink-0" />
+        <h3 className="text-sm font-semibold text-foreground">
+          What else it does
+        </h3>
+      </div>
+      <div className="text-sm text-foreground leading-relaxed pl-6">
+        {section.body}
+      </div>
+      {section.condensed && section.condensedReason && (
+        <p className="text-xs text-muted-foreground italic mt-1.5 pl-6">
+          {section.condensedReason}
+        </p>
+      )}
     </div>
   );
 }

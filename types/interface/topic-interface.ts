@@ -44,3 +44,19 @@ export interface TopicSection {
   /** Required if condensed is true — one short line explaining why. */
   condensedReason?: string;
 }
+
+export interface GatewayModalContent {
+  topicName: string;
+  /** Longer than a regular topic's intro — this carries the section weight
+   *  a gateway node doesn't have, since it has no in/out/climate/else sections. */
+  intro: string;
+  links: GatewayLink[];
+}
+
+export interface GatewayLink {
+  label: string;
+  /** Whatever identifies a zoom level/target in your map's navigation state.
+   *  Adjust the type once your zoom-state system is built — string is a
+   *  safe placeholder for now (e.g. "level1", "level1a"). */
+  target: string;
+}

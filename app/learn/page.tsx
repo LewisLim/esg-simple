@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useDisclosure } from "@mantine/hooks";
+import TopicModalShell from "@/components/article/TopicModalShell";
+import { sunContent } from "@/components/article/content/sun";
+import { atmosphereContent } from "@/components/article/content/atmosphere";
+import { moonContent } from "@/components/article/content/moon";
+import type { TopicModalContent } from "@/types/interface/topic-interface";
 
-// Each element's position is a percentage of the container, not pixels —
-// this is what keeps them aligned at any screen size (see conversation notes).
-// left/top = position of the element's center. width = element size as a
-// percentage of container width, so it scales proportionally with everything else.
 const ELEMENTS = [
   {
     id: "earth",
@@ -15,8 +17,9 @@ const ELEMENTS = [
     left: "22%",
     top: "55%",
     width: "22%",
-    imgWidth: 240, // ← replace with img real viewBox width
-    imgHeight: 240, // ← replace with img real viewBox width
+    imgWidth: 240,
+    imgHeight: 240,
+    content: null, // no Earth content yet — clicking does nothing until you write it
   },
   {
     id: "sun",
@@ -25,8 +28,9 @@ const ELEMENTS = [
     left: "78%",
     top: "18%",
     width: "16%",
-    imgWidth: 240, // ← replace with img real viewBox width
-    imgHeight: 240, // ← replace with img real viewBox width
+    imgWidth: 240,
+    imgHeight: 240,
+    content: sunContent,
   },
   {
     id: "atmosphere",
@@ -35,8 +39,20 @@ const ELEMENTS = [
     left: "34%",
     top: "48%",
     width: "26%",
-    imgWidth: 240, // ← replace with img real viewBox width
-    imgHeight: 240, // ← replace with img real viewBox width
+    imgWidth: 240,
+    imgHeight: 240,
+    content: atmosphereContent,
+  },
+  {
+    id: "moon",
+    src: "/map/moon.svg", // adjust path once the moon SVG is in /public/map
+    alt: "Moon",
+    left: "45%",
+    top: "80%",
+    width: "6%",
+    imgWidth: 240,
+    imgHeight: 240,
+    content: moonContent,
   },
 ] as const;
 
@@ -44,19 +60,23 @@ type ElementId = (typeof ELEMENTS)[number]["id"];
 
 export default function ClimateMapZoom0() {
   const [selected, setSelected] = useState<ElementId | null>(null);
+  const [modalOpened, { open, close }] = useDisclosure(false);
+
+  const activeContent: TopicModalContent | null =
+    ELEMENTS.find((el) => el.id === selected)?.content ?? null;
+
+  const handleSelect = (id: ElementId, content: TopicModalContent | null) => {
+    setSelected(id);
+    if (content) {
+      open();
+    }
+    // If content is null (e.g. Earth not written yet), the click just
+    // highlights the element without opening a modal — avoids opening
+    // an empty modal for topics you haven't authored content for.
+  };
 
   return (
-    // Outer wrapper: lets mobile scroll horizontally later without
-    // affecting desktop/tablet, which just render at full width.
     <div className="w-full overflow-x-auto">
-      {/*
-        Fixed-ratio container (16:9 home base — see earlier discussion on
-        aspect ratio). This is what guarantees every hotspot stays visible
-        and clickable at any screen size: the whole composition scales as
-        one block rather than being cropped (object-fit: cover) or
-        stretched. On mismatched screen ratios this leaves empty space
-        above/below or left/right rather than cutting anything off.
-      */}
       <div className="relative w-full min-w-[640px] aspect-video bg-gradient-to-b from-slate-950 to-slate-900 rounded-lg overflow-hidden">
         {ELEMENTS.map((el) => {
           const isSelected = selected === el.id;
@@ -64,7 +84,7 @@ export default function ClimateMapZoom0() {
             <button
               key={el.id}
               type="button"
-              onClick={() => setSelected(el.id)}
+              onClick={() => handleSelect(el.id, el.content)}
               aria-label={el.alt}
               className="absolute -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 hover:scale-105 focus:outline-none cursor-pointer"
               style={{
@@ -90,16 +110,11 @@ export default function ClimateMapZoom0() {
         })}
       </div>
 
-      {/*
-        Placeholder for the modal — swap this for <TopicModalShell /> once
-        content per element exists. Left minimal on purpose since this
-        request was just "the div with these," not the modal wiring.
-      */}
-      {selected && (
-        <div className="mt-3 text-sm text-muted-foreground">
-          Selected: {selected}
-        </div>
-      )}
+      <TopicModalShell
+        content={activeContent}
+        opened={modalOpened}
+        onClose={close}
+      />
     </div>
   );
 }

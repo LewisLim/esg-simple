@@ -1,8 +1,3 @@
-"use client";
-
-export default function LearnEnvironment() {
-  return (
-    <div className="paper-light calc-page w-full h-full relative hidden">
         SITE STRUCTURE:
 
         Level 0: Highest View (Zoom 1)
@@ -12,49 +7,46 @@ export default function LearnEnvironment() {
 
         Level 1: Whats on the surface of Earth (Zoom 0)
         ├─ Sea
-        ├─ Rivers 
-        ├─ Forests 
+        ├─ Rivers
+        ├─ Forests
         ├─ Soil
         ├─ Deep Earth (Click to go Level 1A)
         └─ Human Consumption (Click to go Level 3)
-        
+
         Level 1A: Zoom in to under the Soil (Zoom -1)
-        ├─ Fossil Fuels 
-        └─ Minerals 
+        ├─ Fossil Fuels
+        └─ Minerals
 
         Level 2: Processing & Business (Zoom 0)
-        ├─ Factories / Manufacturing 
+        ├─ Factories / Manufacturing
         ├─ Agriculture / Farms
         ├─ Energy / Power Generation
-        └─ Transportation 
+        └─ Transportation
 
         Level 3: Consumption (Zoom -1)
         ├─ Food
-        ├─ Household Goods 
+        ├─ Household Goods
         ├─ Fashion
         ├─ Electronics
         ├─ Home / Energy Use
-        └─ Personal Transportation 
+        └─ Personal Transportation
 
-        Level 4: Waste Consumption (Zoom -1) 
+        Level 4: Waste Consumption (Zoom -1)
         └─ Waste (Click to go Level 4A)
 
-        Level 4A: Waste Consumption (Zoom -2) 
-        ├─ Burnable Waste  
+        Level 4A: Waste Consumption (Zoom -2)
+        ├─ Burnable Waste
         ├─ Non-burnable Waste
         ├─ Electonic Waste
         ├─ Plastic Waste
-        └─ Hazardous Waste   
-        
+        └─ Hazardous Waste
+
         Level A: Planetary Health
-        ├─ Climate Change 
-        ├─ Biodiversity Loss 
-        ├─ Ocean Acidification 
+        ├─ Climate Change
+        ├─ Biodiversity Loss
+        ├─ Ocean Acidification
         ├─ Soil Degradation
         ├─ Resource Depletion
         ├─ Circular Economy
-        ├─ Recycling Systems  
-        └─ Water Systems 
-    </div>
-  );
-}
+        ├─ Recycling Systems
+        └─ Water Systems
