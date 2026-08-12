@@ -21,13 +21,15 @@ interface MapZoomTemplateProps {
    *  state — this component doesn't own that state itself, so the same
    *  MapZoom instance can be used regardless of how navigation works. */
   onGatewayNavigate: (target: string) => void;
-  bgColor: string;
+  bgColor?: string;
+  bgImage?: string;
 }
 
 export default function MapZoomTemplate({
   elements,
   onGatewayNavigate,
-  bgColor,
+  bgColor = "",
+  bgImage,
 }: MapZoomTemplateProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [modalOpened, { open, close }] = useDisclosure(false);
@@ -48,6 +50,11 @@ export default function MapZoomTemplate({
     <div className="w-full overflow-x-auto">
       <div
         className={`${bgColor} relative w-full min-w-[640px] aspect-[4/3] rounded-lg overflow-hidden`}
+        style={{
+          backgroundImage: bgImage ? `url('${bgImage}')` : undefined,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         {elements.map((el) => {
           const isSelected = selectedId === el.id;

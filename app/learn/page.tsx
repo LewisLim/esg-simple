@@ -31,7 +31,8 @@ export default function ClimateMapPage() {
     <MapZoomTemplate
       elements={currentElements}
       onGatewayNavigate={handleGatewayNavigate}
-      bgColor="bg-gradient-to-b from-slate-950 to-slate-900"
-    />
+      // bgColor="bg-gradient-to-b from-slate-950 to-slate-900"
+      bgImage="map/space.jpg"
+      />
   );
 }
