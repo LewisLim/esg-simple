@@ -60,3 +60,24 @@ export interface GatewayLink {
    *  safe placeholder for now (e.g. "level1", "level1a"). */
   target: string;
 }
+ 
+export interface MapElement {
+  id: string;
+  src: string;
+  alt: string;
+  /** Position as a percentage of the container — see conversation notes on
+   *  why percentage (not pixel) positioning is what keeps hotspots aligned
+   *  across screen sizes. */
+  left: string;
+  top: string;
+  width: string;
+  /** Real aspect ratio of the SVG file (viewBox width/height), used only
+   *  as a layout-shift-prevention hint for next/image — NOT the rendered
+   *  size, which is controlled by `width` above + w-full h-auto. */
+  imgWidth: number;
+  imgHeight: number;
+  /** null if this topic hasn't been authored yet — click highlights the
+   *  element but doesn't open an empty modal. */
+  content: TopicModalContent | GatewayModalContent | null;
+}
+ 
