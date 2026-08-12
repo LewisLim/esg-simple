@@ -15,6 +15,8 @@ const ELEMENTS = [
     left: "22%",
     top: "55%",
     width: "22%",
+    imgWidth: 240, // ← replace with img real viewBox width
+    imgHeight: 240, // ← replace with img real viewBox width
   },
   {
     id: "sun",
@@ -23,6 +25,8 @@ const ELEMENTS = [
     left: "78%",
     top: "18%",
     width: "16%",
+    imgWidth: 240, // ← replace with img real viewBox width
+    imgHeight: 240, // ← replace with img real viewBox width
   },
   {
     id: "atmosphere",
@@ -31,6 +35,8 @@ const ELEMENTS = [
     left: "34%",
     top: "48%",
     width: "26%",
+    imgWidth: 240, // ← replace with img real viewBox width
+    imgHeight: 240, // ← replace with img real viewBox width
   },
 ] as const;
 
@@ -60,7 +66,7 @@ export default function ClimateMapZoom0() {
               type="button"
               onClick={() => setSelected(el.id)}
               aria-label={el.alt}
-              className="absolute -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 hover:scale-105 focus:outline-none"
+              className="absolute -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 hover:scale-105 focus:outline-none cursor-pointer"
               style={{
                 left: el.left,
                 top: el.top,
@@ -70,8 +76,8 @@ export default function ClimateMapZoom0() {
               <Image
                 src={el.src}
                 alt={el.alt}
-                width={200}
-                height={200}
+                width={el.imgWidth}
+                height={el.imgHeight}
                 className={`w-full h-auto transition-all duration-300 ${
                   isSelected
                     ? "drop-shadow-[0_0_25px_rgba(255,220,120,0.85)]"
