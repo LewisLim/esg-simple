@@ -10,10 +10,6 @@ import {
   TrashIcon,
 } from "@phosphor-icons/react";
 
-// Mantine's default theme only has these palette keys: blue, red, green,
-// yellow, orange, violet, indigo, grape, pink, cyan, teal, gray, dark.
-// "grey", "brown", and "black" aren't real keys — theme.colors[key] was
-// undefined for those, which is why theme.colors[item.color][6] crashed.
 export const doYouKnowFacts = [
   // sea
   {
@@ -75,7 +71,6 @@ export const doYouKnowFacts = [
     title: "Soil holds more carbon than the sky",
     desc: "Soil isn't just dirt. It holds huge amounts of carbon underground, about three times more than the whole atmosphere. Healthy soil is a powerful climate tool.",
     category: "soil",
-    // "brown" isn't a Mantine key — orange is the closest warm default tone
     color: "orange",
     icon: MountainsIcon,
   },
@@ -158,7 +153,6 @@ export const doYouKnowFacts = [
     title: "Most plastic is never recycled",
     desc: "Only about 9 percent of all plastic ever made has been recycled. Most of the rest sits in landfills or nature, where it can take hundreds of years to break down.",
     category: "waste",
-    // "black" isn't a Mantine key — "dark" is the closest default equivalent
     color: "dark",
     icon: TrashIcon,
   },
