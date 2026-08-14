@@ -1,6 +1,11 @@
+import { useEffect, useState } from "react";
 import survey from "@/lib/calculator/questions.json";
 import { BaseSurvey } from "@/types/interface/calculator-interface";
 import ProgressBar from "@/components/custom/ProgressBar";
+import {
+  convertUsdToLocal,
+  ConvertedAmount,
+} from "@/lib/utils/currency-convert";
 
 interface Props {
   pageNum: number;
@@ -10,7 +15,16 @@ interface Props {
   onPrevious: () => void;
 }
 
-export default function ButtonsPage({
+// USD thresholds matching ASSUMED_MONTHLY_SPEND_USD bucket boundaries
+// in shopping-emissions.ts (the bucket EDGES, not the midpoints used
+// for the calc itself - these are what the label text needs to show).
+const BUCKET_THRESHOLDS_USD = {
+  low: 100,
+  medium: 1000,
+  high: 5000,
+};
+
+export default function ShoppingPage({
   pageNum,
   data,
   setData,
@@ -24,15 +38,55 @@ export default function ButtonsPage({
       ? question.options
       : null;
 
-  // question.id matches a BaseSurvey key directly (e.g. "transport", "diet")
-  const fieldKey = question?.id as keyof BaseSurvey | undefined;
-  const currentValue = fieldKey ? data[fieldKey] : undefined;
+  const [converted, setConverted] = useState<{
+    low: ConvertedAmount;
+    medium: ConvertedAmount;
+    high: ConvertedAmount;
+  } | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadConversions() {
+      const [low, medium, high] = await Promise.all([
+        convertUsdToLocal(BUCKET_THRESHOLDS_USD.low, data.country),
+        convertUsdToLocal(BUCKET_THRESHOLDS_USD.medium, data.country),
+        convertUsdToLocal(BUCKET_THRESHOLDS_USD.high, data.country),
+      ]);
+      if (!cancelled) {
+        setConverted({ low, medium, high });
+      }
+    }
+
+    loadConversions();
+    return () => {
+      cancelled = true;
+    };
+  }, [data.country]);
 
   function handleSelect(value: string) {
-    if (!fieldKey) return;
-    setData((prev) => ({ ...prev, [fieldKey]: value }));
-    // auto-advance on selection, per single-click-then-next UX
+    setData((prev) => ({ ...prev, shopping: value }));
     onNext();
+  }
+
+  function getLabel(optionValue: string, fallbackLabel: string): string {
+    if (!converted) return fallbackLabel; // show static label while loading
+
+    const { low, medium, high } = converted;
+    const symbol = low.symbol; // same currency across all three
+
+    switch (optionValue) {
+      case "low":
+        return `Spend < ${symbol} ${low.amount} a month`;
+      case "medium":
+        return `Spend ${symbol} ${low.amount} - ${symbol} ${medium.amount} a month`;
+      case "high":
+        return `Spend ${symbol} ${medium.amount} - ${symbol} ${high.amount} a month`;
+      case "very_high":
+        return `Spend > ${symbol} ${high.amount} a month`;
+      default:
+        return fallbackLabel;
+    }
   }
 
   return (
@@ -56,11 +110,18 @@ export default function ButtonsPage({
         <p className="text-sm">{page?.categoryIntro}</p>
       </div>
 
+      {converted && !converted.low.isConverted && (
+        <p className="px-3 text-xs text-gray-400 text-center mb-2">
+          Showing amounts in USD — live currency conversion unavailable
+        </p>
+      )}
+
       {/* Answer */}
       <div className="calc-answer">
         {buttonOptions &&
           buttonOptions.map((option, index) => {
-            const isSelected = currentValue === option.value;
+            const isSelected = data.shopping === option.value;
+            const label = getLabel(option.value, option.label ?? "N/A");
             return (
               <div
                 key={option.value ?? index}
@@ -84,21 +145,7 @@ export default function ButtonsPage({
                 `}
               >
                 <div className="flex items-center justify-between w-[260px] sm:w-[320px] md:w-[550px]">
-                  <div>
-                    <span className="text-gray-700">
-                      {option?.label ?? "N/A"}
-                    </span>
-                    {(() => {
-                      const description: string | undefined = (
-                        option as { description?: string }
-                      ).description;
-                      return description ? (
-                        <p className="text-xs text-gray-400 mt-0.5">
-                          {description}
-                        </p>
-                      ) : null;
-                    })()}
-                  </div>
+                  <span className="text-gray-700">{label}</span>
                   <div
                     className={`w-3 h-3 rounded-full border-2 ${
                       isSelected

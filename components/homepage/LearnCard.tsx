@@ -1,29 +1,66 @@
 "use client";
 
-import { Card, Image, Text, Button, Group } from "@mantine/core";
+import { Card, Text, Button, Group, Badge } from "@mantine/core";
+import { LearnCardData } from "@/lib/learnModules";
+import Link from "next/link";
+import Image from "next/image";
 
-export function LearnCard() {
+export function LearnCard({
+  title,
+  description,
+  imageUrl,
+  estimatedTime,
+  difficulty,
+  href,
+}: LearnCardData) {
+  const difficultyColor = {
+    beginner: "green",
+    intermediate: "blue",
+    advanced: "orange",
+  };
+
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder>
       <Card.Section>
-        <Image
-          src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
-          height={160}
-          alt="Norway"
-        />
+        <div style={{ position: "relative", width: "100%", height: 160 }}>
+          <Image
+            src={imageUrl ?? "/images/placeholder.jpg"}
+            fill
+            style={{ objectFit: "cover" }}
+            alt={title}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </div>
       </Card.Section>
 
       <Group justify="space-between" mt="md" mb="xs">
-        <Text fw={500}>Norway Fjord Adventures</Text>
+        <Text fw={500} lineClamp={2}>
+          {title}
+        </Text>
       </Group>
 
-      <Text size="sm" c="dimmed">
-        With Fjord Tours you can explore more of the magical fjord landscapes
-        with tours and activities on and around the fjords of Norway
+      <Group gap="xs" mb="xs">
+        <Badge size="sm" variant="light" color={difficultyColor[difficulty]}>
+          {difficulty}
+        </Badge>
+        <Badge size="sm" variant="light" color="gray">
+          {estimatedTime}
+        </Badge>
+      </Group>
+
+      <Text size="sm" c="dimmed" lineClamp={3} mb="md">
+        {description}
       </Text>
 
-      <Button color="blue" fullWidth mt="md" radius="md">
-        View
+      <Button
+        component={Link}
+        href={href}
+        color="blue"
+        fullWidth
+        mt="auto"
+        radius="md"
+      >
+        Start Learning
       </Button>
     </Card>
   );
