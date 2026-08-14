@@ -75,8 +75,8 @@ export default function MapZoomTemplate({
               <div
                 className={`transition-all duration-300 ${
                   isSelected
-                    ? "drop-shadow-[0_0_45px_rgba(255,220,120,0.85)]"
-                    : "drop-shadow-none"
+                    ? "drop-shadow-[0_0_30px_rgba(255,220,120,1)]"
+                    : "drop-shadow-[0_0_45px_rgba(255,255,255,0.45)]"
                 }`}
               >
                 <div style={{ clipPath: el.clipPath }}>
