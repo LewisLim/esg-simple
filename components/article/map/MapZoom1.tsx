@@ -45,7 +45,7 @@ export const zoom1Elements: readonly MapElement[] = [
   },
   {
     id: "moon",
-    src: "/map/moon.png", // adjust path once the moon SVG is in /public/map
+    src: "/map/moon.png",
     alt: "Moon",
     left: "58%",
     top: "80%",

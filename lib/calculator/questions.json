@@ -966,27 +966,27 @@
             {
               "value": "always_travelling",
               "label": "I'm always travelling",
-              "description": "> 200hrs"
+              "description": "> 200hrs flights"
             },
             {
               "value": "travel_lot",
               "label": "I travel a lot",
-              "description": "> 50hrs"
+              "description": "> 50hrs flights"
             },
             {
               "value": "longer_trips",
               "label": "Some longer trips",
-              "description": "20-50 hrs per year"
+              "description": "20-50 hrs flights per year"
             },
             {
               "value": "short_trips",
               "label": "A few short trips",
-              "description": "~10 hours per year"
+              "description": "~10 hours flights per year"
             },
             {
               "value": "very_rare",
               "label": "Very rare",
-              "description": "Almost no travel"
+              "description": "Almost no travel / None"
             }
           ],
           "required": true
@@ -1048,7 +1048,7 @@
     {
       "pageId": 4,
       "title": "Home Energy - Household Size",
-      "categoryIntro": "Including yourself",
+      "categoryIntro": "Including yourself. Count as 1 if you don't own the house.",
       "progress": {
         "current": 5,
         "total": 8

@@ -248,7 +248,7 @@
   }
 
   .category-intro {
-    @apply px-3 text-center text-sm mb-6;
+    @apply px-3 text-start text-sm mb-6;
   }
 
   .tip {

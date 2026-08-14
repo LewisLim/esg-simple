@@ -73,8 +73,8 @@ export default function HybridPage({
         </div>
       </div>
 
-      <div className="category-intro text-sm font-muted">
-        <p className="text-base">{page?.categoryIntro}</p>
+      <div className="category-intro font-muted">
+        <p className="text-sm">{page?.categoryIntro}</p>
       </div>
 
       {/* Question and Answer - Hybrid Section */}

@@ -106,8 +106,8 @@ export default function ShoppingPage({
         <h2 className="text-lg">{question?.question ?? "Error"}</h2>
       </div>
 
-      <div className="category-intro text-sm font-muted">
-        <p className="text-base">{page?.categoryIntro}</p>
+      <div className="category-intro font-muted">
+        <p className="text-sm">{page?.categoryIntro}</p>
       </div>
 
       {converted && !converted.low.isConverted && (

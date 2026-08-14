@@ -26,24 +26,26 @@ const PAGE_TEMPLATES: Record<
 };
 
 const TOTAL_PAGES = survey.pages.length; // 8
+const initializedData = {
+  country: "",
+  dependency: 0,
+  pets: 0,
+  transport: "",
+  travel: "",
+  diet: "",
+  homePeople: 1,
+  homeSize: "",
+  homeAge: "",
+  shopping: "",
+};
 
 // "welcome" before page 0, "results" after the last page
 type Step = "welcome" | number | "results";
 
 export default function Calculator() {
   const [step, setStep] = useState<Step>("welcome");
-  const [baseSurveyData, setBaseSurveyData] = useState<BaseSurvey>({
-    country: "",
-    dependency: 0,
-    pets: 0,
-    transport: "",
-    travel: "",
-    diet: "",
-    homePeople: 1,
-    homeSize: "",
-    homeAge: "",
-    shopping: "",
-  });
+  const [baseSurveyData, setBaseSurveyData] =
+    useState<BaseSurvey>(initializedData);
 
   function goNext() {
     if (step === "welcome") {
@@ -67,8 +69,13 @@ export default function Calculator() {
         setStep(step - 1);
       }
     } else if (step === "results") {
+      initializeData();
       setStep("welcome");
     }
+  }
+
+  function initializeData() {
+    setBaseSurveyData(initializedData);
   }
 
   return (
