@@ -36,11 +36,11 @@ export const zoom1Elements: readonly MapElement[] = [
     alt: "Atmosphere",
     left: "31%",
     top: "54%",
-    width: "41%",
+    width: "42%",
     imgWidth: 700,
     imgHeight: 700,
     zIndex: 1,
-    clipPath: "circle(50%)",
+    // clipPath: "circle(100%)",
     content: atmosphereContent,
   },
   {

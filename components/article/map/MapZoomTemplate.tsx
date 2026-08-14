@@ -10,6 +10,7 @@ import type {
   TopicModalContent,
 } from "@/types/interface/topic-interface";
 import type { MapElement } from "@/types/interface/topic-interface";
+import PointerArrow from "@/components/custom/PointerArrow";
 
 interface MapZoomTemplateProps {
   /** The set of clickable elements for this zoom level. Pass a different
@@ -90,6 +91,14 @@ export default function MapZoomTemplate({
                   />
                 </div>
               </div>
+              {el.id === "atmosphere" && (
+                <PointerArrow
+                  position="topRight"
+                  label="Click on anything"
+                  className="absolute top-20 -right-28"
+                  color="#FFFFFF"
+                />
+              )}
             </button>
           );
         })}
