@@ -54,7 +54,7 @@ export interface GatewayModalContent {
 }
 
 export interface GatewayLink {
-  label: string;
+  label: number;
   /** Whatever identifies a zoom level/target in your map's navigation state.
    *  Adjust the type once your zoom-state system is built — string is a
    *  safe placeholder for now (e.g. "level1", "level1a"). */

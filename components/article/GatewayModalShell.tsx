@@ -9,7 +9,7 @@ interface GatewayModalShellProps {
   onClose: () => void;
   /** Called when a link is clicked, passing the target so the parent map
    *  can change zoom level / navigate. Shell doesn't own navigation state. */
-  onNavigate: (target: string) => void;
+  onNavigate: (target: number) => void;
 }
 
 /**
@@ -53,7 +53,7 @@ export default function GatewayModalShell({
               color="teal"
               fullWidth
               onClick={() => {
-                onNavigate(link.target);
+                onNavigate(Number(link.target));
                 onClose();
               }}
             >

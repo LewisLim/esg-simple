@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import Image from "next/image";
 import { useDisclosure } from "@mantine/hooks";
 import TopicModalShell from "@/components/article/TopicModalShell";
@@ -11,6 +11,7 @@ import type {
 } from "@/types/interface/topic-interface";
 import type { MapElement } from "@/types/interface/topic-interface";
 import PointerArrow from "@/components/custom/PointerArrow";
+import ZoomButtons from "@/components/custom/zoomButtons";
 
 interface MapZoomTemplateProps {
   /** The set of clickable elements for this zoom level. Pass a different
@@ -21,9 +22,11 @@ interface MapZoomTemplateProps {
    *  what's on the surface"). Wire this to your actual zoom-navigation
    *  state — this component doesn't own that state itself, so the same
    *  MapZoom instance can be used regardless of how navigation works. */
-  onGatewayNavigate: (target: string) => void;
+  onGatewayNavigate: (target: number) => void;
   bgColor?: string;
   bgImage?: string;
+  zoomLevel: number;
+  setZoomLevel: Dispatch<SetStateAction<number>>;
 }
 
 export default function MapZoomTemplate({
@@ -31,6 +34,8 @@ export default function MapZoomTemplate({
   onGatewayNavigate,
   bgColor = "",
   bgImage,
+  zoomLevel,
+  setZoomLevel,
 }: MapZoomTemplateProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [modalOpened, { open, close }] = useDisclosure(false);
@@ -102,6 +107,9 @@ export default function MapZoomTemplate({
             </button>
           );
         })}
+        <div className="absolute bottom-4 right-4 z-10">
+          <ZoomButtons zoomLevel={zoomLevel} setZoomLevel={setZoomLevel} />
+        </div>
       </div>
 
       {activeContent && "links" in activeContent ? (

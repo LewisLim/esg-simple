@@ -7,23 +7,21 @@ import { zoom1Elements } from "@/components/article/map/MapZoom1";
 import { zoomn1Elements } from "@/components/article/map/MapZoom-1";
 import { zoomn2Elements } from "@/components/article/map/MapZoom-2";
 
-type ZoomLevel = "level1" | "level0" | "level-1" | "level-2";
-
 export default function ClimateMapPage() {
-  const [zoomLevel, setZoomLevel] = useState<ZoomLevel>("level1");
+  const [zoomLevel, setZoomLevel] = useState<number>(1);
 
-  const handleGatewayNavigate = (target: string) => {
-    setZoomLevel(target as ZoomLevel);
+  const handleGatewayNavigate = (target: number) => {
+    setZoomLevel(target);
   };
 
   const currentElements =
-    zoomLevel === "level1"
+    zoomLevel === 1
       ? zoom1Elements
-      : zoomLevel === "level0"
+      : zoomLevel === 0
         ? zoom0Elements
-        : zoomLevel === "level-1"
+        : zoomLevel === -1
           ? zoomn1Elements
-          : zoomLevel === "level-2"
+          : zoomLevel === -2
             ? zoomn2Elements
             : zoom0Elements;
 
@@ -33,6 +31,8 @@ export default function ClimateMapPage() {
       onGatewayNavigate={handleGatewayNavigate}
       // bgColor="bg-gradient-to-b from-slate-950 to-slate-900"
       bgImage="map/space.jpg"
-      />
+      zoomLevel={zoomLevel}
+      setZoomLevel={setZoomLevel}
+    />
   );
 }
